@@ -553,7 +553,7 @@ export const site: SiteConfig = {
         placeholder: "Ex.: sábado, 20h — aniversário, cadeirinha para bebê…",
       },
       submit: "Reservar pelo WhatsApp",
-      privacy: "Seus dados são usados apenas para confirmar a reserva.",
+      privacy: "Seus dados são usados apenas para confirmar a reserva. Saiba mais na",
       errors: {
         nameMin: "Informe seu nome (mínimo de 3 letras).",
         nameMax: "Nome muito longo.",
@@ -577,6 +577,68 @@ export const site: SiteConfig = {
         description: "Sua reserva já está escrita. É só tocar em enviar.",
       },
     },
+  },
+
+  privacy: {
+    title: "Política de privacidade",
+    description: "Como o site do Alecrim & Brasa trata seus dados pessoais, em linguagem simples e de acordo com a LGPD.",
+    updatedLabel: "Última atualização",
+    updatedAt: "3 de novembro de 2026",
+    intro:
+      "Esta política explica, de forma direta, quais dados este site usa, para quê e quais são os seus direitos segundo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Resumo: o site não tem banco de dados, não usa cookies e não rastreia você.",
+    sections: [
+      {
+        heading: "Quem é o responsável",
+        paragraphs: [
+          "O controlador dos dados é Alecrim & Brasa Gastronomia Ltda. (CNPJ 00.000.000/0001-00), Rua do Alecrim, 315, Jardim Aurora, Campinas – SP. Empresa e dados fictícios, criados para portfólio.",
+        ],
+      },
+      {
+        heading: "Quais dados coletamos",
+        paragraphs: [
+          "Somente o que você digita no formulário de reserva: nome, WhatsApp, número de pessoas, refeição e, se quiser, uma mensagem com data e observações.",
+          "Esses dados não são enviados a nenhum servidor nosso: o próprio navegador monta uma mensagem e abre o WhatsApp. Só recebemos a reserva se você tocar em enviar dentro do aplicativo.",
+        ],
+      },
+      {
+        heading: "Para que usamos",
+        paragraphs: [
+          "Para responder e confirmar a sua reserva (base legal: procedimentos preliminares a pedido do titular, art. 7º, V, da LGPD). Não usamos seus dados para publicidade e não os vendemos ou compartilhamos com terceiros.",
+        ],
+      },
+      {
+        heading: "WhatsApp",
+        paragraphs: [
+          "A conversa acontece no WhatsApp, serviço da Meta, que tem política de privacidade própria. Guardamos o histórico da conversa apenas pelo tempo necessário para atender você e cumprir obrigações legais.",
+        ],
+      },
+      {
+        heading: "Cookies e armazenamento no navegador",
+        paragraphs: [
+          "Este site não usa cookies, ferramentas de análise ou pixels de rastreamento. Por isso não exibimos aviso de cookies.",
+          "A única informação guardada no seu navegador é a preferência de tema (claro ou escuro), no armazenamento local do próprio aparelho. Ela não é enviada para nós e pode ser apagada limpando os dados do site.",
+        ],
+      },
+      {
+        heading: "Seus direitos",
+        paragraphs: [
+          "Você pode pedir confirmação de tratamento, acesso, correção, anonimização ou eliminação dos seus dados, além de informações sobre compartilhamento e revogação de consentimento (art. 18 da LGPD).",
+          "Para isso, fale com a gente pelo e-mail reservas@alecrimebrasa.com.br ou pelo WhatsApp (19) 98888-7777. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).",
+        ],
+      },
+      {
+        heading: "Segurança",
+        paragraphs: [
+          "O site é servido somente por HTTPS, com cabeçalhos de segurança e sem conteúdo de terceiros. Como não armazenamos os dados do formulário, não há base de dados que possa vazar.",
+        ],
+      },
+      {
+        heading: "Alterações",
+        paragraphs: ["Se esta política mudar, a data de atualização no topo da página será alterada."],
+      },
+    ],
+    linkLabel: "Política de privacidade",
+    backLabel: "Voltar ao início",
   },
 
   location: {

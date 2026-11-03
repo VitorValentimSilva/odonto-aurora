@@ -187,7 +187,13 @@ export function BookingForm() {
             <Send aria-hidden="true" />
             {copy.submit}
           </Button>
-          <p className="text-center text-xs text-muted-foreground">{copy.privacy}</p>
+          <p className="text-center text-xs text-muted-foreground">
+            {copy.privacy}{" "}
+            <a href="/privacidade" className="font-medium text-primary underline underline-offset-2">
+              {site.privacy.linkLabel}
+            </a>
+            .
+          </p>
         </div>
       </form>
     </Form>

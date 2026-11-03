@@ -270,6 +270,19 @@ export type SiteConfig = {
     };
   };
 
+  /** Política de privacidade (rota /privacidade). */
+  privacy: {
+    title: string;
+    description: string;
+    updatedLabel: string;
+    updatedAt: string;
+    intro: string;
+    sections: { heading: string; paragraphs: string[] }[];
+    /** Texto do link no rodapé e no formulário. */
+    linkLabel: string;
+    backLabel: string;
+  };
+
   location: {
     heading: SectionHeading;
     addressTitle: string;
