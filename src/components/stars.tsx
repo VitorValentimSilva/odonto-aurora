@@ -1,11 +1,12 @@
 import { Star } from "lucide-react";
 
-import { site } from "@/config/site";
+import { fill } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
-export function Stars({ rating, className }: { rating: number; className?: string }) {
+/** Estrelas de avaliação. `labelTemplate` vem de `site.ui.starsLabel` (modelo com {rating}). */
+export function Stars({ rating, labelTemplate, className }: { rating: number; labelTemplate: string; className?: string }) {
   return (
-    <div className={cn("flex items-center gap-0.5", className)} role="img" aria-label={site.ui.starsLabel(rating)}>
+    <div className={cn("flex items-center gap-0.5", className)} role="img" aria-label={fill(labelTemplate, { rating })}>
       {Array.from({ length: 5 }, (_, i) => (
         <Star
           key={i}

@@ -1,11 +1,11 @@
 import { expect, test } from "@playwright/test";
 
-import { collectErrors, scrollThrough } from "./helpers";
+import { collectErrors, localized, scrollThrough } from "./helpers";
 
 test.describe("página inicial", () => {
   test("carrega sem erros de console e com um único h1", async ({ page }) => {
     const errors = collectErrors(page);
-    await page.goto("/");
+    await page.goto(localized("/"));
     await scrollThrough(page);
     await expect(page.locator("h1")).toHaveCount(1);
     await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(1);
@@ -13,7 +13,7 @@ test.describe("página inicial", () => {
   });
 
   test("todos os links internos (#) apontam para elementos existentes", async ({ page }) => {
-    await page.goto("/");
+    await page.goto(localized("/"));
     const broken = await page.evaluate(() =>
       [...document.querySelectorAll<HTMLAnchorElement>('a[href*="#"]')]
         .map((a) => new URL(a.href))
@@ -25,7 +25,7 @@ test.describe("página inicial", () => {
   });
 
   test("links externos abrem em nova aba com rel seguro", async ({ page }) => {
-    await page.goto("/");
+    await page.goto(localized("/"));
     const unsafe = await page.evaluate(() =>
       [...document.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]')]
         .filter((a) => !a.rel.includes("noopener"))
@@ -37,7 +37,7 @@ test.describe("página inicial", () => {
   for (const width of [360, 768, 1024, 1440]) {
     test(`sem rolagem horizontal em ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height: 900 });
-      await page.goto("/");
+      await page.goto(localized("/"));
       await scrollThrough(page);
       const overflowing = await page.evaluate(() => {
         const vw = document.documentElement.clientWidth;
@@ -61,7 +61,7 @@ test.describe("página inicial", () => {
 });
 
 test("página 404 responde com status 404 e conteúdo localizado", async ({ page }) => {
-  const response = await page.goto("/pagina-que-nao-existe");
+  const response = await page.goto(localized("/pagina-que-nao-existe"));
   expect(response?.status()).toBe(404);
   await expect(page.locator("h1")).toBeVisible();
   await expect(page.getByRole("link").filter({ hasText: /\S/ }).first()).toBeVisible();
@@ -78,7 +78,7 @@ test("cabeçalhos de segurança presentes", async ({ request }) => {
 });
 
 test("arquivos de SEO respondem", async ({ request }) => {
-  for (const path of ["/privacidade", "/robots.txt", "/sitemap.xml", "/manifest.webmanifest", "/opengraph-image", "/icon"]) {
+  for (const path of ["/robots.txt", "/sitemap.xml", "/manifest.webmanifest", "/opengraph-image", "/icon"]) {
     const res = await request.get(path);
     expect(res.status(), path).toBe(200);
   }

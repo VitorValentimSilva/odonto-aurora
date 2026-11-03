@@ -4,7 +4,7 @@ import { useScroll, useSpring } from "motion/react";
 import * as m from "motion/react-m";
 import { useRef } from "react";
 
-import { site } from "@/config/site";
+import { useSite } from "@/components/site-provider";
 import { getIcon } from "@/lib/icons";
 
 const viewport = { once: true, margin: "0px 0px -80px 0px" } as const;
@@ -14,7 +14,7 @@ const viewport = { once: true, margin: "0px 0px -80px 0px" } as const;
  * Vertical no celular/tablet e horizontal (4 colunas) no desktop.
  */
 export function Timeline() {
-  const { steps } = site;
+  const { steps } = useSite();
   const ref = useRef<HTMLOListElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 80%", "end 55%"] });
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });

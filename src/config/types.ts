@@ -99,7 +99,15 @@ export type FormOption = { value: string; label: string };
 export type SiteConfig = {
   /** URL de produção (usada em SEO, sitemap e Open Graph). */
   url: string;
+  /** Código do idioma na rota (ex.: "pt", "en"). */
+  code: string;
+  /** Prefixo das URLs deste idioma ("" para o idioma padrão, "/en" para inglês). */
+  pathPrefix: string;
+  /** Nome do idioma no seletor (no próprio idioma). */
+  languageName: string;
+  /** Formato Open Graph (ex.: pt_BR). */
   locale: string;
+  /** Atributo lang do HTML (ex.: pt-BR). */
   lang: string;
 
   brand: {
@@ -191,7 +199,8 @@ export type SiteConfig = {
     homeLabel: string;
     mainNavLabel: string;
     whatsappFab: string;
-    starsLabel: (rating: number) => string;
+    /** Modelo com {rating}. */
+    starsLabel: string;
     externalLinkHint: string;
     pauseAnimation: string;
     notifications: string;
@@ -199,7 +208,10 @@ export type SiteConfig = {
     playAnimation: string;
     notFound: { title: string; description: string; cta: CTA };
     /** Seletor de tema: nome de cada modo e rótulo do botão. */
-    theme: { toggle: (current: string) => string; light: string; dark: string; system: string };
+    /** `toggle` é um modelo com {mode}. */
+    theme: { toggle: string; light: string; dark: string; system: string };
+    /** Seletor de idioma. */
+    language: { label: string };
   };
 
   hero: {
@@ -285,20 +297,19 @@ export type SiteConfig = {
         period: string;
         messageMax: string;
       };
-      /** Monta a mensagem enviada ao WhatsApp. */
-      buildMessage: (data: {
-        name: string;
-        phone: string;
-        treatment: string;
-        period: string;
-        message?: string;
-      }) => string;
+      /** Mensagem enviada ao WhatsApp: abertura + rótulo de cada campo. */
+      whatsappMessage: {
+        intro: string;
+        fields: { name: string; phone: string; treatment: string; period: string; message: string };
+      };
       toast: { title: string; description: string };
     };
   };
 
-  /** Política de privacidade (rota /privacidade). */
+  /** Política de privacidade. */
   privacy: {
+    /** Segmento da URL (ex.: "privacidade" → /privacidade). */
+    path: string;
     title: string;
     description: string;
     updatedLabel: string;

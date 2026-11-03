@@ -1,10 +1,11 @@
 import { Container } from "@/components/container";
 import { Stagger, StaggerItem } from "@/components/motion/reveal";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 
 import { Counter } from "./counter";
 
-export function Stats() {
+export async function Stats() {
+  const site = await getSite();
   const { stats } = site;
   return (
     <section aria-labelledby="stats-title" className="py-12 sm:py-16">

@@ -1,14 +1,16 @@
 import { expect, test } from "@playwright/test";
 
+import { localized } from "./helpers";
+
 test("tema segue o sistema por padrão", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
-  await page.goto("/");
+  await page.goto(localized("/"));
   await expect(page.locator("html")).toHaveClass(/dark/);
 });
 
 test("botão alterna claro → escuro → sistema e lembra a escolha", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "light" });
-  await page.goto("/");
+  await page.goto(localized("/"));
   const html = page.locator("html");
   const toggle = page.locator("header").getByRole("button", { name: /:/ }).first();
 

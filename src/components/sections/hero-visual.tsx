@@ -2,13 +2,14 @@ import { CalendarClock, Check, Star } from "lucide-react";
 import Image from "next/image";
 
 import { Illustration } from "@/components/illustrations";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 
 /**
  * Composição visual do hero feita só com SVG, gradientes e cartões.
  * Se `site.hero.image` estiver definido, a foto entra no lugar da ilustração.
  */
-export function HeroVisual() {
+export async function HeroVisual() {
+  const site = await getSite();
   const { visual, image } = site.hero;
 
   return (

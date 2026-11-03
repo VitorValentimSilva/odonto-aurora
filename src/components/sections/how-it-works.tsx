@@ -1,10 +1,11 @@
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 
 import { Timeline } from "./timeline";
 
-export function HowItWorks() {
+export async function HowItWorks() {
+  const site = await getSite();
   return (
     <section id={site.sections.steps} aria-labelledby={`${site.sections.steps}-title`} className="py-20 sm:py-24">
       <Container>

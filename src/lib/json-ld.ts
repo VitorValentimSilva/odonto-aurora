@@ -1,9 +1,8 @@
-import { site } from "@/config/site";
-import type { Treatment } from "@/config/types";
-import { itemPath } from "@/lib/items";
+import type { SiteConfig, Treatment } from "@/config/types";
+import { homeHref, itemPath, localePath } from "@/lib/paths";
 
 /** Dados estruturados schema.org gerados a partir do site.ts. */
-export function buildLocalBusinessJsonLd() {
+export function buildLocalBusinessJsonLd(site: SiteConfig) {
   return {
     "@context": "https://schema.org",
     "@type": site.brand.schemaType,
@@ -11,8 +10,9 @@ export function buildLocalBusinessJsonLd() {
     name: site.brand.name,
     slogan: site.brand.slogan,
     description: site.brand.description,
-    url: site.url,
-    image: `${site.url}/opengraph-image`,
+    url: `${site.url}${localePath(site, "/")}`,
+    inLanguage: site.lang,
+    image: `${site.url}${localePath(site, "/opengraph-image")}`,
     logo: `${site.url}/apple-icon`,
     telephone: site.contact.phone,
     email: site.contact.email,
@@ -52,7 +52,7 @@ export function buildLocalBusinessJsonLd() {
     availableService: site.treatments.items.map((t) => ({
       "@type": site.seo.serviceSchemaType,
       name: t.title,
-      url: `${site.url}${itemPath(t.slug)}`,
+      url: `${site.url}${itemPath(site, t.slug)}`,
       description: t.description,
       ...(t.price ? { offers: { "@type": "Offer", price: t.price.replace(/[^\d,]/g, "").replace(",", "."), priceCurrency: "BRL" } } : {}),
     })),
@@ -60,8 +60,8 @@ export function buildLocalBusinessJsonLd() {
 }
 
 /** JSON-LD da página de um item: o item, a trilha de navegação e o FAQ. */
-export function buildItemJsonLd(item: Treatment) {
-  const url = `${site.url}${itemPath(item.slug)}`;
+export function buildItemJsonLd(site: SiteConfig, item: Treatment) {
+  const url = `${site.url}${itemPath(site, item.slug)}`;
   const page = site.treatments.page;
   return [
     {
@@ -79,8 +79,8 @@ export function buildItemJsonLd(item: Treatment) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: page.breadcrumbHome, item: site.url },
-        { "@type": "ListItem", position: 2, name: page.breadcrumbLabel, item: `${site.url}/#${site.sections.treatments}` },
+        { "@type": "ListItem", position: 1, name: page.breadcrumbHome, item: `${site.url}${localePath(site, "/")}` },
+        { "@type": "ListItem", position: 2, name: page.breadcrumbLabel, item: `${site.url}${homeHref(site, `#${site.sections.treatments}`)}` },
         { "@type": "ListItem", position: 3, name: item.title, item: url },
       ],
     },

@@ -8,11 +8,13 @@ import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { site } from "@/config/site";
-import { homeHref } from "@/lib/links";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useSite } from "@/components/site-provider";
+import { homeHref } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
+  const site = useSite();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
 
@@ -33,7 +35,7 @@ export function SiteHeader() {
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
-  }, []);
+  }, [site.nav]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -55,8 +57,8 @@ export function SiteHeader() {
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
-        <a href={`/#${site.sections.home}`} aria-label={site.ui.homeLabel} className="rounded-lg">
-          <Logo name={site.brand.name} />
+        <a href={homeHref(site, `#${site.sections.home}`)} aria-label={site.ui.homeLabel} className="rounded-lg">
+          <Logo name={site.brand.name} logo={site.brand.logo} />
         </a>
 
         <nav aria-label={site.ui.mainNavLabel} className="hidden lg:block">
@@ -64,9 +66,9 @@ export function SiteHeader() {
             {site.nav.map((item) => (
               <li key={item.href}>
                 <a
-                  href={homeHref(item.href)}
+                  href={homeHref(site, item.href)}
                   aria-current={active === item.href ? "true" : undefined}
-                  className="relative rounded-full px-3 py-2 text-sm font-medium text-foreground/75 transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-primary after:transition-transform hover:bg-secondary hover:text-foreground aria-[current=true]:text-foreground aria-[current=true]:after:scale-x-100"
+                  className="relative rounded-full px-2 py-2 text-sm font-medium xl:px-3 text-foreground/75 transition-colors after:absolute after:inset-x-2 after:bottom-1 xl:after:inset-x-3 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-primary after:transition-transform hover:bg-secondary hover:text-foreground aria-[current=true]:text-foreground aria-[current=true]:after:scale-x-100"
                 >
                   {item.label}
                 </a>
@@ -75,14 +77,15 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Button asChild className="hidden h-10 rounded-full px-5 font-semibold shadow-soft sm:inline-flex">
-            <a href={homeHref(site.ui.headerCta.href)}>
-              <CalendarCheck aria-hidden="true" />
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <Button asChild className="hidden h-10 rounded-full px-4 font-semibold shadow-soft sm:inline-flex xl:px-5">
+            <a href={homeHref(site, site.ui.headerCta.href)}>
+              <CalendarCheck aria-hidden="true" className="lg:hidden xl:block" />
               {site.ui.headerCta.label}
             </a>
           </Button>
 
+          <LanguageSwitcher />
           <ThemeToggle />
 
           <Sheet>
@@ -94,7 +97,7 @@ export function SiteHeader() {
             <SheetContent side="right" closeLabel={site.ui.closeMenu} className="w-[85vw] max-w-sm gap-0 p-0">
               <SheetHeader className="border-b p-5">
                 <SheetTitle className="text-left">
-                  <Logo name={site.brand.name} />
+                  <Logo name={site.brand.name} logo={site.brand.logo} />
                 </SheetTitle>
                 <SheetDescription className="text-left">{site.brand.slogan}</SheetDescription>
               </SheetHeader>
@@ -104,7 +107,7 @@ export function SiteHeader() {
                     <li key={item.href}>
                       <SheetClose asChild>
                         <a
-                          href={homeHref(item.href)}
+                          href={homeHref(site, item.href)}
                           aria-current={active === item.href ? "true" : undefined}
                           className="flex rounded-xl px-4 py-3 text-base font-medium transition-colors hover:bg-secondary aria-[current=true]:bg-secondary aria-[current=true]:text-primary"
                         >
@@ -118,7 +121,7 @@ export function SiteHeader() {
               <div className="border-t p-5">
                 <SheetClose asChild>
                   <Button asChild size="xl" className="w-full">
-                    <a href={homeHref(site.ui.headerCta.href)}>
+                    <a href={homeHref(site, site.ui.headerCta.href)}>
                       <CalendarCheck aria-hidden="true" />
                       {site.ui.headerCta.label}
                     </a>
