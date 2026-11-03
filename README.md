@@ -50,6 +50,8 @@ hero e o logo. Bom exemplo de como o template vira outro negócio sem reescrever
 - Depoimentos em marquee com pausa (hover, foco e botão) e fallback estático para "reduzir movimento"
 - Cardápio em destaque com preço, comodidades em chips e card de eventos
 - FAQ com Accordion
+- **Política de privacidade (LGPD)** em `/privacidade`, com link no rodapé e no formulário. Sem aviso de cookies porque o
+  site não usa cookies nem rastreamento (só a preferência de tema fica no `localStorage`)
 - **Reservas**: formulário com máscara de WhatsApp, Select de número de pessoas, refeição e validação zod → abre o
   `wa.me` com a mensagem pronta + toast de sucesso
 - Localização com mapa ilustrativo em SVG e botão "Como chegar" (Google Maps, sem iframe)

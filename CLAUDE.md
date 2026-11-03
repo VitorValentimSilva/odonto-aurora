@@ -22,7 +22,10 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
 - **Componentes não podem ter texto do negócio no JSX** (nem aria-labels): adicione um campo no tipo + `site.ts`
   (rótulos de interface ficam em `site.ui`).
 - Ícones são referenciados por nome (`IconName`) e resolvidos por `getIcon()` em `src/lib/icons.ts`.
-- Links: `buildWhatsAppUrl()` e `buildMapsUrl()` em `src/lib/links.ts`.
+- Links: `buildWhatsAppUrl()`, `buildMapsUrl()` e `homeHref()` (âncora da home que funciona em qualquer página) em
+  `src/lib/links.ts`.
+- Privacidade: texto em `site.privacy`, rota `/privacidade`. Se o site passar a usar cookies/analytics, atualizar a
+  política e só então avaliar um aviso de consentimento.
 - Âncoras das seções: `site.sections` (ids na URL); hrefs do `nav`/CTAs devem usar os mesmos ids.
 - URL pública: `resolveSiteUrl()` (`src/lib/site-url.ts`) usa o domínio de produção da Vercel automaticamente.
 - Segurança: CSP e cabeçalhos em `next.config.ts`. Nada de scripts/fontes/imagens de terceiros (a CSP bloqueia).

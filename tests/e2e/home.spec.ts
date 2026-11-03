@@ -78,7 +78,7 @@ test("cabeçalhos de segurança presentes", async ({ request }) => {
 });
 
 test("arquivos de SEO respondem", async ({ request }) => {
-  for (const path of ["/robots.txt", "/sitemap.xml", "/manifest.webmanifest", "/opengraph-image", "/icon"]) {
+  for (const path of ["/privacidade", "/robots.txt", "/sitemap.xml", "/manifest.webmanifest", "/opengraph-image", "/icon"]) {
     const res = await request.get(path);
     expect(res.status(), path).toBe(200);
   }
