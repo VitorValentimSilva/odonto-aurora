@@ -41,7 +41,7 @@ export function Differentials() {
                   <span
                     className={cn(
                       "relative grid size-12 place-items-center rounded-2xl",
-                      featured ? "bg-white/15 text-white" : "bg-accent text-accent-foreground",
+                      featured ? "bg-primary-foreground/15 text-primary-foreground" : "bg-accent text-accent-foreground",
                     )}
                   >
                     <Icon className="size-6" aria-hidden="true" />
