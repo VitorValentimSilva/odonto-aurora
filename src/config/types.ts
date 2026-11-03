@@ -36,6 +36,16 @@ export type Treatment = {
   highlights: string[];
   /** Preço opcional exibido no card (ex.: cardápio). */
   price?: string;
+  /** Parte final da URL da página do item (ex.: /cardapio/<slug>). */
+  slug: string;
+  /** Conteúdo da página do item. */
+  details: {
+    metaDescription: string;
+    intro: string;
+    body: string[];
+    benefits: string[];
+    faq: FaqItem[];
+  };
 };
 
 export type Differential = {
@@ -216,7 +226,24 @@ export type SiteConfig = {
   };
 
   stats: { heading: SectionHeading; items: Stat[] };
-  treatments: { heading: SectionHeading; items: Treatment[]; cta: CTA; cardCta: CTA };
+  treatments: {
+    heading: SectionHeading;
+    items: Treatment[];
+    cta: CTA;
+    /** Rótulo do link de cada card para a página do item. */
+    cardLinkLabel: string;
+    /** Primeiro segmento da URL das páginas de item (ex.: "cardapio" → /cardapio/<slug>). */
+    basePath: string;
+    /** Textos da página de item. */
+    page: {
+      breadcrumbHome: string;
+      breadcrumbLabel: string;
+      benefitsTitle: string;
+      faqTitle: string;
+      relatedTitle: string;
+      cta: { title: string; description: string; button: CTA };
+    };
+  };
   differentials: { heading: SectionHeading; items: Differential[] };
   steps: { heading: SectionHeading; items: Step[]; stepLabel: string };
   team: { heading: SectionHeading; items: TeamMember[] };

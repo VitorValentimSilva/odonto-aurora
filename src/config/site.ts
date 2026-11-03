@@ -239,6 +239,35 @@ export const site: SiteConfig = {
         description:
           "Dentes até 4 tons mais claros com protocolo seguro, combinando consultório e moldeira caseira.",
         highlights: ["Baixa sensibilidade", "Resultado em 3 semanas"],
+        slug: "clareamento-dental",
+        details: {
+          metaDescription: "Clareamento dental em Campinas com protocolo combinado (consultório + caseiro), baixa sensibilidade e resultado em cerca de 3 semanas.",
+          intro: "Dentes até 4 tons mais claros com um protocolo que combina sessões no consultório e moldeira caseira, sempre com acompanhamento.",
+          body: [
+            "Antes de clarear, fazemos uma avaliação para verificar cáries, gengiva e restaurações — o gel não altera a cor de resinas e coroas, então planejamos tudo para o resultado ficar uniforme.",
+            "O protocolo combinado usa géis de concentração controlada e dessensibilizantes antes e depois de cada etapa. Na maioria dos casos, o resultado final aparece em cerca de três semanas e se mantém por anos com boa higiene e retoques ocasionais.",
+          ],
+          benefits: [
+            "Avaliação prévia de cáries, gengiva e restaurações",
+            "Protocolo combinado: consultório + moldeira caseira",
+            "Dessensibilizante em todas as etapas",
+            "Moldeira digital feita por escaneamento 3D",
+          ],
+          faq: [
+            {
+              question: "O clareamento estraga o esmalte?",
+              answer: "Não, quando feito com acompanhamento profissional e géis adequados. O esmalte não é desgastado; o gel age nos pigmentos internos do dente.",
+            },
+            {
+              question: "Quanto tempo dura o resultado?",
+              answer: "De 2 a 4 anos em média, dependendo de hábitos como café, vinho e cigarro. Retoques curtos com a moldeira mantêm a cor.",
+            },
+            {
+              question: "Grávidas podem clarear?",
+              answer: "Recomendamos adiar o clareamento durante a gestação e a amamentação, por precaução.",
+            },
+          ],
+        },
       },
       {
         icon: "shieldCheck",
@@ -246,6 +275,35 @@ export const site: SiteConfig = {
         description:
           "Reposição de dentes com implantes de titânio e planejamento guiado por tomografia digital.",
         highlights: ["Cirurgia guiada", "Planejamento 3D"],
+        slug: "implantes",
+        details: {
+          metaDescription: "Implantes dentários em Campinas com planejamento por tomografia, cirurgia guiada e acompanhamento completo na Odonto Aurora.",
+          intro: "Reposição de dentes perdidos com implantes de titânio, planejados digitalmente para uma cirurgia mais rápida, precisa e confortável.",
+          body: [
+            "O planejamento começa com tomografia e escaneamento intraoral. Com esses dados, posicionamos o implante virtualmente e imprimimos um guia cirúrgico que leva a broca exatamente ao lugar planejado.",
+            "A cirurgia guiada costuma ser mais curta e com pós-operatório mais tranquilo. Depois do período de integração ao osso, instalamos a coroa definitiva em cerâmica, com cor e formato pensados para o seu sorriso.",
+          ],
+          benefits: [
+            "Planejamento digital com tomografia",
+            "Cirurgia guiada, menos invasiva",
+            "Coroa em cerâmica com cor personalizada",
+            "Retornos programados após a instalação",
+          ],
+          faq: [
+            {
+              question: "Qualquer pessoa pode fazer implante?",
+              answer: "A maioria dos adultos sim. Avaliamos osso, gengiva e condições de saúde como diabetes e tabagismo, que podem exigir cuidados extras.",
+            },
+            {
+              question: "Quanto tempo leva o tratamento?",
+              answer: "Em geral de 3 a 6 meses entre a cirurgia e a coroa definitiva. Em alguns casos é possível instalar uma coroa provisória no mesmo dia.",
+            },
+            {
+              question: "Dói?",
+              answer: "A cirurgia é feita com anestesia local. O pós-operatório costuma ser controlado com analgésicos simples.",
+            },
+          ],
+        },
       },
       {
         icon: "orthodontics",
@@ -253,6 +311,35 @@ export const site: SiteConfig = {
         description:
           "Aparelhos fixos estéticos ou alinhadores invisíveis, com simulação 3D do resultado antes de começar.",
         highlights: ["Simulação 3D", "Alinhadores invisíveis"],
+        slug: "ortodontia-alinhadores",
+        details: {
+          metaDescription: "Aparelhos estéticos e alinhadores invisíveis em Campinas, com simulação 3D do resultado antes de começar o tratamento.",
+          intro: "Dentes alinhados com aparelhos fixos estéticos ou alinhadores invisíveis — e você vê a simulação 3D do resultado antes de começar.",
+          body: [
+            "Na avaliação, escaneamos os dentes em 3D e planejamos cada movimento. A simulação mostra como o sorriso vai ficar e quantas etapas o tratamento deve ter.",
+            "Os alinhadores são placas transparentes trocadas a cada uma ou duas semanas e podem ser removidos para comer. Para casos mais complexos, indicamos aparelhos fixos com bráquetes estéticos, quase imperceptíveis.",
+          ],
+          benefits: [
+            "Simulação 3D antes de começar",
+            "Alinhadores transparentes e removíveis",
+            "Bráquetes estéticos para casos complexos",
+            "Contenção inclusa ao final do tratamento",
+          ],
+          faq: [
+            {
+              question: "Adulto pode usar aparelho?",
+              answer: "Sim, não há idade limite. Muitos adultos escolhem os alinhadores pela discrição.",
+            },
+            {
+              question: "Quantas horas por dia uso o alinhador?",
+              answer: "Cerca de 22 horas por dia, tirando só para comer e escovar os dentes.",
+            },
+            {
+              question: "O tratamento dói?",
+              answer: "Pode haver leve pressão nos primeiros dias de cada troca, sinal de que os dentes estão se movendo. Passa rápido.",
+            },
+          ],
+        },
       },
       {
         icon: "gem",
@@ -260,6 +347,35 @@ export const site: SiteConfig = {
         description:
           "Facetas ultrafinas de porcelana para corrigir cor, forma e alinhamento com naturalidade.",
         highlights: ["Ensaio estético", "Mínimo desgaste"],
+        slug: "lentes-de-contato-dental",
+        details: {
+          metaDescription: "Lentes de contato dental em porcelana com ensaio estético e mínimo desgaste, na Odonto Aurora em Campinas.",
+          intro: "Facetas ultrafinas de porcelana para corrigir cor, formato e pequenos desalinhamentos com aparência natural.",
+          body: [
+            "Antes de qualquer preparo, fazemos um ensaio estético: aplicamos uma resina provisória sobre os dentes para você ver e aprovar o novo formato do sorriso no espelho e em fotos.",
+            "Com o planejamento aprovado, as lentes são produzidas em cerâmica e cimentadas com mínimo ou nenhum desgaste. A porcelana não mancha e reflete a luz como o esmalte natural.",
+          ],
+          benefits: [
+            "Ensaio estético antes de começar",
+            "Porcelana que não mancha",
+            "Mínimo ou nenhum desgaste do dente",
+            "Formato planejado com fotos e vídeo",
+          ],
+          faq: [
+            {
+              question: "Quanto tempo duram?",
+              answer: "Com cuidados de higiene e consultas regulares, mais de 10 anos.",
+            },
+            {
+              question: "Preciso desgastar os dentes?",
+              answer: "Muitas vezes o desgaste é mínimo ou nenhum. Isso é definido no planejamento, caso a caso.",
+            },
+            {
+              question: "Fica com aparência artificial?",
+              answer: "Não, quando bem planejada. O ensaio estético existe justamente para ajustar cor e formato ao seu rosto antes da versão final.",
+            },
+          ],
+        },
       },
       {
         icon: "smilePlus",
@@ -267,6 +383,35 @@ export const site: SiteConfig = {
         description:
           "Profilaxia, aplicação de flúor e check-up completo para manter a saúde bucal em dia.",
         highlights: ["Check-up semestral", "Orientação de higiene"],
+        slug: "limpeza-e-prevencao",
+        details: {
+          metaDescription: "Limpeza dental, flúor e check-up completo em Campinas. Prevenção para manter a saúde bucal em dia na Odonto Aurora.",
+          intro: "Profilaxia, aplicação de flúor e um check-up completo para encontrar pequenos problemas antes que virem tratamentos maiores.",
+          body: [
+            "A consulta inclui remoção de tártaro e placa, polimento, avaliação da gengiva e, quando necessário, radiografias. Também revisamos restaurações antigas e sinais de bruxismo.",
+            "Saímos da consulta com orientações de escovação e uso de fio adaptadas a você — e com o próximo retorno já agendado, normalmente a cada seis meses.",
+          ],
+          benefits: [
+            "Remoção de tártaro e polimento",
+            "Avaliação de gengiva e restaurações",
+            "Aplicação de flúor quando indicado",
+            "Orientação personalizada de higiene",
+          ],
+          faq: [
+            {
+              question: "De quanto em quanto tempo devo fazer limpeza?",
+              answer: "Para a maioria das pessoas, a cada seis meses. Quem tem doença gengival ou usa aparelho pode precisar de intervalos menores.",
+            },
+            {
+              question: "A limpeza dói?",
+              answer: "Normalmente não. Em casos de muito tártaro ou gengiva sensível, usamos anestésico tópico.",
+            },
+            {
+              question: "O convênio cobre?",
+              answer: "A maioria dos planos odontológicos cobre limpeza e check-up. Confirme pelo WhatsApp com os dados do seu plano.",
+            },
+          ],
+        },
       },
       {
         icon: "baby",
@@ -274,10 +419,55 @@ export const site: SiteConfig = {
         description:
           "Atendimento lúdico e acolhedor para crianças, criando desde cedo uma relação tranquila com o dentista.",
         highlights: ["Ambiente infantil", "Primeira consulta sem medo"],
+        slug: "odontopediatria",
+        details: {
+          metaDescription: "Dentista infantil em Campinas: atendimento lúdico e acolhedor para bebês e crianças na Odonto Aurora.",
+          intro: "Atendimento pensado para crianças, com tempo, brincadeira e muita conversa — para que a ida ao dentista seja tranquila desde cedo.",
+          body: [
+            "A primeira consulta é de adaptação: a criança conhece a sala, a cadeira e os instrumentos, sem pressa. Explicamos tudo com linguagem simples e respeitamos o tempo de cada um.",
+            "Também orientamos os pais sobre escovação, alimentação, chupeta e hábitos que afetam o desenvolvimento dos dentes e da mordida.",
+          ],
+          benefits: [
+            "Consulta de adaptação sem procedimentos",
+            "Ambiente lúdico e acolhedor",
+            "Orientação aos pais sobre hábitos e alimentação",
+            "Prevenção com flúor e selantes",
+          ],
+          faq: [
+            {
+              question: "Com que idade levar ao dentista?",
+              answer: "Quando nasce o primeiro dente, ou até 1 ano de idade.",
+            },
+            {
+              question: "E se a criança chorar?",
+              answer: "É normal no começo. Por isso fazemos consultas de adaptação e nunca forçamos procedimentos que não sejam urgentes.",
+            },
+            {
+              question: "Os pais podem acompanhar?",
+              answer: "Sim, os pais ou responsáveis ficam na sala durante todo o atendimento.",
+            },
+          ],
+        },
       },
     ],
     cta: { label: "Quero uma avaliação", href: "#agendar" },
-    cardCta: { label: "Agendar", href: "#agendar" },
+    cardLinkLabel: "Saiba mais",
+    basePath: "tratamentos",
+    page: {
+      breadcrumbHome: "Início",
+      breadcrumbLabel: "Tratamentos",
+      benefitsTitle: "O que está incluso",
+      faqTitle: "Dúvidas sobre o tratamento",
+      relatedTitle: "Outros tratamentos",
+      cta: {
+        title: "Quer saber se é indicado para você?",
+        description: "Agende uma avaliação pelo WhatsApp e tire suas dúvidas com a equipe.",
+        button: {
+          label: "Agendar avaliação",
+          href: "#agendar",
+        },
+      },
+    },
   },
 
   differentials: {
