@@ -173,7 +173,7 @@ export type SiteConfig = {
   };
 
   stats: { heading: SectionHeading; items: Stat[] };
-  treatments: { heading: SectionHeading; items: Treatment[]; cta: CTA };
+  treatments: { heading: SectionHeading; items: Treatment[]; cta: CTA; cardCta: CTA };
   differentials: { heading: SectionHeading; items: Differential[] };
   steps: { heading: SectionHeading; items: Step[]; stepLabel: string };
   team: { heading: SectionHeading; items: TeamMember[] };

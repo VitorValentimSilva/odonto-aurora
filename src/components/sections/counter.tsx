@@ -5,10 +5,14 @@ import { useEffect, useRef } from "react";
 
 import type { Stat } from "@/config/types";
 
-function format(stat: Stat, value: number, locale: string) {
+function formatNumber(stat: Stat, value: number, locale: string) {
   const decimals = stat.decimals ?? 0;
-  const n = new Intl.NumberFormat(locale, { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(value);
-  return `${stat.prefix ?? ""}${n}${stat.suffix ?? ""}`;
+  return new Intl.NumberFormat(locale, { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(value);
+}
+
+function format(stat: Stat, value: number, locale: string) {
+  const suffix = stat.suffix ? (/^[a-zà-ú]/i.test(stat.suffix) ? ` ${stat.suffix}` : stat.suffix) : "";
+  return `${stat.prefix ?? ""}${formatNumber(stat, value, locale)}${suffix}`;
 }
 
 const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - 2 ** (-10 * t));
@@ -23,14 +27,14 @@ export function Counter({ stat, locale, duration = 1600 }: { stat: Stat; locale:
     const el = ref.current;
     if (!el || !inView) return;
     if (reduce) {
-      el.textContent = format(stat, stat.value, locale);
+      el.textContent = formatNumber(stat, stat.value, locale);
       return;
     }
     let frame = 0;
     const start = performance.now();
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / duration);
-      el.textContent = format(stat, stat.value * easeOutExpo(t), locale);
+      el.textContent = formatNumber(stat, stat.value * easeOutExpo(t), locale);
       if (t < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
@@ -39,8 +43,12 @@ export function Counter({ stat, locale, duration = 1600 }: { stat: Stat; locale:
 
   return (
     <>
-      <span ref={ref} aria-hidden="true" className="tabular-nums">
-        {format(stat, 0, locale)}
+      <span aria-hidden="true" className="inline-flex items-baseline">
+        {stat.prefix && <span className="mr-0.5 text-[0.6em] font-bold opacity-80">{stat.prefix}</span>}
+        <span ref={ref} className="tabular-nums">
+          {formatNumber(stat, 0, locale)}
+        </span>
+        {stat.suffix && <span className="ml-1 text-[0.45em] font-semibold tracking-normal opacity-80">{stat.suffix}</span>}
       </span>
       <span className="sr-only">{format(stat, stat.value, locale)}</span>
     </>

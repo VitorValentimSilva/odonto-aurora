@@ -20,24 +20,36 @@ export function Treatments() {
             const Icon = getIcon(item.icon);
             return (
               <StaggerItem as="li" key={item.title} className="h-full">
-                <HoverCard className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-card p-6 shadow-soft transition-[box-shadow,border-color] duration-300 hover:border-primary/25 hover:shadow-lift sm:p-7">
+                <HoverCard className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-card p-5 shadow-soft transition-[box-shadow,border-color] duration-300 hover:border-primary/25 hover:shadow-lift sm:p-7">
                   <div
                     aria-hidden="true"
                     className="absolute -top-16 -right-16 size-40 rounded-full bg-[radial-gradient(circle,oklch(0.94_0.04_50),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
-                  <span className="relative grid size-13 place-items-center rounded-2xl bg-secondary text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-                  </span>
-                  <h3 className="relative mt-5 text-xl font-bold">{item.title}</h3>
-                  <p className="relative mt-2 text-muted-foreground">{item.description}</p>
-                  <ul className="relative mt-auto flex flex-wrap gap-2 pt-5">
+                  <div className="relative flex items-center gap-4 sm:flex-col sm:items-start sm:gap-5">
+                    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-secondary text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground sm:size-13">
+                      <Icon className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+                    </span>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
+                  </div>
+                  <p className="relative mt-3 text-muted-foreground sm:mt-2">{item.description}</p>
+                  <ul className="relative mt-4 flex flex-wrap gap-x-4 gap-y-2 border-t border-dashed pt-4 text-sm text-foreground/80 sm:mt-5 sm:flex-col">
                     {item.highlights.map((h) => (
-                      <li key={h} className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-foreground/80">
-                        <Check className="size-3 text-primary" aria-hidden="true" />
+                      <li key={h} className="flex items-center gap-2">
+                        <span className="grid size-5 shrink-0 place-items-center rounded-full bg-secondary">
+                          <Check className="size-3 text-primary" aria-hidden="true" />
+                        </span>
                         {h}
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href={treatments.cardCta.href}
+                    className="relative mt-auto inline-flex items-center gap-1.5 self-start pt-4 text-sm sm:pt-5 font-semibold text-primary underline-offset-4 hover:underline"
+                  >
+                    {treatments.cardCta.label}
+                    <span className="sr-only">: {item.title}</span>
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </a>
                 </HoverCard>
               </StaggerItem>
             );

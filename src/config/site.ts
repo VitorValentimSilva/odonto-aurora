@@ -175,10 +175,10 @@ export const site: SiteConfig = {
       title: "Confiança construída sorriso a sorriso",
     },
     items: [
-      { value: 12, suffix: " anos", label: "cuidando de Campinas" },
+      { value: 12, suffix: "anos", label: "de história em Campinas" },
       { value: 2000, prefix: "+", label: "pacientes atendidos" },
-      { value: 8, label: "especialistas na equipe" },
-      { value: 4.9, decimals: 1, suffix: "/5", label: "de avaliação média" },
+      { value: 8, label: "especialistas" },
+      { value: 4.9, decimals: 1, suffix: "/5", label: "nota média" },
     ],
   },
 
@@ -234,6 +234,7 @@ export const site: SiteConfig = {
       },
     ],
     cta: { label: "Quero uma avaliação", href: "#agendar" },
+    cardCta: { label: "Agendar", href: "#agendar" },
   },
 
   differentials: {
