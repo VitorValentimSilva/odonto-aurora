@@ -47,6 +47,29 @@
   --chart-4: oklch(0.85 0.06 80);
   --chart-5: oklch(0.6 0.08 230);
 
+  /* tons derivados da marca (gradientes, rodapé, ilustrações) */
+  --primary-deep: oklch(0.36 0.07 220);
+  --footer: oklch(0.22 0.035 222);
+  --footer-accent: oklch(0.8 0.08 195);
+  --glow-warm: oklch(0.93 0.045 50);
+  --glow-cool: oklch(0.9 0.05 195);
+  --whatsapp: #1f9d55;
+  --avatar-1a: oklch(0.55 0.09 200);
+  --avatar-1b: oklch(0.4 0.08 220);
+  --avatar-2a: oklch(0.78 0.1 45);
+  --avatar-2b: oklch(0.62 0.12 30);
+  --avatar-3a: oklch(0.62 0.08 175);
+  --avatar-3b: oklch(0.45 0.08 200);
+  --map-bg: oklch(0.95 0.02 190);
+  --map-water: oklch(0.85 0.05 210);
+  --map-park: oklch(0.9 0.05 150);
+  --illus-sun: oklch(0.88 0.09 55);
+  --illus-sun-2: oklch(0.8 0.1 40);
+  --illus-shade: oklch(0.94 0.02 200);
+  --illus-sparkle: oklch(0.9 0.08 70);
+  --logo-accent-a: oklch(0.82 0.1 45);
+  --logo-accent-b: oklch(0.9 0.07 70);
+
   --shadow-soft: 0 1px 2px oklch(0.3 0.04 220 / 0.04), 0 8px 24px -8px oklch(0.3 0.06 210 / 0.12);
   --shadow-lift: 0 2px 4px oklch(0.3 0.04 220 / 0.05), 0 24px 48px -16px oklch(0.35 0.08 205 / 0.22);
 }
@@ -71,6 +94,13 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-warm: var(--warm);
   --color-warm-foreground: var(--warm-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-footer: var(--footer);
+  --color-footer-accent: var(--footer-accent);
+  --color-glow-warm: var(--glow-warm);
+  --color-glow-cool: var(--glow-cool);
+  --color-whatsapp: var(--whatsapp);
+  --color-map-bg: var(--map-bg);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);

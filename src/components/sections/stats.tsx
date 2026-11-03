@@ -9,10 +9,10 @@ export function Stats() {
   return (
     <section aria-labelledby="stats-title" className="py-12 sm:py-16">
       <Container>
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-[oklch(0.36_0.07_220)] px-6 py-10 text-primary-foreground shadow-lift sm:px-10 sm:py-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-deep px-6 py-10 text-primary-foreground shadow-lift sm:px-10 sm:py-12">
           <div
             aria-hidden="true"
-            className="absolute -top-24 -right-24 size-72 rounded-full bg-[radial-gradient(circle,oklch(0.85_0.09_50/0.35),transparent_65%)]"
+            className="absolute -top-24 -right-24 size-72 rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--glow-warm)_45%,transparent),transparent_65%)]"
           />
           <div
             aria-hidden="true"

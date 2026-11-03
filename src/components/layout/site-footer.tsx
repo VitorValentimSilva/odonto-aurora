@@ -9,10 +9,10 @@ import { getIcon } from "@/lib/icons";
 export function SiteFooter({ year }: { year: number }) {
   const { brand, footer, nav, contact, address, social, responsible, author, ui } = site;
   return (
-    <footer className="border-t bg-[oklch(0.22_0.035_222)] text-white/80">
+    <footer className="border-t bg-footer text-white/80">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Logo name={brand.name} className="text-white [&_.text-primary]:text-[oklch(0.8_0.08_195)]" />
+          <Logo name={brand.name} className="text-white [&_.text-primary]:text-footer-accent" />
           <p className="mt-4 max-w-xs text-sm">{footer.about}</p>
           <p className="mt-4 text-sm">
             <span className="font-semibold text-white">{responsible.role}:</span> {responsible.name} — <span className="whitespace-nowrap">{responsible.registry}</span>

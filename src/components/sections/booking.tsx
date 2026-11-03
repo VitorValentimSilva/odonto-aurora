@@ -36,7 +36,7 @@ export function Booking() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-5 transition-colors hover:bg-secondary/60"
               >
-                <span className="grid size-11 place-items-center rounded-xl bg-[#1f9d55] text-white">
+                <span className="grid size-11 place-items-center rounded-xl bg-whatsapp text-white">
                   <WhatsAppIcon className="size-6" />
                 </span>
                 <span>
