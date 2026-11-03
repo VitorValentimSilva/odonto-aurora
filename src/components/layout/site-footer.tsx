@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import Link from "next/link";
 
 import { Container } from "@/components/container";
 import { GitHubIcon } from "@/components/icons/brand-icons";
@@ -16,7 +17,8 @@ export function SiteFooter({ year }: { year: number }) {
           <Logo name={brand.name} className="text-white [&_.text-primary]:text-footer-accent" />
           <p className="mt-4 max-w-xs text-sm">{footer.about}</p>
           <p className="mt-4 text-sm">
-            <span className="font-semibold text-white">{responsible.role}:</span> {responsible.name} — <span className="whitespace-nowrap">{responsible.registry}</span>
+            <span className="font-semibold text-white">{responsible.role}:</span> {responsible.name} —{" "}
+            <span className="whitespace-nowrap">{responsible.registry}</span>
           </p>
         </div>
 
@@ -34,7 +36,9 @@ export function SiteFooter({ year }: { year: number }) {
         </nav>
 
         <div>
-          <h2 className="font-heading text-sm font-semibold tracking-wide text-white uppercase">{footer.contactTitle}</h2>
+          <h2 className="font-heading text-sm font-semibold tracking-wide text-white uppercase">
+            {footer.contactTitle}
+          </h2>
           <ul className="mt-4 flex flex-col gap-2.5 text-sm">
             <li>
               <a href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`} className="hover:text-white hover:underline">
@@ -51,13 +55,20 @@ export function SiteFooter({ year }: { year: number }) {
         </div>
 
         <div>
-          <h2 className="font-heading text-sm font-semibold tracking-wide text-white uppercase">{footer.socialTitle}</h2>
+          <h2 className="font-heading text-sm font-semibold tracking-wide text-white uppercase">
+            {footer.socialTitle}
+          </h2>
           <ul className="mt-4 flex flex-col gap-2.5 text-sm">
             {social.map((s) => {
               const Icon = getIcon(s.icon);
               return (
                 <li key={s.href}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white hover:underline">
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 hover:text-white hover:underline"
+                  >
                     <Icon className="size-4" aria-hidden="true" />
                     {s.label}
                     <span className="sr-only">
@@ -78,9 +89,9 @@ export function SiteFooter({ year }: { year: number }) {
               © {year} {brand.name}. {footer.rights} {footer.disclaimer}
             </p>
             <p>
-              <a href="/privacidade" className="font-semibold text-white underline-offset-4 hover:underline">
+              <Link href="/privacidade" className="font-semibold text-white underline-offset-4 hover:underline">
                 {site.privacy.linkLabel}
-              </a>
+              </Link>
             </p>
             <p>
               {footer.portfolioPrefix}{" "}
@@ -96,7 +107,10 @@ export function SiteFooter({ year }: { year: number }) {
               </a>
             </p>
           </div>
-          <a href={`/#${site.sections.home}`} className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto">
+          <a
+            href={`/#${site.sections.home}`}
+            className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto"
+          >
             <ArrowUp className="size-3.5" aria-hidden="true" />
             {footer.backToTop}
           </a>
