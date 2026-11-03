@@ -23,6 +23,9 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
   (rótulos de interface ficam em `site.ui`).
 - Ícones são referenciados por nome (`IconName`) e resolvidos por `getIcon()` em `src/lib/icons.ts`.
 - Links: `buildWhatsAppUrl()` e `buildMapsUrl()` em `src/lib/links.ts`.
+- Âncoras das seções: `site.sections` (ids na URL); hrefs do `nav`/CTAs devem usar os mesmos ids.
+- URL pública: `resolveSiteUrl()` (`src/lib/site-url.ts`) usa o domínio de produção da Vercel automaticamente.
+- Segurança: CSP e cabeçalhos em `next.config.ts`. Nada de scripts/fontes/imagens de terceiros (a CSP bloqueia).
 - Fotos são opcionais (`hero.image`, `team.items[n].photo`) e renderizadas com `next/image`.
 - Ilustração do hero: `hero.visual.illustration` (mapa em `src/components/illustrations`); logo: `brand.logo`;
   cores em hex para OG/favicon/manifest: `site.theme`. Ícone vindo do config fora de `.map()`: use `<Icon name=…/>`.
