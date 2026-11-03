@@ -12,14 +12,14 @@ import { LazyBookingForm } from "./booking-form-lazy";
 export function Booking() {
   const { booking, contact, ui, location, openingHours } = site;
   return (
-    <section id="agendar" aria-labelledby="agendar-title" className="relative isolate py-20 sm:py-24">
+    <section data-section="booking" id={site.sections.booking} aria-labelledby={`${site.sections.booking}-title`} className="relative isolate py-20 sm:py-24">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 -z-10 h-2/3 bg-gradient-to-b from-secondary/60 to-transparent"
       />
       <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         <div className="flex flex-col">
-          <SectionHeading id="agendar-title" align="left" {...booking.heading} />
+          <SectionHeading id={`${site.sections.booking}-title`} align="left" {...booking.heading} />
           <Reveal delay={0.1}>
             <ul className="mt-8 flex flex-col gap-3">
               {booking.benefits.map((b) => (

@@ -9,10 +9,10 @@ import { site } from "@/config/site";
 export function Faq() {
   const { faq } = site;
   return (
-    <section id="duvidas" aria-labelledby="duvidas-title" className="py-20 sm:py-24">
+    <section id={site.sections.faq} aria-labelledby={`${site.sections.faq}-title`} className="py-20 sm:py-24">
       <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeading id="duvidas-title" align="left" {...faq.heading} />
+          <SectionHeading id={`${site.sections.faq}-title`} align="left" {...faq.heading} />
           <Reveal delay={0.1} className="mt-8 hidden rounded-3xl border bg-card p-6 shadow-soft lg:block">
             <p className="font-heading text-lg font-bold">{faq.contactPrompt}</p>
             <Button asChild size="xl" className="mt-4">
