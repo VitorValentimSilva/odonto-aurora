@@ -68,7 +68,7 @@ export function SiteHeader() {
                 <a
                   href={homeHref(site, item.href)}
                   aria-current={active === item.href ? "true" : undefined}
-                  className="relative rounded-full px-3 py-2 text-sm font-medium text-foreground/75 transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-primary after:transition-transform hover:bg-secondary hover:text-foreground aria-[current=true]:text-foreground aria-[current=true]:after:scale-x-100"
+                  className="relative rounded-full px-2 py-2 text-sm font-medium xl:px-3 text-foreground/75 transition-colors after:absolute after:inset-x-2 after:bottom-1 xl:after:inset-x-3 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-primary after:transition-transform hover:bg-secondary hover:text-foreground aria-[current=true]:text-foreground aria-[current=true]:after:scale-x-100"
                 >
                   {item.label}
                 </a>
@@ -78,9 +78,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-1.5 sm:gap-2">
-          <Button asChild className="hidden h-10 rounded-full px-5 font-semibold shadow-soft sm:inline-flex">
+          <Button asChild className="hidden h-10 rounded-full px-4 font-semibold shadow-soft sm:inline-flex xl:px-5">
             <a href={homeHref(site, site.ui.headerCta.href)}>
-              <CalendarCheck aria-hidden="true" />
+              <CalendarCheck aria-hidden="true" className="lg:hidden xl:block" />
               {site.ui.headerCta.label}
             </a>
           </Button>
