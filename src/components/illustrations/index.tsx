@@ -50,8 +50,83 @@ function ToothIllustration({ id }: { id: string }) {
   );
 }
 
+
+/** Prato servido com vapor, talheres e ramo de alecrim (restaurante). */
+function DishIllustration({ id }: { id: string }) {
+  return (
+    <svg viewBox="0 0 400 400" className="size-full" role="presentation" aria-hidden="true">
+      <defs>
+        <radialGradient id={`${id}-sun`} cx="0.5" cy="1" r="0.8">
+          <stop offset="0" style={{ stopColor: "var(--illus-sun)" }} />
+          <stop offset="0.45" style={{ stopColor: "var(--illus-sun-2)", stopOpacity: 0.55 }} />
+          <stop offset="1" style={{ stopColor: "var(--illus-sun-2)", stopOpacity: 0 }} />
+        </radialGradient>
+        <radialGradient id={`${id}-plate`} cx="0.45" cy="0.35" r="0.75">
+          <stop offset="0" stopColor="white" />
+          <stop offset="1" style={{ stopColor: "var(--illus-shade)" }} />
+        </radialGradient>
+        <pattern id={`${id}-dots`} width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.4" fill="white" fillOpacity="0.14" />
+        </pattern>
+      </defs>
+      <rect width="400" height="400" fill={`url(#${id}-dots)`} />
+      <circle cx="200" cy="430" r="270" fill={`url(#${id}-sun)`} />
+
+      {/* vapor */}
+      <g fill="none" stroke="white" strokeLinecap="round" strokeWidth="5" strokeOpacity="0.55">
+        <path d="M170 92c-12 14 12 22 0 38" />
+        <path d="M200 78c-14 16 14 26 0 46" />
+        <path d="M230 92c-12 14 12 22 0 38" />
+      </g>
+
+      {/* talheres */}
+      <g fill="white" fillOpacity="0.9">
+        <rect x="58" y="160" width="10" height="130" rx="5" />
+        <path d="M50 130h4v36h4v-36h4v36h4v-36h4v42a13 13 0 0 1-26 0Z" />
+        <path d="M334 128c14 6 16 46 6 62v100a5 5 0 0 1-10 0V132a4 4 0 0 1 4-4Z" />
+      </g>
+
+      {/* prato */}
+      <ellipse cx="200" cy="318" rx="118" ry="14" fill="black" fillOpacity="0.14" />
+      <circle cx="200" cy="215" r="112" fill={`url(#${id}-plate)`} />
+      <circle cx="200" cy="215" r="84" fill="none" style={{ stroke: "var(--illus-shade)" }} strokeWidth="3" />
+
+      {/* comida */}
+      <g>
+        {/* carne em fatias */}
+        <path d="M150 200c10-22 52-30 78-14 12 8 8 24-6 30-26 12-62 10-72-16Z" fill="#8c4a2f" />
+        <path d="M158 202c10-14 44-20 64-10" fill="none" stroke="#b86a45" strokeWidth="6" strokeLinecap="round" />
+        <path d="M168 222c16 6 38 4 52-4" fill="none" stroke="#6b3420" strokeWidth="4" strokeLinecap="round" opacity="0.6" />
+        {/* tomates */}
+        <circle cx="244" cy="240" r="15" fill="#d9482b" />
+        <circle cx="244" cy="240" r="7" fill="#f07a5a" />
+        <circle cx="222" cy="258" r="12" fill="#e5583a" />
+        {/* folhas */}
+        <ellipse cx="160" cy="246" rx="24" ry="12" fill="#5f8f3e" transform="rotate(-24 160 246)" />
+        <ellipse cx="182" cy="258" rx="20" ry="10" fill="#79a94f" transform="rotate(18 182 258)" />
+        {/* alecrim */}
+        <g stroke="#3f6b2a" strokeLinecap="round">
+          <path d="M226 150l60 52" strokeWidth="3" fill="none" />
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <g key={i} transform={`translate(${232 + i * 9} ${155 + i * 7.8}) rotate(41)`}>
+              <path d="M0 0l-9-6M0 0l-9 6" strokeWidth="3" />
+            </g>
+          ))}
+        </g>
+      </g>
+
+      {/* brilhos */}
+      <g style={{ fill: "var(--illus-sparkle)" }}>
+        <path d="M300 92l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" />
+        <path d="M96 96l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" opacity="0.8" />
+      </g>
+    </svg>
+  );
+}
+
 export const illustrations = {
   tooth: ToothIllustration,
+  dish: DishIllustration,
 };
 
 export type IllustrationName = keyof typeof illustrations;
