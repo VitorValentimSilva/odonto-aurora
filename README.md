@@ -12,6 +12,8 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 | --- | --- |
 | <img src="docs/screenshots/desktop.png" alt="Página completa no desktop" width="520" /> | <img src="docs/screenshots/mobile.png" alt="Página completa no celular" width="220" /> |
 
+> 🎨 Veja a [revisão de design com antes/depois](docs/revisao-design.md) (10 pontos de visual/UX corrigidos).
+
 ## Stack
 
 - **Next.js 16** (App Router, Server Components por padrão, Cache Components) + **TypeScript** estrito
