@@ -1,6 +1,6 @@
-import { CreditCard, ShieldCheck } from "lucide-react";
 
 import { Container } from "@/components/container";
+import { Icon } from "@/components/icon";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/config/site";
@@ -8,6 +8,7 @@ import { getIcon } from "@/lib/icons";
 
 export function Payment() {
   const { payment } = site;
+
   return (
     <section id="convenios" aria-labelledby="convenios-title" className="bg-secondary/50 py-20 sm:py-24">
       <Container>
@@ -16,7 +17,7 @@ export function Payment() {
         <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-[1.4fr_1fr]">
           <Reveal className="flex flex-col rounded-3xl border bg-card p-6 shadow-soft sm:p-8">
             <h3 className="flex items-center gap-2 text-lg font-bold">
-              <ShieldCheck className="size-5 text-primary" aria-hidden="true" />
+              <Icon name={payment.insurancesIcon ?? "shieldCheck"} className="size-5 text-primary" />
               {payment.insurancesTitle}
             </h3>
             <Stagger as="ul" stagger={0.05} className="mt-5 flex flex-1 flex-wrap content-start gap-2.5 pb-6">
@@ -35,7 +36,7 @@ export function Payment() {
 
           <Reveal delay={0.1} className="relative flex flex-col overflow-hidden rounded-3xl bg-accent p-6 text-accent-foreground shadow-soft sm:p-8">
             <div aria-hidden="true" className="absolute -top-12 -right-12 size-44 rounded-full bg-white/40" />
-            <CreditCard className="relative size-8" aria-hidden="true" />
+            <Icon name={payment.installments.icon ?? "creditCard"} className="relative size-8" />
             <p className="relative mt-4 font-heading text-3xl leading-tight font-extrabold text-balance">{payment.installments.title}</p>
             <p className="relative mt-1 text-accent-foreground/90">{payment.installments.description}</p>
             <h3 className="relative mt-6 text-sm font-semibold tracking-wide uppercase">{payment.methodsTitle}</h3>
