@@ -1,4 +1,6 @@
 import { site } from "@/config/site";
+import type { Treatment } from "@/config/types";
+import { itemPath } from "@/lib/items";
 
 /** Dados estruturados schema.org gerados a partir do site.ts. */
 export function buildLocalBusinessJsonLd() {
@@ -50,8 +52,46 @@ export function buildLocalBusinessJsonLd() {
     availableService: site.treatments.items.map((t) => ({
       "@type": site.seo.serviceSchemaType,
       name: t.title,
+      url: `${site.url}${itemPath(t.slug)}`,
       description: t.description,
       ...(t.price ? { offers: { "@type": "Offer", price: t.price.replace(/[^\d,]/g, "").replace(",", "."), priceCurrency: "BRL" } } : {}),
     })),
   };
+}
+
+/** JSON-LD da página de um item: o item, a trilha de navegação e o FAQ. */
+export function buildItemJsonLd(item: Treatment) {
+  const url = `${site.url}${itemPath(item.slug)}`;
+  const page = site.treatments.page;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": site.seo.serviceSchemaType,
+      name: item.title,
+      description: item.details.metaDescription,
+      url,
+      provider: { "@id": `${site.url}/#business` },
+      ...(item.price
+        ? { offers: { "@type": "Offer", price: item.price.replace(/[^\d,]/g, "").replace(",", "."), priceCurrency: "BRL" } }
+        : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: page.breadcrumbHome, item: site.url },
+        { "@type": "ListItem", position: 2, name: page.breadcrumbLabel, item: `${site.url}/#${site.sections.treatments}` },
+        { "@type": "ListItem", position: 3, name: item.title, item: url },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: item.details.faq.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    },
+  ];
 }

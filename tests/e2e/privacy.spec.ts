@@ -4,8 +4,9 @@ test("política de privacidade abre pelo rodapé", async ({ page }) => {
   await page.goto("/");
   await page.locator('footer a[href="/privacidade"]').click();
   await expect(page).toHaveURL(/\/privacidade$/);
-  await expect(page.locator("h1")).toBeVisible();
-  expect(await page.locator("main h2").count()).toBeGreaterThan(2);
+  // navegação no cliente: o Next mantém a página anterior oculta (Activity) para o "voltar" ser instantâneo
+  await expect(page.locator("h1:visible")).toHaveCount(1);
+  expect(await page.locator("main:visible h2").count()).toBeGreaterThan(2);
 });
 
 test("menu da página de privacidade leva às seções da home", async ({ page, isMobile }) => {

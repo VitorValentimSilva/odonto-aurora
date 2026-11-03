@@ -251,6 +251,35 @@ export const site: SiteConfig = {
         description: "12 horas na brasa, com farofa de manteiga de garrafa, mandioca crocante e vinagrete de ervas.",
         highlights: ["Serve 2 pessoas", "Assinatura da casa"],
         price: "R$ 129",
+        slug: "costela-fogo-de-chao",
+        details: {
+          metaDescription: "Costela assada 12 horas no fogo de chão, com farofa de manteiga de garrafa e mandioca crocante. Prato para 2 no Alecrim & Brasa, em Campinas.",
+          intro: "O prato que deu fama à casa: costela bovina temperada só com sal grosso e assada lentamente, por 12 horas, ao lado do fogo de chão.",
+          body: [
+            "Começamos a acender a brasa às seis da manhã. A costela fica de pé, presa em espetos de ferro, recebendo o calor de lado — nunca a chama direta. O resultado é uma carne que desmancha no garfo, com a gordura derretida e a casca levemente defumada.",
+            "Servimos fatiada na mesa, com farofa de manteiga de garrafa, mandioca cozida e depois tostada na chapa e um vinagrete de ervas da nossa horta. A porção serve bem duas pessoas — ou três, se houver entrada e sobremesa.",
+          ],
+          benefits: [
+            "12 horas de cocção lenta no fogo de chão",
+            "Corte selecionado de pequenos produtores do interior paulista",
+            "Acompanhamentos inclusos: farofa, mandioca e vinagrete",
+            "Sem glúten (avise sobre alergias na reserva)",
+          ],
+          faq: [
+            {
+              question: "A costela fica disponível todos os dias?",
+              answer: "Sim, de terça a domingo, enquanto durar a fornada do dia. Nos fins de semana recomendamos reservar e avisar que deseja a costela.",
+            },
+            {
+              question: "Serve quantas pessoas?",
+              answer: "Duas pessoas com folga. Para grupos maiores, a cozinha prepara porções extras sob pedido na reserva.",
+            },
+            {
+              question: "Qual vinho combina?",
+              answer: "Um tinto encorpado, como Malbec ou Tannat. A sommelière sugere opções por taça para quem prefere variar.",
+            },
+          ],
+        },
       },
       {
         icon: "pizza",
@@ -258,6 +287,35 @@ export const site: SiteConfig = {
         description: "Massa de 48 horas assada no forno a lenha, com tomate italiano, fior di latte e manjericão.",
         highlights: ["Forno a lenha", "Opção vegana"],
         price: "R$ 68",
+        slug: "pizza-fermentacao-natural",
+        details: {
+          metaDescription: "Pizza napolitana com massa de fermentação natural de 48 horas, assada no forno a lenha. Opção vegana disponível no Alecrim & Brasa.",
+          intro: "Massa leve, de borda alta e salpicada, feita com fermento natural e descanso de 48 horas antes de ir ao forno a lenha.",
+          body: [
+            "A fermentação longa deixa a massa mais digestiva e cheia de sabor. Ela assa em cerca de 90 segundos a 450 °C, o que cria a borda aerada com pintinhas tostadas típica da pizza napolitana.",
+            "A clássica leva molho de tomate italiano, fior di latte, manjericão fresco e azeite. Também temos a versão vegana, com queijo de castanha e legumes assados na brasa.",
+          ],
+          benefits: [
+            "Massa com 48 horas de fermentação natural",
+            "Forno a lenha a 450 °C",
+            "Versão vegana com queijo de castanha",
+            "Tamanho individual, ideal para dividir como entrada",
+          ],
+          faq: [
+            {
+              question: "Tem opção sem glúten?",
+              answer: "Ainda não: a massa é feita com farinha de trigo e preparada no mesmo forno. Para quem não consome glúten, indicamos a costela ou o peixe.",
+            },
+            {
+              question: "Posso pedir meio a meio?",
+              answer: "Como a pizza é individual, preferimos não dividir sabores, mas você pode pedir duas para compartilhar na mesa.",
+            },
+            {
+              question: "Vocês fazem para viagem?",
+              answer: "Sim, pelo WhatsApp, para retirada no balcão. A massa é melhor consumida até 15 minutos depois de sair do forno.",
+            },
+          ],
+        },
       },
       {
         icon: "fish",
@@ -265,6 +323,35 @@ export const site: SiteConfig = {
         description: "Peixe do dia assado na brasa, arroz de coco, banana-da-terra grelhada e molho de maracujá.",
         highlights: ["Sem glúten", "Peixe fresco"],
         price: "R$ 89",
+        slug: "peixe-folha-de-bananeira",
+        details: {
+          metaDescription: "Peixe do dia assado na brasa dentro da folha de bananeira, com arroz de coco e banana-da-terra. Prato sem glúten no Alecrim & Brasa.",
+          intro: "O peixe fresco do dia, temperado com ervas e limão, embrulhado na folha de bananeira e assado sobre a brasa.",
+          body: [
+            "A folha protege o peixe do fogo direto e cria um vapor perfumado lá dentro: a carne fica suculenta e ganha um leve aroma defumado. Abrimos a folha na mesa para você sentir o perfume.",
+            "Acompanham arroz de coco, banana-da-terra grelhada e um molho de maracujá com pimenta-de-cheiro, que dá acidez sem esconder o sabor do peixe.",
+          ],
+          benefits: [
+            "Peixe fresco, comprado no dia",
+            "Preparo na brasa, sem fritura",
+            "Sem glúten",
+            "Molho de maracujá servido à parte",
+          ],
+          faq: [
+            {
+              question: "Qual é o peixe?",
+              answer: "Depende da pesca do dia — geralmente pescada, robalo ou tilápia de criação responsável. A equipe informa na hora do pedido.",
+            },
+            {
+              question: "O prato é picante?",
+              answer: "Não. A pimenta-de-cheiro é aromática e não arde; o molho vem à parte.",
+            },
+            {
+              question: "Tem espinhas?",
+              answer: "Servimos em filé, mas pequenas espinhas podem aparecer. Avise se for servir para crianças que limpamos com mais cuidado.",
+            },
+          ],
+        },
       },
       {
         icon: "cookingPot",
@@ -272,6 +359,35 @@ export const site: SiteConfig = {
         description: "Arroz arbóreo, cogumelos frescos salteados, parmesão 12 meses e azeite de alecrim da horta.",
         highlights: ["Vegetariano", "Cogumelos da serra"],
         price: "R$ 74",
+        slug: "risoto-cogumelos-alecrim",
+        details: {
+          metaDescription: "Risoto cremoso de cogumelos frescos com parmesão 12 meses e azeite de alecrim da horta. Opção vegetariana do Alecrim & Brasa.",
+          intro: "Nosso prato vegetariano mais pedido: arroz arbóreo cozido no caldo de legumes, com cogumelos da serra salteados na manteiga.",
+          body: [
+            "O risoto é feito na hora, mexido até ficar cremoso sem precisar de creme de leite. Finalizamos com parmesão curado por 12 meses e um fio de azeite infusionado com alecrim colhido na nossa horta.",
+            "Os cogumelos (paris, shimeji e shiitake) vêm de um pequeno produtor da Serra da Mantiqueira e são selados na chapa quente para ganhar cor e sabor.",
+          ],
+          benefits: [
+            "Vegetariano",
+            "Cogumelos frescos de pequeno produtor",
+            "Feito na hora, cremoso sem creme de leite",
+            "Versão vegana sob pedido (sem queijo e manteiga)",
+          ],
+          faq: [
+            {
+              question: "Quanto tempo demora?",
+              answer: "Cerca de 20 minutos, porque é preparado na hora. Se estiver com pressa, avise o garçom ao pedir.",
+            },
+            {
+              question: "Pode ser vegano?",
+              answer: "Sim: trocamos manteiga por azeite e o parmesão por farofa de castanhas tostadas.",
+            },
+            {
+              question: "Serve como prato principal?",
+              answer: "Sim, a porção é de prato principal. Para dividir como entrada, pedimos meia porção.",
+            },
+          ],
+        },
       },
       {
         icon: "salad",
@@ -279,6 +395,35 @@ export const site: SiteConfig = {
         description: "Folhas, abóbora e cebola tostadas no fogo, queijo de cabra, castanhas e vinagrete de mel.",
         highlights: ["Vegetariano", "Da horta à mesa"],
         price: "R$ 46",
+        slug: "salada-da-horta-na-brasa",
+        details: {
+          metaDescription: "Salada de folhas com abóbora e cebola tostadas na brasa, queijo de cabra, castanhas e vinagrete de mel. Entrada vegetariana do Alecrim & Brasa.",
+          intro: "Uma salada que também passa pelo fogo: legumes da estação tostados na brasa sobre folhas frescas da nossa horta.",
+          body: [
+            "A abóbora cabotiá e a cebola roxa ganham marcas da grelha e ficam adocicadas. Montamos sobre folhas colhidas no dia, com queijo de cabra cremoso, castanhas-do-pará tostadas e vinagrete de mel com mostarda.",
+            "Funciona como entrada para dividir ou como prato leve para o almoço. Os legumes mudam conforme a estação, mas a ideia é sempre a mesma: o sabor do fogo em ingredientes simples.",
+          ],
+          benefits: [
+            "Vegetariana",
+            "Folhas da horta própria, colhidas no dia",
+            "Legumes da estação tostados na brasa",
+            "Versão vegana sem queijo",
+          ],
+          faq: [
+            {
+              question: "Os ingredientes mudam?",
+              answer: "Os legumes acompanham a estação. A base de folhas, queijo de cabra e castanhas é fixa.",
+            },
+            {
+              question: "Posso acrescentar proteína?",
+              answer: "Sim: frango na brasa ou fatias de costela, cobrados à parte.",
+            },
+            {
+              question: "Tem castanhas?",
+              answer: "Sim, castanhas-do-pará. Avise sobre alergia que servimos sem e preparamos em utensílios separados.",
+            },
+          ],
+        },
       },
       {
         icon: "cakeSlice",
@@ -286,10 +431,55 @@ export const site: SiteConfig = {
         description: "Pudim cremoso com calda de doce de leite caramelizado no maçarico e flor de sal.",
         highlights: ["Sobremesa da casa", "Para dividir"],
         price: "R$ 29",
+        slug: "pudim-doce-de-leite",
+        details: {
+          metaDescription: "Pudim cremoso de doce de leite com calda caramelizada no maçarico e flor de sal. Sobremesa da casa no Alecrim & Brasa.",
+          intro: "A sobremesa que fecha a noite: pudim de doce de leite, liso e cremoso, com calda queimada na hora no maçarico.",
+          body: [
+            "O doce de leite é feito na casa, em panela de cobre, e vira a base de um pudim assado em banho-maria por quase duas horas. A textura é firme por fora e cremosa no centro.",
+            "Na mesa, queimamos uma camada de açúcar no maçarico — como num crème brûlée — e finalizamos com flor de sal, que equilibra o doce. Em aniversários, vai com vela por nossa conta.",
+          ],
+          benefits: [
+            "Doce de leite artesanal feito na casa",
+            "Calda caramelizada na hora",
+            "Porção generosa para dividir",
+            "Vela de aniversário por conta da casa",
+          ],
+          faq: [
+            {
+              question: "Leva glúten?",
+              answer: "Não. O pudim é feito com leite, ovos e açúcar. Contém lactose e ovos.",
+            },
+            {
+              question: "Posso encomendar inteiro?",
+              answer: "Sim, com 48 horas de antecedência pelo WhatsApp. O pudim inteiro serve de 10 a 12 pessoas.",
+            },
+            {
+              question: "Tem opção sem lactose?",
+              answer: "Temos sorbet de frutas da estação, sem lactose e vegano.",
+            },
+          ],
+        },
       },
     ],
     cta: { label: "Reservar uma mesa", href: "#reservas" },
-    cardCta: { label: "Reservar", href: "#reservas" },
+    cardLinkLabel: "Ver detalhes",
+    basePath: "cardapio",
+    page: {
+      breadcrumbHome: "Início",
+      breadcrumbLabel: "Cardápio",
+      benefitsTitle: "Por que pedir",
+      faqTitle: "Perguntas sobre o prato",
+      relatedTitle: "Outros pratos da casa",
+      cta: {
+        title: "Bateu a fome?",
+        description: "Reserve sua mesa pelo WhatsApp e avise qual prato não pode faltar.",
+        button: {
+          label: "Reservar mesa",
+          href: "#reservas",
+        },
+      },
+    },
   },
 
   differentials: {

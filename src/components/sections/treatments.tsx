@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
 
 import { Container } from "@/components/container";
 import { HoverCard } from "@/components/motion/hover-card";
@@ -6,6 +7,7 @@ import { Stagger, StaggerItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { site } from "@/config/site";
+import { itemPath } from "@/lib/items";
 import { getIcon } from "@/lib/icons";
 
 export function Treatments() {
@@ -43,14 +45,14 @@ export function Treatments() {
                     ))}
                   </ul>
                   <div className="relative mt-auto flex items-center justify-between gap-3 pt-4 sm:pt-5">
-                    <a
-                      href={treatments.cardCta.href}
+                    <Link
+                      href={itemPath(item.slug)}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
                     >
-                      {treatments.cardCta.label}
+                      {treatments.cardLinkLabel}
                       <span className="sr-only">: {item.title}</span>
                       <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                    </a>
+                    </Link>
                     {item.price && (
                       <span className="rounded-full bg-accent px-3 py-1 font-heading text-sm font-bold text-accent-foreground">
                         {item.price}

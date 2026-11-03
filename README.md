@@ -49,6 +49,8 @@ hero e o logo. Bom exemplo de como o template vira outro negócio sem reescrever
 - Equipe com avatares de iniciais (aceita foto opcional via `next/image`)
 - Depoimentos em marquee com pausa (hover, foco e botão) e fallback estático para "reduzir movimento"
 - Cardápio em destaque com preço, comodidades em chips e card de eventos
+- **Página para cada prato** (`/cardapio/<slug>`) com descrição longa, destaques, FAQ próprio, "outros pratos", metadata
+  e JSON-LD (`MenuItem` + `BreadcrumbList` + `FAQPage`), geradas estaticamente a partir do `site.ts`
 - FAQ com Accordion
 - **Política de privacidade (LGPD)** em `/privacidade`, com link no rodapé e no formulário. Sem aviso de cookies porque o
   site não usa cookies nem rastreamento (só a preferência de tema fica no `localStorage`)
