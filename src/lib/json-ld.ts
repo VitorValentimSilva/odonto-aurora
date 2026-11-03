@@ -26,12 +26,14 @@ export function buildLocalBusinessJsonLd() {
     },
     openingHoursSpecification: site.openingHours
       .filter((h) => h.days.length > 0)
-      .map((h) => ({
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: h.days,
-        opens: h.opens,
-        closes: h.closes,
-      })),
+      .flatMap((h) =>
+        (h.slots ?? [{ opens: h.opens, closes: h.closes }]).map((slot) => ({
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: h.days,
+          opens: slot.opens,
+          closes: slot.closes,
+        })),
+      ),
     sameAs: site.social.map((s) => s.href),
     aggregateRating: {
       "@type": "AggregateRating",

@@ -71,8 +71,10 @@ export type OpeningHours = {
   hours: string;
   /** schema.org: dias da semana (ex.: ["Monday", "Tuesday"]). */
   days: string[];
+  /** Horário contínuo. Para turnos (ex.: almoço e jantar), use `slots`. */
   opens: string;
   closes: string;
+  slots?: { opens: string; closes: string }[];
 };
 
 export type SocialLink = {
@@ -152,6 +154,20 @@ export type SiteConfig = {
 
   author: { name: string; url: string };
 
+  /** ids das âncoras de cada seção (aparecem na URL, ex.: /#cardapio). */
+  sections: {
+    home: string;
+    treatments: string;
+    differentials: string;
+    steps: string;
+    team: string;
+    testimonials: string;
+    payment: string;
+    faq: string;
+    booking: string;
+    location: string;
+  };
+
   nav: NavItem[];
 
   ui: {
@@ -169,6 +185,7 @@ export type SiteConfig = {
     notifications: string;
     closeNotification: string;
     playAnimation: string;
+    notFound: { title: string; description: string; cta: CTA };
   };
 
   hero: {

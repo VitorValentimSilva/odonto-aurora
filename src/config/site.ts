@@ -1,3 +1,5 @@
+import { resolveSiteUrl } from "@/lib/site-url";
+
 import type { SiteConfig } from "./types";
 
 /**
@@ -16,7 +18,7 @@ import type { SiteConfig } from "./types";
 const whatsapp = "5519999999999";
 
 export const site: SiteConfig = {
-  url: "https://odonto-aurora.vercel.app",
+  url: resolveSiteUrl("https://odonto-aurora.vercel.app"),
   locale: "pt_BR",
   lang: "pt-BR",
 
@@ -133,6 +135,19 @@ export const site: SiteConfig = {
     url: "https://github.com/vitorvalentimsilva",
   },
 
+  sections: {
+    home: "inicio",
+    treatments: "tratamentos",
+    differentials: "diferenciais",
+    steps: "como-funciona",
+    team: "equipe",
+    testimonials: "depoimentos",
+    payment: "convenios",
+    faq: "duvidas",
+    booking: "agendar",
+    location: "localizacao",
+  },
+
   nav: [
     { label: "Tratamentos", href: "#tratamentos" },
     { label: "Diferenciais", href: "#diferenciais" },
@@ -157,6 +172,11 @@ export const site: SiteConfig = {
     notifications: "Notificações",
     closeNotification: "Fechar notificação",
     playAnimation: "Retomar depoimentos",
+    notFound: {
+      title: "Página não encontrada",
+      description: "Não encontramos essa página. Que tal voltar ao início e agendar a sua avaliação?",
+      cta: { label: "Voltar ao início", href: "/" },
+    },
   },
 
   hero: {
