@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 export function Differentials() {
   const { differentials } = site;
   return (
-    <section id="diferenciais" aria-labelledby="diferenciais-title" className="relative bg-secondary/50 py-20 sm:py-24">
+    <section id={site.sections.differentials} aria-labelledby={`${site.sections.differentials}-title`} className="relative bg-secondary/50 py-20 sm:py-24">
       <Container>
-        <SectionHeading id="diferenciais-title" {...differentials.heading} />
+        <SectionHeading id={`${site.sections.differentials}-title`} {...differentials.heading} />
 
         <Stagger as="ul" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {differentials.items.map((item, index) => {

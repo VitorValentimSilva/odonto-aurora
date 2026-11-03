@@ -9,9 +9,9 @@ import { TestimonialsMarquee } from "./testimonials-marquee";
 export function Testimonials() {
   const { testimonials, ui } = site;
   return (
-    <section id="depoimentos" aria-labelledby="depoimentos-title" className="overflow-hidden py-20 sm:py-24">
+    <section id={site.sections.testimonials} aria-labelledby={`${site.sections.testimonials}-title`} className="overflow-hidden py-20 sm:py-24">
       <Container>
-        <SectionHeading id="depoimentos-title" {...testimonials.heading} />
+        <SectionHeading id={`${site.sections.testimonials}-title`} {...testimonials.heading} />
         <Reveal className="mt-5 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
           <Stars rating={5} className="[&_svg]:size-5" />
           <p className="text-center text-sm font-medium text-muted-foreground">{testimonials.summary}</p>

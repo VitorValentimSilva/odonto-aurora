@@ -53,7 +53,7 @@ export function SiteHeader() {
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
-        <a href="#inicio" aria-label={site.ui.homeLabel} className="rounded-lg">
+        <a href={`#${site.sections.home}`} aria-label={site.ui.homeLabel} className="rounded-lg">
           <Logo name={site.brand.name} />
         </a>
 

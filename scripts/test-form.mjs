@@ -13,7 +13,9 @@ const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: 
 try {
   const page = await browser.newPage();
   await page.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });
-  await page.goto(`${BASE_URL}/#agendar`, { waitUntil: "networkidle0" });
+  await page.goto(BASE_URL, { waitUntil: "networkidle0" });
+  // Leva a seção de agendamento à tela (o formulário é carregado sob demanda).
+  await page.evaluate(() => document.querySelector('[data-section="booking"]')?.scrollIntoView({ behavior: "instant" }));
 
   // Captura o window.open em vez de abrir uma nova aba.
   await page.evaluate(() => {
