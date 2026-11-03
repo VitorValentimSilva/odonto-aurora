@@ -2,6 +2,7 @@
 
 import { LazyMotion, MotionConfig, domAnimation } from "motion/react";
 import dynamic from "next/dynamic";
+import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
 
 import { site } from "@/config/site";
@@ -11,17 +12,19 @@ const Toaster = dynamic(() => import("@/components/ui/sonner").then((mod) => mod
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <LazyMotion features={domAnimation} strict>
-      <MotionConfig reducedMotion="user">
-        {children}
-        <Toaster
-          position="top-center"
-          richColors
-          closeButton
-          containerAriaLabel={site.ui.notifications}
-          toastOptions={{ closeButtonAriaLabel: site.ui.closeNotification }}
-        />
-      </MotionConfig>
-    </LazyMotion>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <LazyMotion features={domAnimation} strict>
+        <MotionConfig reducedMotion="user">
+          {children}
+          <Toaster
+            position="top-center"
+            richColors
+            closeButton
+            containerAriaLabel={site.ui.notifications}
+            toastOptions={{ closeButtonAriaLabel: site.ui.closeNotification }}
+          />
+        </MotionConfig>
+      </LazyMotion>
+    </ThemeProvider>
   );
 }

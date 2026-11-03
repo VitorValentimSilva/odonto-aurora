@@ -63,6 +63,7 @@
   --map-bg: oklch(0.955 0.02 85);
   --map-water: oklch(0.86 0.04 220);
   --map-park: oklch(0.9 0.06 130);
+  --map-road: oklch(1 0 0);
   --illus-sun: oklch(0.86 0.13 75);
   --illus-sun-2: oklch(0.74 0.15 50);
   --illus-shade: oklch(0.93 0.02 80);
@@ -72,6 +73,60 @@
 
   --shadow-soft: 0 1px 2px oklch(0.3 0.04 40 / 0.04), 0 8px 24px -8px oklch(0.3 0.06 40 / 0.12);
   --shadow-lift: 0 2px 4px oklch(0.3 0.04 40 / 0.05), 0 24px 48px -16px oklch(0.35 0.08 35 / 0.22);
+}
+
+/* Modo escuro: carvão quente, terracota clara e açafrão. Pares texto/fundo em WCAG AA. */
+.dark {
+  --background: oklch(0.17 0.012 45);
+  --foreground: oklch(0.95 0.012 75);
+
+  --card: oklch(0.215 0.014 45);
+  --card-foreground: oklch(0.95 0.012 75);
+  --popover: oklch(0.215 0.014 45);
+  --popover-foreground: oklch(0.95 0.012 75);
+
+  --primary: oklch(0.72 0.13 42);
+  --primary-foreground: oklch(0.18 0.03 40);
+
+  --secondary: oklch(0.255 0.02 45);
+  --secondary-foreground: oklch(0.9 0.045 70);
+
+  --muted: oklch(0.24 0.016 45);
+  --muted-foreground: oklch(0.76 0.022 70);
+
+  --accent: oklch(0.3 0.045 70);
+  --accent-foreground: oklch(0.92 0.07 85);
+
+  --warm: oklch(0.78 0.14 75);
+  --warm-foreground: oklch(0.2 0.04 60);
+
+  --destructive: oklch(0.7 0.17 25);
+  --border: oklch(0.31 0.016 45);
+  --input: oklch(0.35 0.02 45);
+  --ring: oklch(0.72 0.13 42);
+
+  --primary-deep: oklch(0.645 0.13 36);
+  --footer: oklch(0.13 0.01 45);
+  --footer-accent: oklch(0.83 0.11 75);
+  --glow-warm: oklch(0.3 0.06 55);
+  --glow-cool: oklch(0.27 0.04 130);
+  --avatar-1a: oklch(0.55 0.13 35);
+  --avatar-1b: oklch(0.38 0.1 30);
+  --avatar-2a: oklch(0.6 0.12 70);
+  --avatar-2b: oklch(0.45 0.11 55);
+  --avatar-3a: oklch(0.52 0.08 130);
+  --avatar-3b: oklch(0.38 0.07 135);
+  --map-bg: oklch(0.24 0.015 60);
+  --map-water: oklch(0.36 0.05 230);
+  --map-park: oklch(0.32 0.05 135);
+  --map-road: oklch(0.33 0.015 50);
+  --illus-sun: oklch(0.82 0.13 75);
+  --illus-sun-2: oklch(0.7 0.15 50);
+  --illus-shade: oklch(0.88 0.02 80);
+  --illus-sparkle: oklch(0.9 0.11 85);
+
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3), 0 8px 24px -8px oklch(0 0 0 / 0.45);
+  --shadow-lift: 0 2px 4px oklch(0 0 0 / 0.3), 0 24px 48px -16px oklch(0 0 0 / 0.6);
 }
 
 @theme inline {
@@ -163,8 +218,12 @@
     @apply border-border outline-ring/50;
   }
   html {
+    color-scheme: light;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+  }
+  .dark {
+    color-scheme: dark;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;

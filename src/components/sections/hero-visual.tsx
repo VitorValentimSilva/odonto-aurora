@@ -37,7 +37,7 @@ export function HeroVisual() {
       </div>
 
       {/* cartão: plano de tratamento */}
-      <div className="absolute top-[3%] left-0 max-w-[60%] animate-float rounded-2xl border border-white/60 bg-card/95 px-3 py-2.5 shadow-lift backdrop-blur sm:max-w-60 sm:p-4">
+      <div className="absolute top-[3%] left-0 max-w-[60%] animate-float rounded-2xl border border-white/60 bg-card/95 dark:border-white/10 px-3 py-2.5 shadow-lift backdrop-blur sm:max-w-60 sm:p-4">
         <p className="text-xs font-medium text-muted-foreground">{visual.cardTitle}</p>
         <p className="mt-0.5 font-heading text-sm font-bold sm:text-base">{visual.cardSubtitle}</p>
         <ul className="mt-2.5 hidden flex-wrap gap-1.5 sm:flex">
@@ -54,7 +54,7 @@ export function HeroVisual() {
       </div>
 
       {/* cartão: avaliação */}
-      <div className="absolute right-0 bottom-[20%] flex animate-float-slow items-center gap-2.5 rounded-2xl border border-white/60 bg-card/95 p-2.5 pr-3.5 shadow-lift sm:bottom-[16%] sm:gap-3 sm:p-3 sm:pr-4 backdrop-blur [animation-delay:-3s]">
+      <div className="absolute right-0 bottom-[20%] flex animate-float-slow items-center gap-2.5 rounded-2xl border border-white/60 bg-card/95 dark:border-white/10 p-2.5 pr-3.5 shadow-lift sm:bottom-[16%] sm:gap-3 sm:p-3 sm:pr-4 backdrop-blur [animation-delay:-3s]">
         <span className="grid size-9 place-items-center rounded-xl bg-accent text-accent-foreground sm:size-10">
           <Star className="size-5 fill-current" aria-hidden="true" />
         </span>
@@ -65,7 +65,7 @@ export function HeroVisual() {
       </div>
 
       {/* cartão: próximo horário */}
-      <div className="absolute bottom-[1%] left-0 flex animate-float items-center gap-2.5 rounded-2xl border border-white/60 bg-card/95 p-2.5 pr-3.5 shadow-lift sm:left-[6%] sm:gap-3 sm:p-3 sm:pr-4 backdrop-blur [animation-delay:-1.5s]">
+      <div className="absolute bottom-[1%] left-0 flex animate-float items-center gap-2.5 rounded-2xl border border-white/60 bg-card/95 dark:border-white/10 p-2.5 pr-3.5 shadow-lift sm:left-[6%] sm:gap-3 sm:p-3 sm:pr-4 backdrop-blur [animation-delay:-1.5s]">
         <span className="grid size-9 place-items-center rounded-xl bg-secondary text-primary sm:size-10">
           <CalendarClock className="size-5" aria-hidden="true" />
         </span>

@@ -47,6 +47,7 @@ export const site: SiteConfig = {
     warmLight: "#fbe8c6",
     background: "#fcf8f2",
     backgroundTint: "#f5eadb",
+    backgroundDark: "#1d1511",
     foreground: "#2d1d15",
   },
 
@@ -185,6 +186,12 @@ export const site: SiteConfig = {
     notifications: "Notificações",
     closeNotification: "Fechar notificação",
     playAnimation: "Retomar avaliações",
+    theme: {
+      toggle: (current) => `Tema: ${current}. Clique para trocar.`,
+      light: "claro",
+      dark: "escuro",
+      system: "do sistema",
+    },
     notFound: {
       title: "Página não encontrada",
       description: "Essa página saiu do cardápio. Que tal voltar ao início e reservar a sua mesa?",

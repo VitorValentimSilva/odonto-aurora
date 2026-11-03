@@ -14,13 +14,13 @@ function MapIllustration({ caption }: { caption: string }) {
       <svg aria-hidden="true" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 size-full">
         <rect width="400" height="300" style={{ fill: "var(--map-bg)" }} />
         <path d="M-20 210C60 180 120 240 200 200s140-90 230-60" fill="none" style={{ stroke: "var(--map-water)" }} strokeWidth="22" />
-        <g stroke="white" strokeWidth="10" strokeLinecap="round" fill="none">
+        <g style={{ stroke: "var(--map-road)" }} strokeWidth="10" strokeLinecap="round" fill="none">
           <path d="M-10 90h420" />
           <path d="M120-10v320" />
           <path d="M290-10v320" />
           <path d="M-10 250l420-60" />
         </g>
-        <g stroke="white" strokeWidth="4" fill="none" opacity="0.8">
+        <g style={{ stroke: "var(--map-road)" }} strokeWidth="4" fill="none" opacity="0.8">
           <path d="M-10 40h420M-10 150h420M60-10v320M200-10v320M350-10v320" />
         </g>
         <rect x="140" y="105" width="40" height="30" rx="6" style={{ fill: "var(--map-park)" }} />

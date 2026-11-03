@@ -17,6 +17,9 @@ const OUT = fileURLToPath(new URL("../docs/screenshots/", import.meta.url));
 const targets = [
   { name: "mobile", width: 375, height: 812, mobile: true, save: true },
   { name: "desktop", width: 1440, height: 900, mobile: false, save: true },
+  // modo escuro (tema do sistema emulado)
+  { name: "mobile-dark", width: 375, height: 812, mobile: true, save: true, dark: true },
+  { name: "desktop-dark", width: 1440, height: 900, mobile: false, save: true, dark: true },
   // larguras extras: só verificam rolagem horizontal
   { name: "360", width: 360, height: 780, mobile: true },
   { name: "768", width: 768, height: 1024, mobile: true },
@@ -68,6 +71,7 @@ try {
   for (const t of targets) {
     const page = await browser.newPage();
     await page.setViewport({ width: t.width, height: t.height, deviceScaleFactor: t.mobile ? 2 : 1, isMobile: t.mobile, hasTouch: t.mobile });
+    await page.emulateMediaFeatures([{ name: "prefers-color-scheme", value: t.dark ? "dark" : "light" }]);
     await page.goto(BASE_URL, { waitUntil: "networkidle0" });
     await page.evaluate(() => document.fonts.ready);
     await scrollThrough(page);

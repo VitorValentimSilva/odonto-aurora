@@ -60,7 +60,9 @@ versão do Chromium pré-instalado (`overrides.playwright-core` no package.json)
 ## Regras de design
 
 - Paleta em tokens CSS (oklch) em `globals.css` (aqui: terracota, creme e açafrão; na `main`: azul-petróleo, pêssego
-  e coral). `--warm` só para detalhes gráficos. Nada de cor fixa nos componentes: use/crie tokens. Contraste WCAG AA.
+  e coral). `--warm` só para detalhes gráficos. Nada de cor fixa nos componentes: use/crie tokens.
+- Todo token precisa de valor em `:root` **e** em `.dark` (modo escuro via `next-themes`, classe `dark` no `<html>`).
+  Contraste WCAG AA nos dois temas.
 - Títulos: Plus Jakarta Sans (`font-heading`); texto: Inter (`font-sans`).
 - Cantos bem arredondados (`rounded-3xl` nos cards), sombras `shadow-soft` / `shadow-lift`, espaçamento generoso
   (`py-20 sm:py-24` por seção).

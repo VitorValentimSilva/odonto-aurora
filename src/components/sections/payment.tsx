@@ -35,7 +35,7 @@ export function Payment() {
           </Reveal>
 
           <Reveal delay={0.1} className="relative flex flex-col overflow-hidden rounded-3xl bg-accent p-6 text-accent-foreground shadow-soft sm:p-8">
-            <div aria-hidden="true" className="absolute -top-12 -right-12 size-44 rounded-full bg-white/40" />
+            <div aria-hidden="true" className="absolute -top-12 -right-12 size-44 rounded-full bg-background/40" />
             <Icon name={payment.installments.icon ?? "creditCard"} className="relative size-8" />
             <p className="relative mt-4 font-heading text-3xl leading-tight font-extrabold text-balance">{payment.installments.title}</p>
             <p className="relative mt-1 text-accent-foreground/90">{payment.installments.description}</p>
@@ -44,7 +44,7 @@ export function Payment() {
               {payment.methods.map((m) => {
                 const Icon = getIcon(m.icon);
                 return (
-                  <li key={m.label} className="inline-flex items-center gap-1.5 rounded-full bg-white/70 px-3 py-1.5 text-sm font-medium">
+                  <li key={m.label} className="inline-flex items-center gap-1.5 rounded-full bg-background/60 px-3 py-1.5 text-sm font-medium">
                     <Icon className="size-4" aria-hidden="true" />
                     {m.label}
                   </li>
