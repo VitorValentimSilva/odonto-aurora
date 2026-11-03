@@ -19,14 +19,21 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
 ## Regra principal: conteúdo só no `site.ts`
 
 - Todo texto/número/link do negócio vive em `src/config/site.ts`, tipado por `src/config/types.ts`.
+- **Idiomas**: `site.ts` exporta `sites = { pt, en }` (mesmo tipo `SiteConfig`; `en` reaproveita do `pt` o que não é
+  texto). Rotas em `src/app/[lang]`; `src/proxy.ts` serve o português sem prefixo (reescreve para `/pt`) e redireciona
+  `/pt/*` → `/*`. Server Components: `const site = await getSite()` (`src/lib/i18n.ts`, usa `next/root-params`).
+  Client Components: `useSite()` (`components/site-provider.tsx`), que recebe só o idioma atual (`toClientSite`).
+  O config precisa ser serializável: textos com variáveis são modelos (`{rating}`, `{mode}`) preenchidos por `fill()`.
+- Caminhos sempre por `localePath/homeHref/itemPath/privacyPath(site, …)` (`src/lib/paths.ts`), nunca "/x" fixo.
+  Links para páginas sem prefixo em pt usam `prefetch={false}` quando o prefetch confundir a rota (ex.: privacidade).
 - **Componentes não podem ter texto do negócio no JSX** (nem aria-labels): adicione um campo no tipo + `site.ts`
   (rótulos de interface ficam em `site.ui`).
 - Ícones são referenciados por nome (`IconName`) e resolvidos por `getIcon()` em `src/lib/icons.ts`.
 - Links: `buildWhatsAppUrl()`, `buildMapsUrl()` e `homeHref()` (âncora da home que funciona em qualquer página) em
   `src/lib/links.ts`.
-- Privacidade: texto em `site.privacy`, rota `/privacidade`. Se o site passar a usar cookies/analytics, atualizar a
+- Privacidade: texto em `site.privacy`, rota `/<privacy.path>` (`/privacidade`, `/en/privacy`). Se o site passar a usar cookies/analytics, atualizar a
   política e só então avaliar um aviso de consentimento.
-- Páginas de item: rota `src/app/[collection]/[slug]` gerada de `site.treatments.items` (`slug` + `details`) e
+- Páginas de item: rota `src/app/[lang]/[collection]/[slug]` gerada de `site.treatments.items` (`slug` + `details`) e
   `site.treatments.basePath`. Item inexistente → `notFound()` (404 real; `partialPrefetching` fica desligado para isso).
 - Âncoras das seções: `site.sections` (ids na URL); hrefs do `nav`/CTAs devem usar os mesmos ids.
 - URL pública: `resolveSiteUrl()` (`src/lib/site-url.ts`) usa o domínio de produção da Vercel automaticamente.
