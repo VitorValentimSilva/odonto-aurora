@@ -1,3 +1,5 @@
+import { resolveSiteUrl } from "@/lib/site-url";
+
 import type { SiteConfig } from "./types";
 
 /**
@@ -17,7 +19,7 @@ import type { SiteConfig } from "./types";
 const whatsapp = "5519988887777";
 
 export const site: SiteConfig = {
-  url: "https://alecrim-e-brasa.vercel.app",
+  url: resolveSiteUrl("https://odonto-aurora.vercel.app"),
   locale: "pt_BR",
   lang: "pt-BR",
 
@@ -91,6 +93,10 @@ export const site: SiteConfig = {
       days: ["Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "11:30",
       closes: "23:00",
+      slots: [
+        { opens: "11:30", closes: "15:00" },
+        { opens: "19:00", closes: "23:00" },
+      ],
     },
     {
       label: "Sábado",
@@ -142,18 +148,31 @@ export const site: SiteConfig = {
     url: "https://github.com/vitorvalentimsilva",
   },
 
+  sections: {
+    home: "inicio",
+    treatments: "cardapio",
+    differentials: "a-casa",
+    steps: "como-reservar",
+    team: "equipe",
+    testimonials: "avaliacoes",
+    payment: "ambiente",
+    faq: "duvidas",
+    booking: "reservas",
+    location: "localizacao",
+  },
+
   nav: [
-    { label: "Cardápio", href: "#tratamentos" },
-    { label: "A casa", href: "#diferenciais" },
+    { label: "Cardápio", href: "#cardapio" },
+    { label: "A casa", href: "#a-casa" },
     { label: "Equipe", href: "#equipe" },
-    { label: "Avaliações", href: "#depoimentos" },
+    { label: "Avaliações", href: "#avaliacoes" },
     { label: "Dúvidas", href: "#duvidas" },
     { label: "Contato", href: "#localizacao" },
   ],
 
   ui: {
     skipToContent: "Pular para o conteúdo",
-    headerCta: { label: "Reservar mesa", href: "#agendar" },
+    headerCta: { label: "Reservar mesa", href: "#reservas" },
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     menuTitle: "Menu",
@@ -166,6 +185,11 @@ export const site: SiteConfig = {
     notifications: "Notificações",
     closeNotification: "Fechar notificação",
     playAnimation: "Retomar avaliações",
+    notFound: {
+      title: "Página não encontrada",
+      description: "Essa página saiu do cardápio. Que tal voltar ao início e reservar a sua mesa?",
+      cta: { label: "Voltar ao início", href: "/" },
+    },
   },
 
   hero: {
@@ -174,8 +198,8 @@ export const site: SiteConfig = {
     highlight: "ingredientes de verdade",
     subtitle:
       "Carnes na brasa, pizzas de fermentação lenta e vegetais de pequenos produtores da região — servidos sem pressa, num salão feito para encontros.",
-    primaryCta: { label: "Reservar pelo WhatsApp", href: "#agendar" },
-    secondaryCta: { label: "Ver cardápio", href: "#tratamentos" },
+    primaryCta: { label: "Reservar pelo WhatsApp", href: "#reservas" },
+    secondaryCta: { label: "Ver cardápio", href: "#cardapio" },
     trustBadges: [
       { icon: "flame", label: "Forno a lenha e parrilla" },
       { icon: "star", label: "Nota 4,8 no Google" },
@@ -257,8 +281,8 @@ export const site: SiteConfig = {
         price: "R$ 29",
       },
     ],
-    cta: { label: "Reservar uma mesa", href: "#agendar" },
-    cardCta: { label: "Reservar", href: "#agendar" },
+    cta: { label: "Reservar uma mesa", href: "#reservas" },
+    cardCta: { label: "Reservar", href: "#reservas" },
   },
 
   differentials: {
@@ -448,7 +472,7 @@ export const site: SiteConfig = {
       title: "Antes de você chegar",
     },
     contactPrompt: "Ficou alguma dúvida?",
-    contactCta: { label: "Fale com a gente no WhatsApp", href: "#agendar" },
+    contactCta: { label: "Fale com a gente no WhatsApp", href: "#reservas" },
     items: [
       {
         question: "Preciso de reserva?",
