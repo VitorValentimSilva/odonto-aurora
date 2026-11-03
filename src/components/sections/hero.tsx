@@ -62,12 +62,17 @@ export function Hero() {
             </Button>
           </div>
 
-          <ul className={`${enter} mt-10 flex flex-wrap gap-x-6 gap-y-3 [animation-delay:320ms]`}>
+          <ul
+            className={`${enter} mt-10 grid w-full max-w-xl grid-cols-3 divide-x divide-border border-t border-border pt-6 [animation-delay:320ms]`}
+          >
             {hero.trustBadges.map((badge) => {
               const Icon = getIcon(badge.icon);
               return (
-                <li key={badge.label} className="flex items-center gap-2 text-sm font-medium text-foreground/80">
-                  <span className="grid size-8 place-items-center rounded-full bg-accent text-accent-foreground">
+                <li
+                  key={badge.label}
+                  className="flex flex-col gap-2 px-3 text-[0.8rem] leading-snug font-medium text-foreground/80 first:pl-0 sm:px-5 sm:text-sm"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground">
                     <Icon className="size-4" aria-hidden="true" />
                   </span>
                   {badge.label}
