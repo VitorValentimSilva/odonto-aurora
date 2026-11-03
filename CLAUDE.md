@@ -2,7 +2,8 @@
 
 @AGENTS.md
 
-Landing page de portfólio para uma clínica odontológica **fictícia**. Site estático, sem backend, sem banco,
+Landing page de portfólio. Nesta branch (`restaurante`), o template da clínica Odonto Aurora (`main`) foi
+trocado para um restaurante **fictício** (Alecrim & Brasa) só via `site.ts`, paleta e ilustração. Site estático, sem backend, sem banco,
 sem variáveis de ambiente. Deploy na Vercel sem configuração.
 
 ## Stack
@@ -23,6 +24,8 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
 - Ícones são referenciados por nome (`IconName`) e resolvidos por `getIcon()` em `src/lib/icons.ts`.
 - Links: `buildWhatsAppUrl()` e `buildMapsUrl()` em `src/lib/links.ts`.
 - Fotos são opcionais (`hero.image`, `team.items[n].photo`) e renderizadas com `next/image`.
+- Ilustração do hero: `hero.visual.illustration` (mapa em `src/components/illustrations`); logo: `brand.logo`;
+  cores em hex para OG/favicon/manifest: `site.theme`. Ícone vindo do config fora de `.map()`: use `<Icon name=…/>`.
 
 ## Comandos
 
@@ -51,8 +54,8 @@ npm run test:form    # com o start rodando: valida erros do zod e o link wa.me
 
 ## Regras de design
 
-- Paleta em tokens CSS (oklch) em `globals.css`: base off-white, `--primary` azul-petróleo, `--accent` pêssego claro,
-  `--warm` coral (só para detalhes gráficos, não para texto pequeno). Manter contraste WCAG AA.
+- Paleta em tokens CSS (oklch) em `globals.css` (aqui: terracota, creme e açafrão; na `main`: azul-petróleo, pêssego
+  e coral). `--warm` só para detalhes gráficos. Nada de cor fixa nos componentes: use/crie tokens. Contraste WCAG AA.
 - Títulos: Plus Jakarta Sans (`font-heading`); texto: Inter (`font-sans`).
 - Cantos bem arredondados (`rounded-3xl` nos cards), sombras `shadow-soft` / `shadow-lift`, espaçamento generoso
   (`py-20 sm:py-24` por seção).
