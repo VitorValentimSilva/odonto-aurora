@@ -4,6 +4,7 @@ import { Container } from "@/components/container";
 import { GitHubIcon } from "@/components/icons/brand-icons";
 import { Logo } from "@/components/logo";
 import { site } from "@/config/site";
+import { homeHref } from "@/lib/links";
 import { getIcon } from "@/lib/icons";
 
 export function SiteFooter({ year }: { year: number }) {
@@ -24,7 +25,7 @@ export function SiteFooter({ year }: { year: number }) {
           <ul className="mt-4 flex flex-col gap-2.5 text-sm">
             {nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="hover:text-white hover:underline">
+                <a href={homeHref(item.href)} className="hover:text-white hover:underline">
                   {item.label}
                 </a>
               </li>
@@ -77,6 +78,11 @@ export function SiteFooter({ year }: { year: number }) {
               © {year} {brand.name}. {footer.rights} {footer.disclaimer}
             </p>
             <p>
+              <a href="/privacidade" className="font-semibold text-white underline-offset-4 hover:underline">
+                {site.privacy.linkLabel}
+              </a>
+            </p>
+            <p>
               {footer.portfolioPrefix}{" "}
               <a
                 href={author.url}
@@ -90,7 +96,7 @@ export function SiteFooter({ year }: { year: number }) {
               </a>
             </p>
           </div>
-          <a href={`#${site.sections.home}`} className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto">
+          <a href={`/#${site.sections.home}`} className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto">
             <ArrowUp className="size-3.5" aria-hidden="true" />
             {footer.backToTop}
           </a>
