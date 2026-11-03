@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "screenshots": "node scripts/screenshot.mjs"
+    "screenshots": "node scripts/screenshot.mjs",
+    "test:form": "node scripts/test-form.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.2",
