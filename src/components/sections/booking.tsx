@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/config/site";
 import { buildWhatsAppUrl } from "@/lib/links";
 
-import { BookingForm } from "./booking-form";
+import { LazyBookingForm } from "./booking-form-lazy";
 
 export function Booking() {
   const { booking, contact, ui } = site;
@@ -36,7 +36,7 @@ export function Booking() {
                 <WhatsAppIcon className="size-6" />
               </span>
               <span>
-                <span className="block text-xs text-muted-foreground">WhatsApp</span>
+                <span className="block text-xs text-muted-foreground">{contact.whatsappLabel}</span>
                 <span className="block font-heading text-lg font-bold">{contact.whatsappDisplay}</span>
               </span>
               <span className="sr-only">{ui.externalLinkHint}</span>
@@ -45,7 +45,7 @@ export function Booking() {
         </div>
 
         <Reveal delay={0.05} className="rounded-3xl border bg-card p-5 shadow-lift sm:p-8">
-          <BookingForm />
+          <LazyBookingForm />
         </Reveal>
       </Container>
     </section>

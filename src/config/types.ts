@@ -108,6 +108,7 @@ export type SiteConfig = {
     /** Somente dígitos, com DDI + DDD (ex.: 5519999999999). */
     whatsapp: string;
     whatsappDisplay: string;
+    whatsappLabel: string;
     phone: string;
     email: string;
     defaultWhatsAppMessage: string;
@@ -145,6 +146,8 @@ export type SiteConfig = {
     starsLabel: (rating: number) => string;
     externalLinkHint: string;
     pauseAnimation: string;
+    notifications: string;
+    closeNotification: string;
     playAnimation: string;
   };
 

@@ -10,6 +10,8 @@ import { HeroVisual } from "./hero-visual";
 
 /** Entrada animada via CSS (roda antes da hidratação → melhor LCP). */
 const enter = "animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out fill-mode-both";
+/** Título e subtítulo (candidatos a LCP) só deslizam, sem começar invisíveis. */
+const enterText = "animate-in slide-in-from-bottom-3 duration-700 ease-out fill-mode-both";
 
 export function Hero() {
   const { hero } = site;
@@ -34,7 +36,7 @@ export function Hero() {
 
           <h1
             id="hero-title"
-            className={`${enter} mt-5 text-[2.5rem] leading-[1.05] font-extrabold sm:text-5xl lg:text-6xl xl:text-[4.25rem] [animation-delay:80ms]`}
+            className={`${enterText} mt-5 text-[2.5rem] leading-[1.05] font-extrabold sm:text-5xl lg:text-6xl xl:text-[4.25rem] [animation-delay:80ms]`}
           >
             {hero.title}{" "}
             <span className="bg-[linear-gradient(transparent_78%,color-mix(in_oklch,var(--warm)_55%,transparent)_78%,color-mix(in_oklch,var(--warm)_55%,transparent)_92%,transparent_92%)] box-decoration-clone text-primary">
@@ -43,7 +45,7 @@ export function Hero() {
             {hero.titleAfter && <> {hero.titleAfter}</>}
           </h1>
 
-          <p className={`${enter} mt-6 max-w-xl text-lg text-pretty text-muted-foreground [animation-delay:160ms]`}>{hero.subtitle}</p>
+          <p className={`${enterText} mt-6 max-w-xl text-lg text-pretty text-muted-foreground [animation-delay:160ms]`}>{hero.subtitle}</p>
 
           <div className={`${enter} mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row [animation-delay:240ms]`}>
             <Button asChild size="xl" className="shadow-lift">

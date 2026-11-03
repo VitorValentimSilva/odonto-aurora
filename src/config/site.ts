@@ -49,6 +49,7 @@ export const site: SiteConfig = {
   contact: {
     whatsapp,
     whatsappDisplay: "(19) 99999-9999",
+    whatsappLabel: "WhatsApp",
     phone: "+55 19 99999-9999",
     email: "contato@odontoaurora.com.br",
     defaultWhatsAppMessage:
@@ -138,6 +139,8 @@ export const site: SiteConfig = {
     starsLabel: (rating) => `Avaliação: ${rating} de 5 estrelas`,
     externalLinkHint: "(abre em nova aba)",
     pauseAnimation: "Pausar depoimentos",
+    notifications: "Notificações",
+    closeNotification: "Fechar notificação",
     playAnimation: "Retomar depoimentos",
   },
 

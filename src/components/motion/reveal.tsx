@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, type HTMLMotionProps, type Variants } from "motion/react";
+import type { HTMLMotionProps, Variants } from "motion/react";
+import * as m from "motion/react-m";
 import type { ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -15,7 +16,7 @@ type RevealProps = HTMLMotionProps<"div"> & { delay?: number; y?: number };
 /** Fade + slide ao entrar na tela (uma vez). */
 export function Reveal({ delay = 0, y = 24, children, ...props }: RevealProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -80px 0px" }}
@@ -23,7 +24,7 @@ export function Reveal({ delay = 0, y = 24, children, ...props }: RevealProps) {
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -38,7 +39,7 @@ const viewport = { once: true, margin: "0px 0px -80px 0px" } as const;
 
 /** Container que revela os filhos (`StaggerItem`) em sequência. */
 export function Stagger({ stagger = 0.08, as = "div", className, children }: StaggerProps) {
-  const Comp = as === "ul" ? motion.ul : as === "ol" ? motion.ol : motion.div;
+  const Comp = as === "ul" ? m.ul : as === "ol" ? m.ol : m.div;
   return (
     <Comp
       className={className}
@@ -55,7 +56,7 @@ export function Stagger({ stagger = 0.08, as = "div", className, children }: Sta
 type StaggerItemProps = { as?: "div" | "li"; className?: string; children: ReactNode };
 
 export function StaggerItem({ as = "div", className, children }: StaggerItemProps) {
-  const Comp = as === "li" ? motion.li : motion.div;
+  const Comp = as === "li" ? m.li : m.div;
   return (
     <Comp className={className} variants={itemVariants}>
       {children}

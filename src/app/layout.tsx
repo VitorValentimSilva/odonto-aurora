@@ -9,7 +9,9 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  // "optional" evita a troca tardia de fonte no texto corrido (melhor LCP/CLS);
+  // o fallback ajustado do next/font mantém as métricas muito próximas.
+  display: "optional",
 });
 
 const jakarta = Plus_Jakarta_Sans({

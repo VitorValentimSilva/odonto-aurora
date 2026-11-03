@@ -1,15 +1,27 @@
 "use client";
 
-import { MotionConfig } from "motion/react";
+import { LazyMotion, MotionConfig, domAnimation } from "motion/react";
+import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
 
-import { Toaster } from "@/components/ui/sonner";
+import { site } from "@/config/site";
+
+// O Toaster só é necessário depois de uma interação: fica fora do bundle inicial.
+const Toaster = dynamic(() => import("@/components/ui/sonner").then((mod) => mod.Toaster), { ssr: false });
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <MotionConfig reducedMotion="user">
-      {children}
-      <Toaster position="top-center" richColors closeButton />
-    </MotionConfig>
+    <LazyMotion features={domAnimation} strict>
+      <MotionConfig reducedMotion="user">
+        {children}
+        <Toaster
+          position="top-center"
+          richColors
+          closeButton
+          containerAriaLabel={site.ui.notifications}
+          toastOptions={{ closeButtonAriaLabel: site.ui.closeNotification }}
+        />
+      </MotionConfig>
+    </LazyMotion>
   );
 }

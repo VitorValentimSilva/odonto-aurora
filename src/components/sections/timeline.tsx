@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "motion/react";
+import { useScroll, useSpring } from "motion/react";
+import * as m from "motion/react-m";
 import { useRef } from "react";
 
 import { site } from "@/config/site";
@@ -17,7 +18,7 @@ export function Timeline() {
     <ol ref={ref} className="relative mx-auto mt-14 max-w-3xl">
       {/* trilho */}
       <div aria-hidden="true" className="absolute top-2 bottom-2 left-6 w-0.5 rounded-full bg-border sm:left-1/2 sm:-translate-x-1/2" />
-      <motion.div
+      <m.div
         aria-hidden="true"
         style={{ scaleY: progress }}
         className="absolute top-2 bottom-2 left-6 w-0.5 origin-top rounded-full bg-gradient-to-b from-primary to-warm sm:left-1/2 sm:-translate-x-1/2"
@@ -28,7 +29,7 @@ export function Timeline() {
         const right = i % 2 === 1;
         return (
           <li key={step.title} className="relative grid grid-cols-[3rem_1fr] gap-5 pb-10 last:pb-0 sm:grid-cols-[1fr_3rem_1fr] sm:gap-8">
-            <motion.span
+            <m.span
               initial={{ scale: 0.6, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
@@ -36,8 +37,8 @@ export function Timeline() {
               className="relative z-10 col-start-1 row-start-1 grid size-12 place-items-center rounded-2xl border-4 border-background bg-primary text-primary-foreground shadow-soft sm:col-start-2"
             >
               <Icon className="size-5" aria-hidden="true" />
-            </motion.span>
-            <motion.div
+            </m.span>
+            <m.div
               initial={{ opacity: 0, x: right ? 24 : -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
@@ -55,7 +56,7 @@ export function Timeline() {
                 <h3 className="mt-1 text-lg font-bold sm:text-xl">{step.title}</h3>
                 <p className="mt-2 text-muted-foreground">{step.description}</p>
               </div>
-            </motion.div>
+            </m.div>
           </li>
         );
       })}
