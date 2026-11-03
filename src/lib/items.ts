@@ -1,10 +1,8 @@
-import { site } from "@/config/site";
+import type { SiteConfig } from "@/config/types";
 
-export function itemPath(slug: string) {
-  return `/${site.treatments.basePath}/${slug}`;
-}
+export { itemPath } from "@/lib/paths";
 
-export function findItem(collection: string, slug: string) {
+export function findItem(site: SiteConfig, collection: string, slug: string) {
   if (collection !== site.treatments.basePath) return undefined;
   return site.treatments.items.find((item) => item.slug === slug);
 }
