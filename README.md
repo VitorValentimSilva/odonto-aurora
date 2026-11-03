@@ -81,7 +81,7 @@ Os scripts com puppeteer usam o Chrome da máquina: defina `CHROME_PATH` (padrã
 
 ## Idiomas (português e inglês)
 
-- Português na raiz (`/`, `/cardapio/…`, `/privacidade`) e inglês em `/en` (`/en/menu/…`, `/en/privacy`), com seletor
+- Português na raiz (`/`, `/tratamentos/…`, `/privacidade`) e inglês em `/en` (`/en/treatments/…`, `/en/privacy`), com seletor
   no header que mantém a página equivalente, `hreflang`, sitemap com os dois idiomas e imagem Open Graph por idioma.
 - Os textos ficam no mesmo `src/config/site.ts`: `const pt = {…}` e `const en = {…}` (o inglês reaproveita do
   português o que não é texto, como cores, logo e contatos). Para adicionar um idioma, crie outro objeto, inclua em
