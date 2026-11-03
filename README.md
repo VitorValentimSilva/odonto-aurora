@@ -30,7 +30,9 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 ## Funcionalidades
 
 - **Conteúdo 100% centralizado** em [`src/config/site.ts`](src/config/site.ts) (tipado) — troque o arquivo e tenha outro negócio
-- Header fixo com blur ao rolar e menu mobile (Sheet) acessível
+- Header fixo com blur ao rolar, menu mobile (Sheet) acessível e destaque da seção ativa
+- **Modo escuro** (claro/escuro/sistema, sem "piscar") com paleta própria em tokens — prints em
+  [`docs/screenshots/desktop-dark.png`](docs/screenshots/desktop-dark.png) e [`mobile-dark.png`](docs/screenshots/mobile-dark.png)
 - Hero com composição em SVG/gradientes (sem fotos) e animação de entrada em CSS (não atrasa o LCP)
 - Contadores animados ao entrar na tela, cards com hover animado, bento grid, timeline que "preenche" com a rolagem
 - Equipe com avatares de iniciais (aceita foto opcional via `next/image`)
