@@ -207,10 +207,13 @@ export type SiteConfig = {
   payment: {
     heading: SectionHeading;
     insurancesTitle: string;
+    /** Ícone do card da lista (padrão: shieldCheck). */
+    insurancesIcon?: IconName;
     insurances: string[];
     methodsTitle: string;
     methods: { icon: IconName; label: string }[];
-    installments: { title: string; description: string };
+    /** Card de destaque (padrão de ícone: creditCard). */
+    installments: { title: string; description: string; icon?: IconName };
     note: string;
   };
   faq: { heading: SectionHeading; items: FaqItem[]; contactPrompt: string; contactCta: CTA };
