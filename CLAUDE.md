@@ -26,6 +26,8 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
   `src/lib/links.ts`.
 - Privacidade: texto em `site.privacy`, rota `/privacidade`. Se o site passar a usar cookies/analytics, atualizar a
   política e só então avaliar um aviso de consentimento.
+- Páginas de item: rota `src/app/[collection]/[slug]` gerada de `site.treatments.items` (`slug` + `details`) e
+  `site.treatments.basePath`. Item inexistente → `notFound()` (404 real; `partialPrefetching` fica desligado para isso).
 - Âncoras das seções: `site.sections` (ids na URL); hrefs do `nav`/CTAs devem usar os mesmos ids.
 - URL pública: `resolveSiteUrl()` (`src/lib/site-url.ts`) usa o domínio de produção da Vercel automaticamente.
 - Segurança: CSP e cabeçalhos em `next.config.ts`. Nada de scripts/fontes/imagens de terceiros (a CSP bloqueia).

@@ -38,6 +38,8 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 - Equipe com avatares de iniciais (aceita foto opcional via `next/image`)
 - Depoimentos em marquee com pausa (hover, foco e botão) e fallback estático para "reduzir movimento"
 - FAQ com Accordion, convênios em chips, "parcelamos em até 12x"
+- **Página para cada tratamento** (`/tratamentos/<slug>`) com descrição longa, o que está incluso, FAQ próprio, "outros
+  tratamentos", metadata e JSON-LD (`MedicalProcedure` + `BreadcrumbList` + `FAQPage`), geradas a partir do `site.ts`
 - **Política de privacidade (LGPD)** em `/privacidade`, com link no rodapé e no formulário (inclui dados de saúde).
   Sem aviso de cookies porque o site não usa cookies nem rastreamento (só a preferência de tema fica no `localStorage`)
 - **Agendamento**: formulário com máscara de WhatsApp, Select de tratamento, período e validação zod → abre o
