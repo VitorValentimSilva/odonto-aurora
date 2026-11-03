@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Container } from "@/components/container";
 import { Logo } from "@/components/logo";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { site } from "@/config/site";
@@ -80,6 +81,8 @@ export function SiteHeader() {
               {site.ui.headerCta.label}
             </a>
           </Button>
+
+          <ThemeToggle />
 
           <Sheet>
             <SheetTrigger asChild>

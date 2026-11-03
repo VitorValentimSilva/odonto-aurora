@@ -51,14 +51,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: site.theme.background,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: site.theme.background },
+    { media: "(prefers-color-scheme: dark)", color: site.theme.backgroundDark },
+  ],
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={site.lang} className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang={site.lang} suppressHydrationWarning className={`${inter.variable} ${jakarta.variable}`}>
       <body>
         <a
           href="#conteudo"
