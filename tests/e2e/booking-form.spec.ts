@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { localized } from "./helpers";
+
 test("formulário valida campos e abre o WhatsApp com a mensagem montada", async ({ page }) => {
   await page.addInitScript(() => {
     (window as unknown as { __opened: string[] }).__opened = [];
@@ -8,7 +10,7 @@ test("formulário valida campos e abre o WhatsApp com a mensagem montada", async
       return {} as Window;
     }) as typeof window.open;
   });
-  await page.goto("/");
+  await page.goto(localized("/"));
   await page.evaluate(() => document.querySelector('[data-section="booking"]')?.scrollIntoView({ behavior: "instant" }));
 
   const form = page.getByTestId("booking-form");
