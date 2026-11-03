@@ -14,13 +14,15 @@ import { Stats } from "@/components/sections/stats";
 import { Team } from "@/components/sections/team";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Treatments } from "@/components/sections/treatments";
+import { getSite } from "@/lib/i18n";
 import { buildLocalBusinessJsonLd } from "@/lib/json-ld";
 
 export default async function Home() {
   "use cache";
   cacheLife("days");
   const year = new Date().getFullYear();
-  const jsonLd = buildLocalBusinessJsonLd();
+  const site = await getSite();
+  const jsonLd = buildLocalBusinessJsonLd(site);
 
   return (
     <>

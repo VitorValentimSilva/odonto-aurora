@@ -1,14 +1,16 @@
 import { ImageResponse } from "next/og";
 
-import { site } from "@/config/site";
+import { defaultLocale, hasLocale, sites } from "@/config/site";
 
-import { BrandMark, brandColors as c, loadOgFonts } from "./og-shared";
+import { BrandMark, brandColors as c, loadOgFonts } from "../og-shared";
 
-export const alt = site.seo.ogImageAlt;
+export const alt = sites[defaultLocale].seo.ogImageAlt;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function OpengraphImage() {
+export default async function OpengraphImage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const site = sites[hasLocale(lang) ? lang : defaultLocale];
   return new ImageResponse(
     (
       <div

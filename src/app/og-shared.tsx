@@ -2,7 +2,10 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-import { site } from "@/config/site";
+import { defaultLocale, sites } from "@/config/site";
+
+// Logo e cores são iguais em todos os idiomas.
+const site = sites[defaultLocale];
 
 /** Plus Jakarta Sans (licença OFL) embutida para gerar as imagens no build, sem rede. */
 export async function loadOgFonts() {
