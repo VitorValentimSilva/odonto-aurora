@@ -30,6 +30,8 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
 - Ilustração do hero: `hero.visual.illustration` (mapa em `src/components/illustrations`); logo: `brand.logo`;
   cores em hex para OG/favicon/manifest: `site.theme`. Ícone vindo do config fora de `.map()`: use `<Icon name=…/>`.
 - Nada de cor fixa nos componentes: use/crie tokens em `globals.css`.
+- Todo token precisa de valor em `:root` **e** em `.dark` (modo escuro via `next-themes`, classe `dark` no `<html>`).
+  Contraste WCAG AA nos dois temas.
 
 ## Comandos
 
