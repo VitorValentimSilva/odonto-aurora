@@ -38,10 +38,12 @@ npm run lint         # precisa passar sem erros/avisos
 npm run build        # precisa passar sem erros de TypeScript
 npm run start        # produção (porta 3000)
 npm run screenshots  # com o start rodando: docs/screenshots + checagem de overflow em 360/375/768/1024/1440
-npm run test:form    # com o start rodando: valida erros do zod e o link wa.me
+npm run test:e2e     # após o build: Playwright + axe (formulário, menu, âncoras, overflow, a11y, SEO, headers)
+npm run lhci         # após o build: Lighthouse CI (mobile ≥ 90 perf; demais ≥ 95) — roda no GitHub Actions
 ```
 
-`CHROME_PATH` aponta para o Chrome usado pelo puppeteer-core.
+`CHROME_PATH` aponta para o Chrome usado pelo puppeteer-core e pelo Lighthouse. O `@playwright/test` fica fixo na
+versão do Chromium pré-instalado (`overrides.playwright-core` no package.json). Testes leem dados do DOM, nunca texto fixo.
 
 ## Estrutura e convenções
 
@@ -69,5 +71,5 @@ npm run test:form    # com o start rodando: valida erros do zod e o link wa.me
 ## Antes de concluir uma mudança
 
 1. `npm run lint` e `npm run build` limpos.
-2. `npm run start` + `npm run screenshots` (olhar os prints e o relatório de overflow) e `npm run test:form`.
+2. `npm run start` + `npm run screenshots` (olhar os prints e o relatório de overflow) e `npm run test:e2e` (o CI repete tudo e roda o Lighthouse a cada PR).
 3. Commits pequenos, mensagens em português (`feat: …`, `fix: …`, `docs: …`).
