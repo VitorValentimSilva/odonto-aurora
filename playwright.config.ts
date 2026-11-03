@@ -20,6 +20,9 @@ export default defineConfig({
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
     { name: "mobile", use: { ...devices["Pixel 7"] } },
+    // mesmas verificações na versão em inglês (/en)
+    { name: "desktop-en", metadata: { prefix: "/en" }, use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
+    { name: "mobile-en", metadata: { prefix: "/en" }, use: { ...devices["Pixel 7"] } },
   ],
   webServer: process.env.BASE_URL
     ? undefined

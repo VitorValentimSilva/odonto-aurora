@@ -1,4 +1,4 @@
-import type { Page } from "@playwright/test";
+import { test, type Page } from "@playwright/test";
 
 /** Rola a página inteira para disparar as animações/carregamentos sob demanda. */
 export async function scrollThrough(page: Page) {
@@ -20,4 +20,16 @@ export function collectErrors(page: Page) {
   });
   page.on("pageerror", (err) => errors.push(err.message));
   return errors;
+}
+
+/** Prefixo do idioma do projeto atual ("" para português, "/en" para inglês). */
+export function prefix() {
+  return (test.info().project.metadata?.prefix as string | undefined) ?? "";
+}
+
+/** Caminho no idioma do projeto ("/" → "/" ou "/en"). */
+export function localized(path: string) {
+  const p = prefix();
+  if (!p) return path;
+  return path === "/" ? p : `${p}${path}`;
 }

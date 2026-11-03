@@ -1,13 +1,15 @@
 import { expect, test } from "@playwright/test";
 
+import { localized } from "./helpers";
+
 /** Links dos cards da seção de tratamentos/cardápio para as páginas de item. */
 async function itemLinks(page: import("@playwright/test").Page) {
-  await page.goto("/");
+  await page.goto(localized("/"));
   return page.evaluate(() => [
     ...new Set(
       [...document.querySelectorAll<HTMLAnchorElement>("main section a[href^='/']")]
         .map((a) => a.getAttribute("href")!)
-        .filter((h) => /^\/[^/#]+\/[^/#]+$/.test(h)),
+        .filter((h) => /^(\/en)?\/[^/#]+\/[^/#]+$/.test(h) && !/^\/en\/[^/#]+$/.test(h)),
     ),
   ]);
 }
@@ -42,7 +44,7 @@ test("FAQ da página de item abre e mostra a resposta", async ({ page }) => {
 
 test("item inexistente responde 404", async ({ page }) => {
   const [first] = await itemLinks(page);
-  const base = first.split("/")[1];
-  const res = await page.goto(`/${base}/item-que-nao-existe`);
+  const base = first.slice(0, first.lastIndexOf("/"));
+  const res = await page.goto(`${base}/item-que-nao-existe`);
   expect(res?.status()).toBe(404);
 });
