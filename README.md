@@ -79,6 +79,15 @@ npm run lhci         # (depois do build) Lighthouse CI mobile e desktop com nota
 
 Os scripts com puppeteer usam o Chrome da máquina: defina `CHROME_PATH` (padrão `/usr/bin/google-chrome`).
 
+## Idiomas (português e inglês)
+
+- Português na raiz (`/`, `/cardapio/…`, `/privacidade`) e inglês em `/en` (`/en/menu/…`, `/en/privacy`), com seletor
+  no header que mantém a página equivalente, `hreflang`, sitemap com os dois idiomas e imagem Open Graph por idioma.
+- Os textos ficam no mesmo `src/config/site.ts`: `const pt = {…}` e `const en = {…}` (o inglês reaproveita do
+  português o que não é texto, como cores, logo e contatos). Para adicionar um idioma, crie outro objeto, inclua em
+  `sites` e no `src/proxy.ts`.
+- Cada página envia ao navegador só o texto do idioma dela — o conteúdo não entra no bundle de JavaScript.
+
 ## Como trocar o conteúdo (`site.ts`)
 
 Todo texto, número, serviço, depoimento, contato e link está em **`src/config/site.ts`**, tipado por
