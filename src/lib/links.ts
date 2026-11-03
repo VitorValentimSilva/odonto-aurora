@@ -13,3 +13,8 @@ export function buildMapsUrl(address: string = site.address.full) {
 export function isExternal(href: string) {
   return /^https?:\/\//.test(href);
 }
+
+/** Âncoras da home ("#secao") viram "/#secao" para funcionarem também em outras páginas. */
+export function homeHref(href: string) {
+  return href.startsWith("#") ? `/${href}` : href;
+}
