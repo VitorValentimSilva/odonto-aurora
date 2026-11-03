@@ -5,100 +5,109 @@ import type { SiteConfig } from "./types";
  *  CONTEÚDO DO SITE
  * ============================================================================
  *  Todo texto, número, contato e link do negócio vive aqui.
- *  Para transformar o site em outro negócio (restaurante, pet shop, estúdio…),
- *  edite este arquivo — os componentes não precisam ser alterados.
+ *  Para transformar o site em outro negócio, edite este arquivo (e a paleta
+ *  em src/app/globals.css) — os componentes não precisam ser alterados.
  *
- *  ⚠️ "Odonto Aurora" é uma clínica FICTÍCIA criada para portfólio.
- *  Telefones, endereço, CROs e depoimentos são inventados.
+ *  ⚠️ "Alecrim & Brasa" é um restaurante FICTÍCIO criado para portfólio.
+ *  Telefones, endereço, CNPJ, equipe, preços e avaliações são inventados.
+ *  Este é o mesmo template da landing page "Odonto Aurora" (branch main).
  * ============================================================================
  */
 
-const whatsapp = "5519999999999";
+const whatsapp = "5519988887777";
 
 export const site: SiteConfig = {
-  url: "https://odonto-aurora.vercel.app",
+  url: "https://alecrim-e-brasa.vercel.app",
   locale: "pt_BR",
   lang: "pt-BR",
 
   brand: {
-    name: "Odonto Aurora",
-    shortName: "Aurora",
-    slogan: "Seu sorriso merece cuidado de verdade",
+    name: "Alecrim & Brasa",
+    shortName: "Alecrim",
+    slogan: "Comida de fogo, ingredientes de verdade",
     description:
-      "Clínica odontológica em Campinas – SP com tratamentos modernos, equipe especializada e atendimento humanizado do primeiro contato ao sorriso final.",
-    schemaType: "Dentist",
+      "Restaurante de cozinha de fogo em Campinas – SP: carnes na brasa, pizzas de fermentação natural, ingredientes de pequenos produtores e uma carta de vinhos pensada para cada prato.",
+    schemaType: "Restaurant",
     priceRange: "$$",
+    servesCuisine: ["Brasileira", "Cozinha de fogo", "Pizza"],
     logo: {
-      glyph: "M13.4 12.6c1.9-1.5 4.2-1.2 6.6-.2 2.4-1 4.7-1.3 6.6.2 2 1.6 2 4.6 1.2 7.4-.6 2-1 3.9-1.5 6-.4 1.6-2.2 1.9-2.9.4l-1.6-3.8c-.5-1.1-1.1-1.4-1.8-1.4s-1.3.3-1.8 1.4l-1.6 3.8c-.7 1.5-2.5 1.2-2.9-.4-.5-2.1-.9-4-1.5-6-.8-2.8-.8-5.8 1.2-7.4Z",
-      accent: "M7 27a13 13 0 0 1 26 0",
+      // chama sobre a linha de um prato
+      glyph:
+        "M20.6 7.5c1.7 4.6 7.4 7.3 7.4 14.2a8 8 0 0 1-16 0c0-3.6 2-5.7 3.6-7.5.4 2.3 1.5 3.6 3 4-.3-3.9-.6-7.4 2-10.7Z",
+      accent: "M8 31.5h24",
     },
   },
 
   theme: {
-    primary: "#0f6f7c",
-    primaryDark: "#134b5c",
-    warm: "#f2a27c",
-    warmLight: "#fde3d3",
-    background: "#f7fbfb",
-    backgroundTint: "#e6f3f3",
-    foreground: "#14313d",
+    primary: "#a2422a",
+    primaryDark: "#6b2a1b",
+    warm: "#e2a43c",
+    warmLight: "#fbe8c6",
+    background: "#fcf8f2",
+    backgroundTint: "#f5eadb",
+    foreground: "#2d1d15",
   },
 
   seo: {
-    title: "Odonto Aurora — Clínica Odontológica em Campinas",
+    title: "Alecrim & Brasa — Restaurante de cozinha de fogo em Campinas",
     description:
-      "Clareamento, implantes, alinhadores, lentes de contato dental e odontopediatria em Campinas – SP. Agende sua avaliação pelo WhatsApp.",
+      "Carnes na brasa, pizzas de fermentação natural e ingredientes locais em Campinas – SP. Reserve sua mesa pelo WhatsApp.",
     keywords: [
-      "dentista em Campinas",
-      "clínica odontológica Campinas",
-      "clareamento dental",
-      "implante dentário",
-      "alinhadores invisíveis",
-      "lentes de contato dental",
-      "odontopediatria",
+      "restaurante em Campinas",
+      "cozinha de fogo",
+      "pizza de fermentação natural",
+      "costela no fogo de chão",
+      "restaurante pet friendly Campinas",
+      "jantar romântico Campinas",
     ],
-    ogImageAlt: "Odonto Aurora — Seu sorriso merece cuidado de verdade",
-    serviceSchemaType: "MedicalProcedure",
+    ogImageAlt: "Alecrim & Brasa — Comida de fogo, ingredientes de verdade",
+    serviceSchemaType: "MenuItem",
   },
 
   contact: {
     whatsapp,
-    whatsappDisplay: "(19) 99999-9999",
+    whatsappDisplay: "(19) 98888-7777",
     whatsappLabel: "WhatsApp",
-    phone: "+55 19 99999-9999",
-    email: "contato@odontoaurora.com.br",
-    defaultWhatsAppMessage:
-      "Olá, Odonto Aurora! Vim pelo site e gostaria de agendar uma avaliação.",
+    phone: "+55 19 98888-7777",
+    email: "reservas@alecrimebrasa.com.br",
+    defaultWhatsAppMessage: "Olá, Alecrim & Brasa! Vim pelo site e gostaria de reservar uma mesa.",
   },
 
   address: {
-    street: "Av. Horizonte Azul, 742 – Sala 12",
+    street: "Rua do Alecrim, 315",
     district: "Jardim Aurora",
     city: "Campinas",
     state: "SP",
     postalCode: "13000-000",
     country: "BR",
-    full: "Av. Horizonte Azul, 742 – Sala 12, Jardim Aurora, Campinas – SP, 13000-000",
-    reference: "Estacionamento conveniado em frente à clínica",
+    full: "Rua do Alecrim, 315, Jardim Aurora, Campinas – SP, 13000-000",
+    reference: "Manobrista no local a partir das 19h",
   },
 
   openingHours: [
     {
-      label: "Segunda a sexta",
-      hours: "8h às 20h",
-      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "20:00",
+      label: "Terça a sexta",
+      hours: "11h30–15h · 19h–23h",
+      days: ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "11:30",
+      closes: "23:00",
     },
     {
       label: "Sábado",
-      hours: "8h às 13h",
+      hours: "12h às 23h30",
       days: ["Saturday"],
-      opens: "08:00",
-      closes: "13:00",
+      opens: "12:00",
+      closes: "23:30",
     },
     {
-      label: "Domingo e feriados",
+      label: "Domingo",
+      hours: "12h às 17h",
+      days: ["Sunday"],
+      opens: "12:00",
+      closes: "17:00",
+    },
+    {
+      label: "Segunda",
       hours: "Fechado",
       days: [],
       opens: "",
@@ -110,21 +119,21 @@ export const site: SiteConfig = {
     {
       icon: "instagram",
       label: "Instagram",
-      handle: "@odontoaurora.demo",
-      href: "https://instagram.com/odontoaurora.demo",
+      handle: "@alecrimebrasa.demo",
+      href: "https://instagram.com/alecrimebrasa.demo",
     },
     {
       icon: "whatsapp",
       label: "WhatsApp",
-      handle: "(19) 99999-9999",
+      handle: "(19) 98888-7777",
       href: `https://wa.me/${whatsapp}`,
     },
   ],
 
   responsible: {
-    name: "Dra. Helena Duarte",
-    role: "Responsável técnica",
-    registry: "CRO-SP 000.001",
+    name: "Alecrim & Brasa Gastronomia Ltda.",
+    role: "Razão social",
+    registry: "CNPJ 00.000.000/0001-00",
   },
 
   /** Troque pelo seu nome e link (GitHub, LinkedIn, site…). */
@@ -134,195 +143,189 @@ export const site: SiteConfig = {
   },
 
   nav: [
-    { label: "Tratamentos", href: "#tratamentos" },
-    { label: "Diferenciais", href: "#diferenciais" },
+    { label: "Cardápio", href: "#tratamentos" },
+    { label: "A casa", href: "#diferenciais" },
     { label: "Equipe", href: "#equipe" },
-    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "Avaliações", href: "#depoimentos" },
     { label: "Dúvidas", href: "#duvidas" },
     { label: "Contato", href: "#localizacao" },
   ],
 
   ui: {
     skipToContent: "Pular para o conteúdo",
-    headerCta: { label: "Agendar avaliação", href: "#agendar" },
+    headerCta: { label: "Reservar mesa", href: "#agendar" },
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     menuTitle: "Menu",
-    homeLabel: "Odonto Aurora — início",
+    homeLabel: "Alecrim & Brasa — início",
     mainNavLabel: "Navegação principal",
-    whatsappFab: "Conversar no WhatsApp",
+    whatsappFab: "Reservar pelo WhatsApp",
     starsLabel: (rating) => `Avaliação: ${rating} de 5 estrelas`,
     externalLinkHint: "(abre em nova aba)",
-    pauseAnimation: "Pausar depoimentos",
+    pauseAnimation: "Pausar avaliações",
     notifications: "Notificações",
     closeNotification: "Fechar notificação",
-    playAnimation: "Retomar depoimentos",
+    playAnimation: "Retomar avaliações",
   },
 
   hero: {
-    badge: "Agenda aberta para novos pacientes",
-    title: "Seu sorriso merece",
-    highlight: "cuidado de verdade",
+    badge: "Reservas abertas para este fim de semana",
+    title: "Comida de fogo,",
+    highlight: "ingredientes de verdade",
     subtitle:
-      "Tratamentos odontológicos modernos, sem pressa e sem dor, com uma equipe que explica cada etapa e cuida de você como pessoa — não como número.",
-    primaryCta: { label: "Agendar pelo WhatsApp", href: "#agendar" },
-    secondaryCta: { label: "Ver tratamentos", href: "#tratamentos" },
+      "Carnes na brasa, pizzas de fermentação lenta e vegetais de pequenos produtores da região — servidos sem pressa, num salão feito para encontros.",
+    primaryCta: { label: "Reservar pelo WhatsApp", href: "#agendar" },
+    secondaryCta: { label: "Ver cardápio", href: "#tratamentos" },
     trustBadges: [
-      { icon: "smile", label: "+2.000 sorrisos" },
-      { icon: "star", label: "Nota 4,9 no Google" },
-      { icon: "heartHandshake", label: "Atendimento humanizado" },
+      { icon: "flame", label: "Forno a lenha e parrilla" },
+      { icon: "star", label: "Nota 4,8 no Google" },
+      { icon: "sprout", label: "Ingredientes locais" },
     ],
     visual: {
-      illustration: "tooth",
-      cardTitle: "Plano de tratamento",
-      cardSubtitle: "Clareamento + limpeza",
-      chips: ["Sem dor", "Digital", "Personalizado"],
+      illustration: "dish",
+      cardTitle: "Prato da semana",
+      cardSubtitle: "Costela de fogo de chão",
+      chips: ["12h na brasa", "Serve 2", "Sem glúten"],
       ratingLabel: "Avaliação média",
-      ratingValue: "4,9",
-      nextSlotLabel: "Próximo horário",
-      nextSlotValue: "Amanhã, 9h30",
+      ratingValue: "4,8",
+      nextSlotLabel: "Mesa disponível",
+      nextSlotValue: "Hoje, 20h30",
     },
-    // image: { src: "/images/hero.jpg", alt: "Recepção da clínica", width: 1200, height: 1400 },
+    // image: { src: "/images/hero.jpg", alt: "Prato servido no salão do restaurante", width: 1200, height: 1400 },
   },
 
   stats: {
     heading: {
       eyebrow: "Em números",
-      title: "Confiança construída sorriso a sorriso",
+      title: "Uma brasa que não apaga desde 2017",
     },
     items: [
-      { value: 12, suffix: "anos", label: "de história em Campinas" },
-      { value: 2000, prefix: "+", label: "pacientes atendidos" },
-      { value: 8, label: "especialistas" },
-      { value: 4.9, decimals: 1, suffix: "/5", label: "nota média" },
+      { value: 9, suffix: "anos", label: "de casa cheia" },
+      { value: 85000, prefix: "+", label: "pratos servidos" },
+      { value: 120, label: "lugares no salão" },
+      { value: 4.8, decimals: 1, suffix: "/5", label: "nota média" },
     ],
   },
 
   treatments: {
     heading: {
-      eyebrow: "Tratamentos",
-      title: "Tudo o que seu sorriso precisa, em um só lugar",
-      description:
-        "Do check-up preventivo à reabilitação completa, com tecnologia digital e planejamento individual.",
+      eyebrow: "Cardápio em destaque",
+      title: "Os pratos que fazem a fama da casa",
+      description: "Uma seleção do nosso cardápio — tudo feito na hora, com fogo de verdade e ingredientes da estação.",
     },
     items: [
       {
-        icon: "sparkles",
-        title: "Clareamento dental",
-        description:
-          "Dentes até 4 tons mais claros com protocolo seguro, combinando consultório e moldeira caseira.",
-        highlights: ["Baixa sensibilidade", "Resultado em 3 semanas"],
+        icon: "beef",
+        title: "Costela de fogo de chão",
+        description: "12 horas na brasa, com farofa de manteiga de garrafa, mandioca crocante e vinagrete de ervas.",
+        highlights: ["Serve 2 pessoas", "Assinatura da casa"],
+        price: "R$ 129",
       },
       {
-        icon: "shieldCheck",
-        title: "Implantes",
-        description:
-          "Reposição de dentes com implantes de titânio e planejamento guiado por tomografia digital.",
-        highlights: ["Cirurgia guiada", "Planejamento 3D"],
+        icon: "pizza",
+        title: "Pizza de fermentação natural",
+        description: "Massa de 48 horas assada no forno a lenha, com tomate italiano, fior di latte e manjericão.",
+        highlights: ["Forno a lenha", "Opção vegana"],
+        price: "R$ 68",
       },
       {
-        icon: "orthodontics",
-        title: "Ortodontia e alinhadores",
-        description:
-          "Aparelhos fixos estéticos ou alinhadores invisíveis, com simulação 3D do resultado antes de começar.",
-        highlights: ["Simulação 3D", "Alinhadores invisíveis"],
+        icon: "fish",
+        title: "Peixe na folha de bananeira",
+        description: "Peixe do dia assado na brasa, arroz de coco, banana-da-terra grelhada e molho de maracujá.",
+        highlights: ["Sem glúten", "Peixe fresco"],
+        price: "R$ 89",
       },
       {
-        icon: "gem",
-        title: "Lentes de contato dental",
-        description:
-          "Facetas ultrafinas de porcelana para corrigir cor, forma e alinhamento com naturalidade.",
-        highlights: ["Ensaio estético", "Mínimo desgaste"],
+        icon: "cookingPot",
+        title: "Risoto de cogumelos e alecrim",
+        description: "Arroz arbóreo, cogumelos frescos salteados, parmesão 12 meses e azeite de alecrim da horta.",
+        highlights: ["Vegetariano", "Cogumelos da serra"],
+        price: "R$ 74",
       },
       {
-        icon: "smilePlus",
-        title: "Limpeza e prevenção",
-        description:
-          "Profilaxia, aplicação de flúor e check-up completo para manter a saúde bucal em dia.",
-        highlights: ["Check-up semestral", "Orientação de higiene"],
+        icon: "salad",
+        title: "Salada da horta na brasa",
+        description: "Folhas, abóbora e cebola tostadas no fogo, queijo de cabra, castanhas e vinagrete de mel.",
+        highlights: ["Vegetariano", "Da horta à mesa"],
+        price: "R$ 46",
       },
       {
-        icon: "baby",
-        title: "Odontopediatria",
-        description:
-          "Atendimento lúdico e acolhedor para crianças, criando desde cedo uma relação tranquila com o dentista.",
-        highlights: ["Ambiente infantil", "Primeira consulta sem medo"],
+        icon: "cakeSlice",
+        title: "Pudim de doce de leite queimado",
+        description: "Pudim cremoso com calda de doce de leite caramelizado no maçarico e flor de sal.",
+        highlights: ["Sobremesa da casa", "Para dividir"],
+        price: "R$ 29",
       },
     ],
-    cta: { label: "Quero uma avaliação", href: "#agendar" },
-    cardCta: { label: "Agendar", href: "#agendar" },
+    cta: { label: "Reservar uma mesa", href: "#agendar" },
+    cardCta: { label: "Reservar", href: "#agendar" },
   },
 
   differentials: {
     heading: {
-      eyebrow: "Por que a Aurora",
-      title: "Detalhes que fazem a diferença na sua experiência",
+      eyebrow: "A casa",
+      title: "Mais que um jantar: uma noite para lembrar",
       description:
-        "Unimos técnica, tecnologia e acolhimento para que cada visita seja leve — inclusive para quem tem medo de dentista.",
+        "Fogo, tempo e bons ingredientes. O resto é o salão cheio, a música baixa e a conversa que vai longe.",
     },
     items: [
       {
-        icon: "heartHandshake",
-        title: "Atendimento sem pressa",
+        icon: "flame",
+        title: "Cozinha de fogo de verdade",
         description:
-          "Consultas com tempo para ouvir, explicar e tirar todas as dúvidas. Você entende cada etapa antes de decidir.",
+          "Parrilla, forno a lenha e fogo de chão: nada de atalhos. Cada prato tem o tempo de brasa que merece.",
         size: "wide",
       },
       {
-        icon: "scanLine",
-        title: "Tecnologia digital",
-        description: "Escaneamento intraoral 3D, sem moldagens desconfortáveis.",
+        icon: "sprout",
+        title: "Da horta à mesa",
+        description: "Vegetais e queijos de pequenos produtores a menos de 100 km.",
       },
       {
-        icon: "clipboardList",
-        title: "Orçamento transparente",
-        description: "Plano por escrito, com valores e prazos claros. Sem surpresas.",
+        icon: "wine",
+        title: "Carta de vinhos",
+        description: "Rótulos nacionais e importados, com harmonização sugerida pela sommelière.",
       },
       {
-        icon: "microscope",
-        title: "Biossegurança rigorosa",
-        description: "Esterilização com rastreio de cada instrumental, ciclo a ciclo.",
+        icon: "pawPrint",
+        title: "Pet friendly",
+        description: "Varanda com água fresca e petisco para o seu melhor amigo.",
       },
       {
-        icon: "clock",
-        title: "Horários estendidos",
-        description:
-          "Até as 20h durante a semana e aos sábados pela manhã, para caber na sua rotina.",
+        icon: "partyPopper",
+        title: "Eventos e aniversários",
+        description: "Salão reservado para até 60 pessoas, com menu fechado e bolo da casa.",
       },
     ],
   },
 
   steps: {
     heading: {
-      eyebrow: "Como funciona",
-      title: "Do primeiro contato ao sorriso novo",
-      description: "Um caminho simples, transparente e no seu ritmo.",
+      eyebrow: "Como reservar",
+      title: "Sua mesa garantida em poucos minutos",
+      description: "Sem aplicativo, sem cadastro: é tudo pelo WhatsApp.",
     },
-    stepLabel: "Etapa",
+    stepLabel: "Passo",
     items: [
       {
         icon: "messages",
-        title: "Fale com a gente",
-        description:
-          "Mande uma mensagem pelo WhatsApp ou preencha o formulário. Respondemos em minutos no horário comercial.",
+        title: "Chame no WhatsApp",
+        description: "Preencha o formulário ou mande uma mensagem com data, horário e número de pessoas.",
       },
       {
-        icon: "stethoscope",
-        title: "Avaliação completa",
-        description:
-          "Exame clínico, fotos e escaneamento digital para entender sua saúde bucal e seus objetivos.",
+        icon: "calendarCheck",
+        title: "Confirmamos a mesa",
+        description: "Nossa equipe responde rapidamente com a confirmação e o melhor lugar do salão para você.",
       },
       {
-        icon: "clipboardList",
-        title: "Plano personalizado",
-        description:
-          "Você recebe um plano de tratamento por escrito, com etapas, prazos e opções de pagamento.",
+        icon: "partyPopper",
+        title: "Conte a ocasião",
+        description: "Aniversário, pedido de casamento, cadeirinha para bebê? A gente prepara tudo.",
       },
       {
-        icon: "smile",
-        title: "Tratamento e acompanhamento",
-        description:
-          "Iniciamos o cuidado com conforto e seguimos com retornos programados para manter o resultado.",
+        icon: "utensils",
+        title: "É só aproveitar",
+        description: "Chegue, sente e deixe o resto com a brasa. Tolerância de 15 minutos para atrasos.",
       },
     ],
   },
@@ -330,82 +333,79 @@ export const site: SiteConfig = {
   team: {
     heading: {
       eyebrow: "Equipe",
-      title: "Especialistas que cuidam de você",
-      description:
-        "Profissionais com formação contínua e um objetivo em comum: tornar o cuidado odontológico leve e eficiente.",
+      title: "Quem acende a brasa todos os dias",
+      description: "Uma equipe apaixonada por fogo, produto e por receber bem.",
     },
     items: [
       {
-        name: "Dra. Helena Duarte",
-        initials: "HD",
-        role: "Implantodontia e prótese",
-        registry: "CRO-SP 000.001",
-        bio: "Diretora clínica, especialista em reabilitação oral e cirurgia guiada.",
+        name: "Lucas Ferraz",
+        initials: "LF",
+        role: "Chef executivo",
+        registry: "20 anos de cozinha",
+        bio: "Criado entre churrasqueiras do interior, estudou cozinha de fogo na Argentina e no Uruguai.",
       },
       {
-        name: "Dr. Rafael Nogueira",
-        initials: "RN",
-        role: "Ortodontia e alinhadores",
-        registry: "CRO-SP 000.002",
-        bio: "Planeja tratamentos ortodônticos digitais com simulação 3D do resultado.",
+        name: "Ana Ribeiro",
+        initials: "AR",
+        role: "Sommelière",
+        registry: "Carta com 180 rótulos",
+        bio: "Monta harmonizações para cada prato e adora apresentar vinhos de pequenas vinícolas.",
       },
       {
-        name: "Dra. Marina Okada",
-        initials: "MO",
-        role: "Odontopediatria e estética",
-        registry: "CRO-SP 000.003",
-        bio: "Une cuidado infantil acolhedor e odontologia estética minimamente invasiva.",
+        name: "Júlia Tanaka",
+        initials: "JT",
+        role: "Confeiteira",
+        registry: "Sobremesas autorais",
+        bio: "Responsável pelas sobremesas e pelos pães de fermentação natural servidos na casa.",
       },
     ],
   },
 
   testimonials: {
     heading: {
-      eyebrow: "Depoimentos",
-      title: "Quem sorri com a Aurora recomenda",
+      eyebrow: "Avaliações",
+      title: "Quem prova, volta",
     },
-    summary: "Nota média 4,9 com base em avaliações de pacientes",
+    summary: "Nota média 4,8 com base em avaliações de clientes",
     items: [
       {
-        name: "Camila R.",
-        detail: "Clareamento dental",
+        name: "Mariana C.",
+        detail: "Jantar de aniversário",
         quote:
-          "Sempre tive vergonha de sorrir em fotos. Em três semanas o resultado ficou natural e não senti sensibilidade nenhuma.",
+          "A costela desmancha! Avisei que era aniversário e trouxeram o pudim com vela. Atendimento impecável do começo ao fim.",
         rating: 5,
       },
       {
-        name: "Eduardo M.",
-        detail: "Implante",
+        name: "Rafael T.",
+        detail: "Almoço de domingo",
         quote:
-          "Explicaram cada etapa com calma e o planejamento digital me deixou muito seguro. Cirurgia tranquila, recuperação rápida.",
+          "Melhor pizza de Campinas, sem exagero. Massa leve, borda perfeita e a varanda é ótima para ir com o cachorro.",
         rating: 5,
       },
       {
-        name: "Patrícia L.",
-        detail: "Mãe do Theo, 6 anos",
+        name: "Beatriz e Paulo",
+        detail: "Noite a dois",
         quote:
-          "Meu filho tinha pavor de dentista. Hoje ele pergunta quando vai voltar! A Dra. Marina tem uma paciência incrível.",
+          "A sommelière acertou em cheio na harmonização. Ambiente aconchegante, música baixa e comida de outro nível.",
         rating: 5,
       },
       {
-        name: "Bruno S.",
-        detail: "Alinhadores invisíveis",
-        quote:
-          "Ver a simulação 3D antes de começar fez toda diferença. Ninguém percebe que estou usando os alinhadores.",
+        name: "Henrique S.",
+        detail: "Evento da empresa",
+        quote: "Fechamos o salão para 40 pessoas. Organização perfeita, menu fechado delicioso e preço justo.",
         rating: 5,
       },
       {
-        name: "Juliana F.",
-        detail: "Lentes de contato dental",
+        name: "Carla M.",
+        detail: "Vegetariana",
         quote:
-          "Fiz o ensaio estético antes e pude aprovar o formato. Ficou exatamente como eu imaginava, muito natural.",
+          "Finalmente um restaurante de brasa com opções vegetarianas de verdade. O risoto e a salada na brasa são incríveis.",
         rating: 5,
       },
       {
-        name: "Sérgio A.",
-        detail: "Limpeza e prevenção",
-        quote:
-          "Atendimento pontual, clínica impecável e horário à noite que encaixa na minha rotina. Virei paciente fiel.",
+        name: "Diego F.",
+        detail: "Happy hour",
+        quote: "Fila no sábado, mas a reserva pelo WhatsApp resolveu. Vale cada minuto — peça a costela e o pudim.",
         rating: 4,
       },
     ],
@@ -413,147 +413,137 @@ export const site: SiteConfig = {
 
   payment: {
     heading: {
-      eyebrow: "Convênios e pagamento",
-      title: "Cuidar do sorriso cabe no seu planejamento",
-      description: "Trabalhamos com os principais convênios e condições facilitadas para tratamentos particulares.",
+      eyebrow: "Ambiente e pagamento",
+      title: "Um lugar para todo mundo à mesa",
+      description: "Pensamos em cada detalhe para que a sua visita seja tranquila — de crianças a pets.",
     },
-    insurancesTitle: "Convênios aceitos",
+    insurancesTitle: "Comodidades",
+    insurancesIcon: "heartHandshake",
     insurances: [
-      "SorriaMais Saúde",
-      "OdontoPrime",
-      "Vida Dental",
-      "BemEstar Odonto",
-      "Plano Sorriso Total",
-      "DentalCare Brasil",
-      "UniOdonto Campinas",
+      "Pet friendly",
+      "Área kids",
+      "Opções veganas",
+      "Sem glúten sob pedido",
+      "Acessível",
+      "Wi-Fi",
+      "Manobrista",
     ],
     methodsTitle: "Formas de pagamento",
     methods: [
       { icon: "qrCode", label: "Pix" },
-      { icon: "creditCard", label: "Cartão de crédito" },
-      { icon: "banknote", label: "Débito e dinheiro" },
+      { icon: "creditCard", label: "Crédito e débito" },
+      { icon: "banknote", label: "Vale-refeição" },
     ],
     installments: {
-      title: "Parcelamos em até 12x",
-      description: "no cartão de crédito, para tratamentos particulares.",
+      title: "Eventos para até 60 pessoas",
+      description: "com menu fechado, bolo da casa e salão reservado.",
+      icon: "partyPopper",
     },
-    note: "Convênios fictícios, apenas para demonstração. Consulte a cobertura do seu plano.",
+    note: "Informe alergias e restrições na reserva — adaptamos o preparo sempre que possível.",
   },
 
   faq: {
     heading: {
       eyebrow: "Dúvidas frequentes",
-      title: "Perguntas que sempre recebemos",
+      title: "Antes de você chegar",
     },
-    contactPrompt: "Não encontrou sua dúvida?",
+    contactPrompt: "Ficou alguma dúvida?",
     contactCta: { label: "Fale com a gente no WhatsApp", href: "#agendar" },
     items: [
       {
-        question: "A primeira avaliação tem custo?",
+        question: "Preciso de reserva?",
         answer:
-          "A avaliação inicial inclui exame clínico, fotos e orientação sobre as opções de tratamento. Consulte as condições vigentes pelo WhatsApp — para pacientes de convênios aceitos, ela é coberta pelo plano.",
+          "Não é obrigatório, mas recomendamos para sextas, sábados e almoço de domingo. Pelo WhatsApp a confirmação é rápida.",
       },
       {
-        question: "O clareamento dental deixa os dentes sensíveis?",
-        answer:
-          "Usamos géis de baixa concentração e dessensibilizantes antes e depois das sessões. A maioria dos pacientes relata sensibilidade leve ou nenhuma.",
+        question: "Vocês aceitam pets?",
+        answer: "Sim! Pets são bem-vindos na varanda, com pote de água e petisco por conta da casa.",
       },
       {
-        question: "Quanto tempo dura um tratamento com alinhadores?",
+        question: "Há opções vegetarianas, veganas e sem glúten?",
         answer:
-          "Depende de cada caso, mas a média fica entre 6 e 18 meses. Na avaliação você vê a simulação 3D com o número estimado de etapas.",
+          "Sim. Temos pratos vegetarianos fixos, pizza vegana e vários itens sem glúten. Avise sobre alergias na reserva.",
       },
       {
-        question: "Implante dói?",
+        question: "Posso comemorar aniversário?",
         answer:
-          "O procedimento é feito com anestesia local e planejamento guiado, o que reduz o tempo de cirurgia. O pós-operatório costuma ser tranquilo, controlado com medicação simples.",
-      },
-      {
-        question: "A partir de que idade a criança deve ir ao dentista?",
-        answer:
-          "Recomendamos a primeira consulta assim que nasce o primeiro dente, ou até 1 ano de idade. Quanto antes, mais natural fica a relação com o cuidado bucal.",
-      },
-      {
-        question: "Vocês atendem urgências?",
-        answer:
-          "Sim. Em casos de dor ou acidente, chame no WhatsApp: encaixamos atendimentos de urgência no mesmo dia sempre que possível.",
-      },
-      {
-        question: "Quais formas de pagamento são aceitas?",
-        answer:
-          "Pix, cartões de débito e crédito (em até 12x) e dinheiro. Também atendemos diversos convênios odontológicos.",
+          "Claro. Conte na reserva e preparamos uma surpresa. Para grupos acima de 15 pessoas, temos menu fechado.",
       },
       {
         question: "Tem estacionamento?",
-        answer:
-          "Sim, temos estacionamento conveniado em frente à clínica e a recepção é totalmente acessível.",
+        answer: "Temos manobrista a partir das 19h e estacionamento conveniado na mesma rua durante o almoço.",
+      },
+      {
+        question: "Cobram taxa de rolha?",
+        answer: "Sim, R$ 50 por garrafa, isenta na compra de um rótulo da nossa carta.",
+      },
+      {
+        question: "Quais formas de pagamento são aceitas?",
+        answer: "Pix, cartões de crédito e débito e as principais bandeiras de vale-refeição.",
       },
     ],
   },
 
   booking: {
     heading: {
-      eyebrow: "Agendamento",
-      title: "Agende sua avaliação em menos de 1 minuto",
-      description:
-        "Preencha os dados abaixo e continue a conversa direto no WhatsApp com nossa equipe de recepção.",
+      eyebrow: "Reservas",
+      title: "Reserve sua mesa em menos de 1 minuto",
+      description: "Preencha os dados e continue a conversa no WhatsApp — confirmamos a sua mesa por lá.",
     },
     benefits: [
-      "Resposta rápida no horário comercial",
-      "Horários de manhã, tarde e noite",
-      "Sem compromisso: tire suas dúvidas primeiro",
+      "Confirmação rápida pelo WhatsApp",
+      "Mesas no salão, varanda ou balcão da parrilla",
+      "Avise a ocasião e preparamos uma surpresa",
     ],
     form: {
-      name: { label: "Nome completo", placeholder: "Como podemos te chamar?" },
+      name: { label: "Nome completo", placeholder: "Em nome de quem fica a reserva?" },
       phone: { label: "WhatsApp", placeholder: "(19) 99999-9999" },
       treatment: {
-        label: "Tratamento de interesse",
-        placeholder: "Selecione uma opção",
+        label: "Número de pessoas",
+        placeholder: "Selecione",
         options: [
-          { value: "avaliacao", label: "Avaliação geral" },
-          { value: "clareamento", label: "Clareamento dental" },
-          { value: "implantes", label: "Implantes" },
-          { value: "ortodontia", label: "Ortodontia / Alinhadores" },
-          { value: "lentes", label: "Lentes de contato dental" },
-          { value: "limpeza", label: "Limpeza e prevenção" },
-          { value: "odontopediatria", label: "Odontopediatria" },
+          { value: "1-2", label: "1 a 2 pessoas" },
+          { value: "3-4", label: "3 a 4 pessoas" },
+          { value: "5-6", label: "5 a 6 pessoas" },
+          { value: "7-10", label: "7 a 10 pessoas" },
+          { value: "evento", label: "Evento (mais de 10)" },
         ],
       },
       period: {
-        label: "Melhor período",
+        label: "Refeição",
         options: [
-          { value: "manha", label: "Manhã" },
-          { value: "tarde", label: "Tarde" },
-          { value: "noite", label: "Noite" },
+          { value: "almoco", label: "Almoço" },
+          { value: "jantar", label: "Jantar" },
+          { value: "evento", label: "Evento" },
         ],
       },
       message: {
-        label: "Mensagem (opcional)",
-        placeholder: "Conte um pouco sobre o que você procura…",
+        label: "Data, horário e observações",
+        placeholder: "Ex.: sábado, 20h — aniversário, cadeirinha para bebê…",
       },
-      submit: "Enviar pelo WhatsApp",
-      privacy: "Seus dados são usados apenas para o contato sobre o agendamento.",
+      submit: "Reservar pelo WhatsApp",
+      privacy: "Seus dados são usados apenas para confirmar a reserva.",
       errors: {
         nameMin: "Informe seu nome (mínimo de 3 letras).",
         nameMax: "Nome muito longo.",
         phone: "Informe um WhatsApp válido com DDD.",
-        treatment: "Selecione o tratamento de interesse.",
-        period: "Escolha o melhor período.",
+        treatment: "Selecione o número de pessoas.",
+        period: "Escolha almoço, jantar ou evento.",
         messageMax: "A mensagem pode ter no máximo 500 caracteres.",
       },
       buildMessage: ({ name, phone, treatment, period, message }) =>
         [
-          "Olá, Odonto Aurora! Gostaria de agendar uma avaliação.",
+          "Olá, Alecrim & Brasa! Gostaria de reservar uma mesa.",
           "",
           `*Nome:* ${name}`,
           `*WhatsApp:* ${phone}`,
-          `*Tratamento:* ${treatment}`,
-          `*Melhor período:* ${period}`,
-          ...(message ? [`*Mensagem:* ${message}`] : []),
+          `*Pessoas:* ${treatment}`,
+          `*Refeição:* ${period}`,
+          ...(message ? [`*Data e observações:* ${message}`] : []),
         ].join("\n"),
       toast: {
         title: "Tudo certo! Abrindo o WhatsApp…",
-        description: "Sua mensagem já está pronta. É só tocar em enviar.",
+        description: "Sua reserva já está escrita. É só tocar em enviar.",
       },
     },
   },
@@ -562,10 +552,10 @@ export const site: SiteConfig = {
     heading: {
       eyebrow: "Localização",
       title: "Venha nos visitar",
-      description: "Fácil acesso, estacionamento conveniado e recepção acessível.",
+      description: "Fácil de chegar, com manobrista à noite e varanda pet friendly.",
     },
     addressTitle: "Endereço",
-    hoursTitle: "Horário de atendimento",
+    hoursTitle: "Horário de funcionamento",
     contactTitle: "Contato",
     directionsCta: "Como chegar",
     mapCaption: "Campinas – SP",
@@ -573,13 +563,12 @@ export const site: SiteConfig = {
 
   footer: {
     about:
-      "Odontologia moderna e humanizada em Campinas. Cuidamos do seu sorriso com técnica, tecnologia e acolhimento.",
+      "Cozinha de fogo em Campinas: carnes na brasa, pizzas de fermentação natural e ingredientes de pequenos produtores.",
     linksTitle: "Navegação",
     contactTitle: "Contato",
     socialTitle: "Redes sociais",
     rights: "Todos os direitos reservados.",
-    disclaimer:
-      "Clínica, profissionais, registros, convênios e depoimentos são fictícios.",
+    disclaimer: "Restaurante, equipe, preços, CNPJ e avaliações são fictícios.",
     portfolioPrefix: "Projeto fictício desenvolvido para portfólio por",
     backToTop: "Voltar ao topo",
   },
