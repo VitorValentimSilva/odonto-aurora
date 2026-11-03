@@ -49,12 +49,18 @@ try {
   await page.keyboard.press("Enter");
   await page.waitForSelector('[role="option"]');
   const options = await page.$$('[role="option"]');
-  await options[1].click(); // Clareamento dental
+  const optionLabel = (await options[1].evaluate((el) => el.textContent ?? "")).trim();
+  await options[1].click();
   await page.waitForFunction(() => !document.querySelector('[role="listbox"]'));
 
   const periodLabels = await page.$$(`${form} fieldset label`);
-  await periodLabels[1].click(); // Tarde
-  await page.type(`${form} textarea[name="message"]`, "Tenho sensibilidade nos dentes.");
+  const periodLabel = (await periodLabels[1].evaluate((el) => el.textContent ?? "")).trim();
+  await periodLabels[1].click();
+  await page.type(`${form} textarea[name="message"]`, "Mensagem de teste automatizado.");
+
+  // Número esperado: o mesmo usado nos links de WhatsApp da página (vem do site.ts).
+  const waHref = await page.$eval('a[href^="https://wa.me/"]', (a) => a.getAttribute("href") ?? "");
+  const expectedBase = new URL(waHref).origin + new URL(waHref).pathname;
 
   await page.click(`${form} button[type="submit"]`);
   await page.waitForFunction(() => window.__opened.length > 0, { timeout: 5000 });
@@ -64,8 +70,8 @@ try {
   console.log("URL:", `${parsed.origin}${parsed.pathname}`);
   console.log("Mensagem:\n" + text);
 
-  assert.equal(parsed.origin + parsed.pathname, "https://wa.me/5519999999999");
-  for (const piece of ["Maria Teste", "(19) 98765-4321", "Clareamento dental", "Tarde", "Tenho sensibilidade"]) {
+  assert.equal(parsed.origin + parsed.pathname, expectedBase);
+  for (const piece of ["Maria Teste", "(19) 98765-4321", optionLabel, periodLabel, "Mensagem de teste"]) {
     assert.ok(text.includes(piece), `mensagem deveria conter "${piece}"`);
   }
 

@@ -68,7 +68,7 @@ export function BookingForm() {
             <FormItem className="sm:col-span-2">
               <FormLabel>{copy.name.label}</FormLabel>
               <FormControl>
-                <Input autoComplete="name" placeholder={copy.name.placeholder} className="h-12 rounded-xl bg-background px-4 text-base" {...field} />
+                <Input autoComplete="name" placeholder={copy.name.placeholder} className="h-12 rounded-xl bg-background px-4 text-base md:text-base" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -87,7 +87,7 @@ export function BookingForm() {
                   inputMode="numeric"
                   autoComplete="tel-national"
                   placeholder={copy.phone.placeholder}
-                  className="h-12 rounded-xl bg-background px-4 text-base"
+                  className="h-12 rounded-xl bg-background px-4 text-base md:text-base"
                   {...field}
                   onChange={(e) => field.onChange(formatBrazilianPhone(e.target.value))}
                 />
@@ -105,7 +105,7 @@ export function BookingForm() {
               <FormLabel>{copy.treatment.label}</FormLabel>
               <Select onValueChange={field.onChange} value={field.value} name={field.name}>
                 <FormControl>
-                  <SelectTrigger onBlur={field.onBlur} ref={field.ref} className="h-12! w-full rounded-xl bg-background px-4 text-base">
+                  <SelectTrigger onBlur={field.onBlur} ref={field.ref} className="h-12! w-full rounded-xl bg-background px-4 text-base md:text-base">
                     <SelectValue placeholder={copy.treatment.placeholder} />
                   </SelectTrigger>
                 </FormControl>
@@ -175,7 +175,7 @@ export function BookingForm() {
             <FormItem className="sm:col-span-2">
               <FormLabel>{copy.message.label}</FormLabel>
               <FormControl>
-                <Textarea rows={4} placeholder={copy.message.placeholder} className="min-h-28 rounded-xl bg-background px-4 py-3 text-base" {...field} />
+                <Textarea rows={4} placeholder={copy.message.placeholder} className="min-h-28 rounded-xl bg-background px-4 py-3 text-base md:text-base" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

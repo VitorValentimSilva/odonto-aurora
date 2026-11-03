@@ -12,9 +12,32 @@ import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
+
+  // Scrollspy: destaca no menu a seção que ocupa o meio da tela.
+  useEffect(() => {
+    const sections = site.nav
+      .map((item) => document.querySelector<HTMLElement>(item.href))
+      .filter((el): el is HTMLElement => el !== null);
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          // No topo da página (hero) nenhum item fica ativo.
+          setActive(window.scrollY < window.innerHeight * 0.5 ? null : `#${entry.target.id}`);
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+      if (window.scrollY < window.innerHeight * 0.5) setActive(null);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -40,7 +63,8 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="rounded-full px-3 py-2 text-sm font-medium text-foreground/75 transition-colors hover:bg-secondary hover:text-foreground"
+                  aria-current={active === item.href ? "true" : undefined}
+                  className="relative rounded-full px-3 py-2 text-sm font-medium text-foreground/75 transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-primary after:transition-transform hover:bg-secondary hover:text-foreground aria-[current=true]:text-foreground aria-[current=true]:after:scale-x-100"
                 >
                   {item.label}
                 </a>
@@ -77,7 +101,8 @@ export function SiteHeader() {
                       <SheetClose asChild>
                         <a
                           href={item.href}
-                          className="flex rounded-xl px-4 py-3 text-base font-medium transition-colors hover:bg-secondary"
+                          aria-current={active === item.href ? "true" : undefined}
+                          className="flex rounded-xl px-4 py-3 text-base font-medium transition-colors hover:bg-secondary aria-[current=true]:bg-secondary aria-[current=true]:text-primary"
                         >
                           {item.label}
                         </a>

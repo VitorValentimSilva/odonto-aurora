@@ -9,17 +9,17 @@ import { getIcon } from "@/lib/icons";
 export function Payment() {
   const { payment } = site;
   return (
-    <section id="convenios" aria-labelledby="convenios-title" className="py-20 sm:py-24">
+    <section id="convenios" aria-labelledby="convenios-title" className="bg-secondary/50 py-20 sm:py-24">
       <Container>
         <SectionHeading id="convenios-title" {...payment.heading} />
 
         <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-[1.4fr_1fr]">
-          <Reveal className="rounded-3xl border bg-card p-6 shadow-soft sm:p-8">
+          <Reveal className="flex flex-col rounded-3xl border bg-card p-6 shadow-soft sm:p-8">
             <h3 className="flex items-center gap-2 text-lg font-bold">
               <ShieldCheck className="size-5 text-primary" aria-hidden="true" />
               {payment.insurancesTitle}
             </h3>
-            <Stagger as="ul" stagger={0.05} className="mt-5 flex flex-wrap gap-2.5">
+            <Stagger as="ul" stagger={0.05} className="mt-5 flex flex-1 flex-wrap content-start gap-2.5 pb-6">
               {payment.insurances.map((name) => (
                 <StaggerItem
                   as="li"
@@ -30,7 +30,7 @@ export function Payment() {
                 </StaggerItem>
               ))}
             </Stagger>
-            <p className="mt-6 text-xs text-muted-foreground">{payment.note}</p>
+            <p className="border-t pt-5 text-xs text-muted-foreground">{payment.note}</p>
           </Reveal>
 
           <Reveal delay={0.1} className="relative flex flex-col overflow-hidden rounded-3xl bg-accent p-6 text-accent-foreground shadow-soft sm:p-8">

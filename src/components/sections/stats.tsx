@@ -23,13 +23,13 @@ export function Stats() {
             <h2 id="stats-title" className="mx-auto mt-2 max-w-xl text-center text-2xl font-bold sm:text-3xl">
               {stats.heading.title}
             </h2>
-            <Stagger as="ul" className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4">
+            <Stagger as="ul" className="mt-10 grid grid-cols-2 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-white/15">
               {stats.items.map((stat) => (
-                <StaggerItem as="li" key={stat.label} className="flex flex-col items-center text-center">
+                <StaggerItem as="li" key={stat.label} className="flex flex-col items-center px-2 text-center">
                   <span className="font-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
                     <Counter stat={stat} locale={site.lang} />
                   </span>
-                  <span className="mt-2 text-sm text-primary-foreground/85 sm:text-base">{stat.label}</span>
+                  <span className="mt-1.5 text-sm text-balance text-primary-foreground/80 sm:text-base">{stat.label}</span>
                 </StaggerItem>
               ))}
             </Stagger>
