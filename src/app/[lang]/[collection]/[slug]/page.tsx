@@ -11,40 +11,48 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { site } from "@/config/site";
-import { findItem, itemPath } from "@/lib/items";
+import { getSite } from "@/lib/i18n";
+import { findItem } from "@/lib/items";
 import { buildItemJsonLd } from "@/lib/json-ld";
-import { homeHref } from "@/lib/links";
+import { homeHref, itemPath, localePath } from "@/lib/paths";
+import { alternatesFor } from "@/lib/seo";
 import { currentYear } from "@/lib/year";
 
 type Params = { collection: string; slug: string };
 
-export function generateStaticParams(): Params[] {
+export async function generateStaticParams(): Promise<Params[]> {
+  const site = await getSite();
   return site.treatments.items.map((item) => ({ collection: site.treatments.basePath, slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const site = await getSite();
   const { collection, slug } = await params;
-  const item = findItem(collection, slug);
+  const item = findItem(site, collection, slug);
   if (!item) return {};
-  const path = itemPath(item.slug);
+  const index = site.treatments.items.indexOf(item);
+  const path = itemPath(site, item.slug);
   return {
     title: item.title,
     description: item.details.metaDescription,
-    alternates: { canonical: path },
+    alternates: alternatesFor(site, (s) => {
+      const equivalent = s.treatments.items[index];
+      return equivalent ? itemPath(s, equivalent.slug) : null;
+    }),
     openGraph: { title: `${item.title} | ${site.brand.name}`, description: item.details.metaDescription, url: path },
   };
 }
 
 export default async function ItemPage({ params }: { params: Promise<Params> }) {
+  const site = await getSite();
   const { collection, slug } = await params;
-  const item = findItem(collection, slug);
+  const item = findItem(site, collection, slug);
   if (!item) notFound();
 
   const year = await currentYear();
   const { page, items } = site.treatments;
   const related = items.filter((i) => i.slug !== item.slug).slice(0, 3);
-  const jsonLd = buildItemJsonLd(item);
+  const jsonLd = buildItemJsonLd(site, item);
 
   return (
     <>
@@ -64,7 +72,7 @@ export default async function ItemPage({ params }: { params: Promise<Params> }) 
             <nav aria-label={page.breadcrumbLabel}>
               <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
                 <li>
-                  <Link href="/" className="hover:text-foreground hover:underline">
+                  <Link href={localePath(site, "/")} className="hover:text-foreground hover:underline">
                     {page.breadcrumbHome}
                   </Link>
                 </li>
@@ -72,7 +80,7 @@ export default async function ItemPage({ params }: { params: Promise<Params> }) 
                   <ChevronRight className="size-3.5" />
                 </li>
                 <li>
-                  <Link href={`/#${site.sections.treatments}`} className="hover:text-foreground hover:underline">
+                  <Link href={homeHref(site, `#${site.sections.treatments}`)} className="hover:text-foreground hover:underline">
                     {page.breadcrumbLabel}
                   </Link>
                 </li>
@@ -114,7 +122,7 @@ export default async function ItemPage({ params }: { params: Promise<Params> }) 
 
             <p className="mt-8 text-lg text-pretty text-foreground/85 sm:text-xl">{item.details.intro}</p>
             <Button asChild size="xl" className="mt-8 shadow-lift">
-              <a href={homeHref(page.cta.button.href)}>
+              <a href={homeHref(site, page.cta.button.href)}>
                 <WhatsAppIcon />
                 {page.cta.button.label}
               </a>
@@ -179,7 +187,7 @@ export default async function ItemPage({ params }: { params: Promise<Params> }) 
               {related.map((r) => (
                 <li key={r.slug}>
                   <Link
-                    href={itemPath(r.slug)}
+                    href={itemPath(site, r.slug)}
                     className="group flex h-full flex-col rounded-3xl border bg-card p-6 shadow-soft transition-[box-shadow,border-color] hover:border-primary/25 hover:shadow-lift"
                   >
                     <span className="grid size-11 place-items-center rounded-2xl bg-secondary text-primary">
@@ -202,7 +210,7 @@ export default async function ItemPage({ params }: { params: Promise<Params> }) 
                 <p className="mt-1 text-primary-foreground/85">{page.cta.description}</p>
               </div>
               <Button asChild size="xl" variant="secondary" className="shrink-0">
-                <a href={homeHref(page.cta.button.href)}>
+                <a href={homeHref(site, page.cta.button.href)}>
                   <WhatsAppIcon />
                   {page.cta.button.label}
                 </a>

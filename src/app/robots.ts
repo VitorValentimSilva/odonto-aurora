@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { site } from "@/config/site";
+import { defaultLocale, sites } from "@/config/site";
+
+const site = sites[defaultLocale];
 
 export default function robots(): MetadataRoute.Robots {
   return {
