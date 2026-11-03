@@ -24,7 +24,8 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 - **Motion** (`motion/react`, com `LazyMotion`) para animações
 - **lucide-react** para ícones · **next/font** com Plus Jakarta Sans (títulos) e Inter (texto)
 - **react-hook-form** + **zod** no formulário · **sonner** para notificações
-- **puppeteer-core** (dev) para screenshots e teste do formulário
+- **Playwright** + **axe** (testes E2E e de acessibilidade), **Lighthouse CI** e **GitHub Actions**
+- **puppeteer-core** (dev) para os screenshots
 
 ## Funcionalidades
 
@@ -66,7 +67,8 @@ npm run lint         # ESLint
 npm run build        # build de produção
 npm run start        # serve o build de produção
 npm run screenshots  # (com o start rodando) gera docs/screenshots/{mobile,desktop}.png
-npm run test:form    # (com o start rodando) testa validação e link do WhatsApp
+npm run test:e2e     # (depois do build) testes E2E: formulário, menu, âncoras, overflow, acessibilidade, SEO
+npm run lhci         # (depois do build) Lighthouse CI mobile e desktop com notas mínimas
 ```
 
 Os scripts com puppeteer usam o Chrome da máquina: defina `CHROME_PATH` (padrão `/usr/bin/google-chrome`).
@@ -115,7 +117,9 @@ src/
     motion/            Reveal/Stagger/HoverCard (animações reutilizáveis)
     ui/                componentes do shadcn/ui
   lib/                 ícones, links (wa.me/Maps), máscara de telefone, JSON-LD
-scripts/               screenshots e teste do formulário (puppeteer-core)
+scripts/               screenshots (puppeteer-core)
+tests/e2e/             testes Playwright (rodam no CI a cada PR)
+.github/workflows/     CI: lint, build, E2E e Lighthouse
 docs/screenshots/      prints usados neste README
 ```
 
