@@ -11,10 +11,11 @@ export function buildLocalBusinessJsonLd() {
     description: site.brand.description,
     url: site.url,
     image: `${site.url}/opengraph-image`,
-    logo: `${site.url}/icon.svg`,
+    logo: `${site.url}/apple-icon`,
     telephone: site.contact.phone,
     email: site.contact.email,
     priceRange: site.brand.priceRange,
+    ...(site.brand.servesCuisine ? { servesCuisine: site.brand.servesCuisine } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -45,9 +46,10 @@ export function buildLocalBusinessJsonLd() {
       jobTitle: m.role,
     })),
     availableService: site.treatments.items.map((t) => ({
-      "@type": "MedicalProcedure",
+      "@type": site.seo.serviceSchemaType,
       name: t.title,
       description: t.description,
+      ...(t.price ? { offers: { "@type": "Offer", price: t.price.replace(/[^\d,]/g, "").replace(",", "."), priceCurrency: "BRL" } } : {}),
     })),
   };
 }

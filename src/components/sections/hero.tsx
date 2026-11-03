@@ -19,8 +19,8 @@ export function Hero() {
     <section id="inicio" aria-labelledby="hero-title" className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36 lg:pb-24">
       {/* fundo */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
-        <div className="absolute -top-40 -right-40 size-[36rem] rounded-full bg-[radial-gradient(circle,oklch(0.93_0.04_195),transparent_65%)]" />
-        <div className="absolute top-1/3 -left-48 size-[30rem] rounded-full bg-[radial-gradient(circle,oklch(0.95_0.035_50),transparent_65%)]" />
+        <div className="absolute -top-40 -right-40 size-[36rem] rounded-full bg-[radial-gradient(circle,var(--glow-cool),transparent_65%)]" />
+        <div className="absolute top-1/3 -left-48 size-[30rem] rounded-full bg-[radial-gradient(circle,var(--glow-warm),transparent_65%)]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 

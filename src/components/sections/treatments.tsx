@@ -23,7 +23,7 @@ export function Treatments() {
                 <HoverCard className="group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-card p-5 shadow-soft transition-[box-shadow,border-color] duration-300 hover:border-primary/25 hover:shadow-lift sm:p-7">
                   <div
                     aria-hidden="true"
-                    className="absolute -top-16 -right-16 size-40 rounded-full bg-[radial-gradient(circle,oklch(0.94_0.04_50),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="absolute -top-16 -right-16 size-40 rounded-full bg-[radial-gradient(circle,var(--glow-warm),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
                   <div className="relative flex items-center gap-4 sm:flex-col sm:items-start sm:gap-5">
                     <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-secondary text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground sm:size-13">
@@ -42,14 +42,21 @@ export function Treatments() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={treatments.cardCta.href}
-                    className="relative mt-auto inline-flex items-center gap-1.5 self-start pt-4 text-sm sm:pt-5 font-semibold text-primary underline-offset-4 hover:underline"
-                  >
-                    {treatments.cardCta.label}
-                    <span className="sr-only">: {item.title}</span>
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                  </a>
+                  <div className="relative mt-auto flex items-center justify-between gap-3 pt-4 sm:pt-5">
+                    <a
+                      href={treatments.cardCta.href}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                    >
+                      {treatments.cardCta.label}
+                      <span className="sr-only">: {item.title}</span>
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                    </a>
+                    {item.price && (
+                      <span className="rounded-full bg-accent px-3 py-1 font-heading text-sm font-bold text-accent-foreground">
+                        {item.price}
+                      </span>
+                    )}
+                  </div>
                 </HoverCard>
               </StaggerItem>
             );

@@ -10,10 +10,10 @@ import { buildMapsUrl } from "@/lib/links";
 /** Mapa ilustrativo em SVG (sem iframe, sem requisições externas). */
 function MapIllustration({ caption }: { caption: string }) {
   return (
-    <div className="relative h-full min-h-64 overflow-hidden rounded-3xl bg-[oklch(0.95_0.02_190)]">
+    <div className="relative h-full min-h-64 overflow-hidden rounded-3xl bg-map-bg">
       <svg aria-hidden="true" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 size-full">
-        <rect width="400" height="300" fill="oklch(0.95 0.02 190)" />
-        <path d="M-20 210C60 180 120 240 200 200s140-90 230-60" fill="none" stroke="oklch(0.85 0.05 210)" strokeWidth="22" />
+        <rect width="400" height="300" style={{ fill: "var(--map-bg)" }} />
+        <path d="M-20 210C60 180 120 240 200 200s140-90 230-60" fill="none" style={{ stroke: "var(--map-water)" }} strokeWidth="22" />
         <g stroke="white" strokeWidth="10" strokeLinecap="round" fill="none">
           <path d="M-10 90h420" />
           <path d="M120-10v320" />
@@ -23,10 +23,10 @@ function MapIllustration({ caption }: { caption: string }) {
         <g stroke="white" strokeWidth="4" fill="none" opacity="0.8">
           <path d="M-10 40h420M-10 150h420M60-10v320M200-10v320M350-10v320" />
         </g>
-        <rect x="140" y="105" width="40" height="30" rx="6" fill="oklch(0.9 0.05 150)" />
-        <rect x="305" y="20" width="60" height="50" rx="8" fill="oklch(0.9 0.05 150)" />
-        <circle cx="205" cy="120" r="46" fill="oklch(0.47 0.085 205 / 0.12)" />
-        <circle cx="205" cy="120" r="24" fill="oklch(0.47 0.085 205 / 0.18)" />
+        <rect x="140" y="105" width="40" height="30" rx="6" style={{ fill: "var(--map-park)" }} />
+        <rect x="305" y="20" width="60" height="50" rx="8" style={{ fill: "var(--map-park)" }} />
+        <circle cx="205" cy="120" r="46" className="fill-primary/12" />
+        <circle cx="205" cy="120" r="24" className="fill-primary/18" />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[85%]">
         <span className="grid size-14 place-items-center rounded-full rounded-br-none bg-primary text-primary-foreground shadow-lift [transform:rotate(45deg)]">

@@ -4,51 +4,74 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Tema "saúde premium": base off-white, primária azul-petróleo (teal escuro)
- * e acento quente pêssego/coral. Todos os pares texto/fundo usados atendem WCAG AA.
+ * Tema "restaurante de fogo": base off-white quente, primária terracota,
+ * creme/manteiga como acento e açafrão nos detalhes. Pares texto/fundo em WCAG AA.
  */
 :root {
   --radius: 1rem;
 
-  --background: oklch(0.989 0.004 196);
-  --foreground: oklch(0.24 0.035 222);
+  --background: oklch(0.985 0.009 75);
+  --foreground: oklch(0.25 0.03 45);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.035 222);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.035 222);
+  --card: oklch(0.997 0.003 80);
+  --card-foreground: oklch(0.25 0.03 45);
+  --popover: oklch(0.997 0.003 80);
+  --popover-foreground: oklch(0.25 0.03 45);
 
-  /* azul-petróleo: branco sobre ele ≈ 6.4:1 */
-  --primary: oklch(0.47 0.085 205);
-  --primary-foreground: oklch(0.99 0.004 196);
+  /* terracota: branco por cima ≈ 5.6:1 */
+  --primary: oklch(0.48 0.13 35);
+  --primary-foreground: oklch(0.99 0.006 80);
 
-  --secondary: oklch(0.955 0.022 196);
-  --secondary-foreground: oklch(0.32 0.06 210);
+  --secondary: oklch(0.955 0.024 70);
+  --secondary-foreground: oklch(0.38 0.09 38);
 
-  --muted: oklch(0.962 0.01 196);
-  --muted-foreground: oklch(0.47 0.03 222);
+  --muted: oklch(0.962 0.013 75);
+  --muted-foreground: oklch(0.46 0.035 50);
 
-  /* pêssego claro como superfície de destaque */
-  --accent: oklch(0.935 0.04 50);
-  --accent-foreground: oklch(0.38 0.09 35);
+  /* creme/manteiga como superfície de destaque */
+  --accent: oklch(0.94 0.055 88);
+  --accent-foreground: oklch(0.38 0.08 60);
 
-  /* coral mais intenso para detalhes gráficos (não para texto pequeno) */
-  --warm: oklch(0.78 0.11 42);
-  --warm-foreground: oklch(0.3 0.08 35);
+  /* açafrão para detalhes gráficos (não para texto pequeno) */
+  --warm: oklch(0.77 0.14 75);
+  --warm-foreground: oklch(0.32 0.07 60);
 
-  --destructive: oklch(0.53 0.2 27);
-  --border: oklch(0.91 0.014 205);
-  --input: oklch(0.88 0.018 205);
-  --ring: oklch(0.55 0.1 200);
+  --destructive: oklch(0.52 0.2 27);
+  --border: oklch(0.905 0.022 70);
+  --input: oklch(0.875 0.028 70);
+  --ring: oklch(0.56 0.13 38);
 
-  --chart-1: oklch(0.47 0.085 205);
-  --chart-2: oklch(0.78 0.11 42);
-  --chart-3: oklch(0.7 0.09 180);
-  --chart-4: oklch(0.85 0.06 80);
-  --chart-5: oklch(0.6 0.08 230);
+  --chart-1: oklch(0.48 0.13 35);
+  --chart-2: oklch(0.77 0.14 75);
+  --chart-3: oklch(0.6 0.08 130);
+  --chart-4: oklch(0.85 0.06 85);
+  --chart-5: oklch(0.4 0.06 30);
 
-  --shadow-soft: 0 1px 2px oklch(0.3 0.04 220 / 0.04), 0 8px 24px -8px oklch(0.3 0.06 210 / 0.12);
-  --shadow-lift: 0 2px 4px oklch(0.3 0.04 220 / 0.05), 0 24px 48px -16px oklch(0.35 0.08 205 / 0.22);
+  /* tons derivados da marca (gradientes, rodapé, ilustrações) */
+  --primary-deep: oklch(0.34 0.09 30);
+  --footer: oklch(0.21 0.03 40);
+  --footer-accent: oklch(0.83 0.11 75);
+  --glow-warm: oklch(0.93 0.055 75);
+  --glow-cool: oklch(0.92 0.04 130);
+  --whatsapp: #1f9d55;
+  --avatar-1a: oklch(0.55 0.13 35);
+  --avatar-1b: oklch(0.38 0.1 30);
+  --avatar-2a: oklch(0.78 0.13 75);
+  --avatar-2b: oklch(0.6 0.13 55);
+  --avatar-3a: oklch(0.6 0.08 130);
+  --avatar-3b: oklch(0.42 0.07 135);
+  --map-bg: oklch(0.955 0.02 85);
+  --map-water: oklch(0.86 0.04 220);
+  --map-park: oklch(0.9 0.06 130);
+  --illus-sun: oklch(0.86 0.13 75);
+  --illus-sun-2: oklch(0.74 0.15 50);
+  --illus-shade: oklch(0.93 0.02 80);
+  --illus-sparkle: oklch(0.9 0.11 85);
+  --logo-accent-a: oklch(0.85 0.12 75);
+  --logo-accent-b: oklch(0.93 0.08 90);
+
+  --shadow-soft: 0 1px 2px oklch(0.3 0.04 40 / 0.04), 0 8px 24px -8px oklch(0.3 0.06 40 / 0.12);
+  --shadow-lift: 0 2px 4px oklch(0.3 0.04 40 / 0.05), 0 24px 48px -16px oklch(0.35 0.08 35 / 0.22);
 }
 
 @theme inline {
@@ -71,6 +94,13 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-warm: var(--warm);
   --color-warm-foreground: var(--warm-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-footer: var(--footer);
+  --color-footer-accent: var(--footer-accent);
+  --color-glow-warm: var(--glow-warm);
+  --color-glow-cool: var(--glow-cool);
+  --color-whatsapp: var(--whatsapp);
+  --color-map-bg: var(--map-bg);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);

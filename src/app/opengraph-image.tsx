@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 import { site } from "@/config/site";
 
-import { ToothMark, brandColors as c, loadOgFonts } from "./og-shared";
+import { BrandMark, brandColors as c, loadOgFonts } from "./og-shared";
 
 export const alt = site.seo.ogImageAlt;
 export const size = { width: 1200, height: 630 };
@@ -17,7 +17,7 @@ export default async function OpengraphImage() {
           height: "100%",
           display: "flex",
           position: "relative",
-          background: `linear-gradient(135deg, ${c.background} 0%, #e6f3f3 55%, ${c.warmLight} 100%)`,
+          background: `linear-gradient(135deg, ${c.background} 0%, ${c.backgroundTint} 55%, ${c.warmLight} 100%)`,
           padding: 72,
           fontFamily: "Jakarta",
         }}
@@ -48,7 +48,7 @@ export default async function OpengraphImage() {
         />
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "100%" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            <ToothMark size={84} />
+            <BrandMark size={84} />
             <span style={{ fontSize: 44, fontWeight: 800, color: c.foreground }}>{site.brand.name}</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column", maxWidth: 860 }}>

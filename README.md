@@ -1,10 +1,13 @@
-# Odonto Aurora — landing page de clínica odontológica
+# Alecrim & Brasa — landing page de restaurante
 
-> **Projeto fictício para portfólio.** A clínica, os profissionais, os CROs, os convênios e os depoimentos são inventados.
+> **Projeto fictício para portfólio.** O restaurante, a equipe, os preços, o CNPJ e as avaliações são inventados.
 
-Landing page moderna, rápida e acessível para uma clínica odontológica fictícia em Campinas – SP. Feita para parecer
-um site real de agência: tipografia caprichada, paleta "saúde premium", animações sutis com Motion e agendamento que
-termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambiente**.
+Landing page de um restaurante fictício de cozinha de fogo em Campinas – SP, com **cardápio em destaque**, **reservas
+pelo WhatsApp** e **avaliações** — **sem backend, sem banco e sem variáveis de ambiente**.
+
+É o **mesmo template** da [Odonto Aurora](https://github.com/vitorvalentimsilva/odonto-aurora) (branch `main`):
+as seções e componentes são os mesmos; mudaram o `src/config/site.ts`, a paleta em `globals.css`, a ilustração do
+hero e o logo. Bom exemplo de como o template vira outro negócio sem reescrever a interface.
 
 **Demo:** (link)
 
@@ -12,7 +15,18 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 | --- | --- |
 | <img src="docs/screenshots/desktop.png" alt="Página completa no desktop" width="520" /> | <img src="docs/screenshots/mobile.png" alt="Página completa no celular" width="220" /> |
 
-> 🎨 Veja a [revisão de design com antes/depois](docs/revisao-design.md) (10 pontos de visual/UX corrigidos).
+### O que mudou em relação à clínica
+
+| | Odonto Aurora (`main`) | Alecrim & Brasa (`restaurante`) |
+| --- | --- | --- |
+| Paleta | azul-petróleo, pêssego e coral | terracota, creme/manteiga e açafrão |
+| Hero | ilustração de dente (`illustration: "tooth"`) | prato servido com vapor (`illustration: "dish"`) |
+| Logo | dente + arco de aurora | chama sobre a linha do prato (`brand.logo`) |
+| Seção de serviços | tratamentos | cardápio com preço (`price` opcional) |
+| Formulário | tratamento + período | número de pessoas + refeição, mensagem com data |
+| schema.org | `Dentist` + `MedicalProcedure` | `Restaurant` + `MenuItem` + `servesCuisine` |
+
+> 🎨 A [revisão de design com antes/depois](docs/revisao-design.md) foi feita na versão da clínica e vale para o template.
 
 ## Stack
 
@@ -31,13 +45,14 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 - Contadores animados ao entrar na tela, cards com hover animado, bento grid, timeline que "preenche" com a rolagem
 - Equipe com avatares de iniciais (aceita foto opcional via `next/image`)
 - Depoimentos em marquee com pausa (hover, foco e botão) e fallback estático para "reduzir movimento"
-- FAQ com Accordion, convênios em chips, "parcelamos em até 12x"
-- **Agendamento**: formulário com máscara de WhatsApp, Select de tratamento, período e validação zod → abre o
+- Cardápio em destaque com preço, comodidades em chips e card de eventos
+- FAQ com Accordion
+- **Reservas**: formulário com máscara de WhatsApp, Select de número de pessoas, refeição e validação zod → abre o
   `wa.me` com a mensagem pronta + toast de sucesso
 - Localização com mapa ilustrativo em SVG e botão "Como chegar" (Google Maps, sem iframe)
 - Botão flutuante do WhatsApp
 - **SEO**: metadata completa, Open Graph/Twitter gerados com `next/og`, ícones, `sitemap.xml`, `robots.txt`,
-  manifest e JSON-LD `Dentist` (schema.org) gerado do `site.ts`
+  manifest e JSON-LD `Restaurant` (schema.org) gerado do `site.ts`
 - **Acessibilidade**: HTML semântico, skip link, foco visível, rótulos ARIA, contraste AA e `MotionConfig reducedMotion="user"`
 
 ### Lighthouse (build de produção, local)
@@ -85,8 +100,12 @@ Para transformar o site em um restaurante, pet shop, estúdio etc.:
 5. A mensagem enviada ao WhatsApp é montada por `booking.form.buildMessage`, e as opções do formulário vêm de
    `booking.form.treatment.options` e `booking.form.period.options`.
 6. Atualize `author` com seu nome e link (aparece no rodapé: "Projeto fictício desenvolvido para portfólio por …").
-7. Cores: ajuste os tokens em `src/app/globals.css` (`--primary`, `--accent`, `--warm`…).
-8. Fotos reais (opcionais): veja [`public/images/README.md`](public/images/README.md).
+7. Cores: ajuste os tokens em `src/app/globals.css` (`--primary`, `--accent`, `--warm`, `--primary-deep`, `--footer`,
+   `--illus-*`…) e as cores em hex de `site.theme` (usadas na imagem Open Graph, favicon e manifest).
+8. Visual do hero e logo: `hero.visual.illustration` escolhe uma ilustração de
+   [`src/components/illustrations`](src/components/illustrations/index.tsx) e `brand.logo.glyph` é o desenho do logo
+   (path SVG em 40×40).
+9. Fotos reais (opcionais): veja [`public/images/README.md`](public/images/README.md).
 
 ## Deploy na Vercel
 

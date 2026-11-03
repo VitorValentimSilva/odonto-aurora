@@ -9,9 +9,9 @@ import { site } from "@/config/site";
 import type { TeamMember } from "@/config/types";
 
 const gradients = [
-  "from-[oklch(0.55_0.09_200)] to-[oklch(0.4_0.08_220)]",
-  "from-[oklch(0.78_0.1_45)] to-[oklch(0.62_0.12_30)]",
-  "from-[oklch(0.62_0.08_175)] to-[oklch(0.45_0.08_200)]",
+  "from-[var(--avatar-1a)] to-[var(--avatar-1b)]",
+  "from-[var(--avatar-2a)] to-[var(--avatar-2b)]",
+  "from-[var(--avatar-3a)] to-[var(--avatar-3b)]",
 ];
 
 function Avatar({ member, index }: { member: TeamMember; index: number }) {
