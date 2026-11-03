@@ -8,6 +8,9 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 
 **Demo:** (link)
 
+> 🔀 **Branches:** esta (`clinica`) é a versão clínica odontológica. O `main` traz o mesmo template trocado para um
+> restaurante fictício (Alecrim & Brasa) — só `site.ts`, paleta, ilustração e logo mudam.
+
 | Desktop (1440px) | Mobile (375px) |
 | --- | --- |
 | <img src="docs/screenshots/desktop.png" alt="Página completa no desktop" width="520" /> | <img src="docs/screenshots/mobile.png" alt="Página completa no celular" width="220" /> |
@@ -85,8 +88,12 @@ Para transformar o site em um restaurante, pet shop, estúdio etc.:
 5. A mensagem enviada ao WhatsApp é montada por `booking.form.buildMessage`, e as opções do formulário vêm de
    `booking.form.treatment.options` e `booking.form.period.options`.
 6. Atualize `author` com seu nome e link (aparece no rodapé: "Projeto fictício desenvolvido para portfólio por …").
-7. Cores: ajuste os tokens em `src/app/globals.css` (`--primary`, `--accent`, `--warm`…).
-8. Fotos reais (opcionais): veja [`public/images/README.md`](public/images/README.md).
+7. Cores: ajuste os tokens em `src/app/globals.css` (`--primary`, `--accent`, `--warm`, `--primary-deep`, `--footer`,
+   `--illus-*`…) e as cores em hex de `site.theme` (imagem Open Graph, favicon e manifest).
+8. Visual do hero e logo: `hero.visual.illustration` escolhe uma ilustração de
+   [`src/components/illustrations`](src/components/illustrations/index.tsx) e `brand.logo.glyph` é o desenho do logo
+   (path SVG em 40×40).
+9. Fotos reais (opcionais): veja [`public/images/README.md`](public/images/README.md).
 
 ## Deploy na Vercel
 

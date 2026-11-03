@@ -2,7 +2,8 @@
 
 @AGENTS.md
 
-Landing page de portfólio para uma clínica odontológica **fictícia**. Site estático, sem backend, sem banco,
+Landing page de portfólio para uma clínica odontológica **fictícia** (branch `clinica`; o `main` é a versão
+restaurante do mesmo template). Site estático, sem backend, sem banco,
 sem variáveis de ambiente. Deploy na Vercel sem configuração.
 
 ## Stack
@@ -23,6 +24,9 @@ sem variáveis de ambiente. Deploy na Vercel sem configuração.
 - Ícones são referenciados por nome (`IconName`) e resolvidos por `getIcon()` em `src/lib/icons.ts`.
 - Links: `buildWhatsAppUrl()` e `buildMapsUrl()` em `src/lib/links.ts`.
 - Fotos são opcionais (`hero.image`, `team.items[n].photo`) e renderizadas com `next/image`.
+- Ilustração do hero: `hero.visual.illustration` (mapa em `src/components/illustrations`); logo: `brand.logo`;
+  cores em hex para OG/favicon/manifest: `site.theme`. Ícone vindo do config fora de `.map()`: use `<Icon name=…/>`.
+- Nada de cor fixa nos componentes: use/crie tokens em `globals.css`.
 
 ## Comandos
 
