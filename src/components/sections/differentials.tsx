@@ -1,0 +1,63 @@
+import { Container } from "@/components/container";
+import { HoverCard } from "@/components/motion/hover-card";
+import { Stagger, StaggerItem } from "@/components/motion/reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { site } from "@/config/site";
+import { getIcon } from "@/lib/icons";
+import { cn } from "@/lib/utils";
+
+export function Differentials() {
+  const { differentials } = site;
+  return (
+    <section id="diferenciais" aria-labelledby="diferenciais-title" className="relative bg-secondary/50 py-20 sm:py-24">
+      <Container>
+        <SectionHeading id="diferenciais-title" {...differentials.heading} />
+
+        <Stagger as="ul" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {differentials.items.map((item, index) => {
+            const Icon = getIcon(item.icon);
+            const wide = item.size === "wide";
+            const featured = index === 0;
+            return (
+              <StaggerItem as="li" key={item.title} className={cn(wide && "sm:col-span-2")}>
+                <HoverCard
+                  className={cn(
+                    "relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-3xl border p-6 shadow-soft sm:p-7",
+                    featured ? "border-transparent bg-primary text-primary-foreground" : "bg-card",
+                  )}
+                >
+                  {featured && (
+                    <div
+                      aria-hidden="true"
+                      className="absolute -right-10 -bottom-24 size-72 rounded-full border-[28px] border-white/10"
+                    />
+                  )}
+                  {!featured && wide && (
+                    <div
+                      aria-hidden="true"
+                      className="absolute -right-12 -bottom-16 size-56 rounded-full bg-[radial-gradient(circle,oklch(0.93_0.05_50),transparent_70%)]"
+                    />
+                  )}
+                  <span
+                    className={cn(
+                      "relative grid size-12 place-items-center rounded-2xl",
+                      featured ? "bg-white/15 text-white" : "bg-accent text-accent-foreground",
+                    )}
+                  >
+                    <Icon className="size-6" aria-hidden="true" />
+                  </span>
+                  <div className="relative">
+                    <h3 className={cn("font-bold", wide ? "text-2xl" : "text-xl")}>{item.title}</h3>
+                    <p className={cn("mt-2 max-w-md", featured ? "text-primary-foreground/85" : "text-muted-foreground")}>
+                      {item.description}
+                    </p>
+                  </div>
+                </HoverCard>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </Container>
+    </section>
+  );
+}
