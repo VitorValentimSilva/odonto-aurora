@@ -41,9 +41,9 @@ function MapIllustration({ caption }: { caption: string }) {
 export function Location() {
   const { location, address, openingHours, contact, brand, ui } = site;
   return (
-    <section id="localizacao" aria-labelledby="localizacao-title" className="py-20 sm:py-24">
+    <section id={site.sections.location} aria-labelledby={`${site.sections.location}-title`} className="py-20 sm:py-24">
       <Container>
-        <SectionHeading id="localizacao-title" {...location.heading} />
+        <SectionHeading id={`${site.sections.location}-title`} {...location.heading} />
 
         <Reveal className="mt-12 grid overflow-hidden rounded-[2rem] border bg-card p-3 shadow-lift lg:grid-cols-2">
           <div className="flex flex-col gap-8 p-5 sm:p-8">

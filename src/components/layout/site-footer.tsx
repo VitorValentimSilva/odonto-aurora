@@ -90,7 +90,7 @@ export function SiteFooter({ year }: { year: number }) {
               </a>
             </p>
           </div>
-          <a href="#inicio" className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto">
+          <a href={`#${site.sections.home}`} className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto">
             <ArrowUp className="size-3.5" aria-hidden="true" />
             {footer.backToTop}
           </a>

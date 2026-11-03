@@ -47,9 +47,9 @@ function Avatar({ member, index }: { member: TeamMember; index: number }) {
 export function Team() {
   const { team } = site;
   return (
-    <section id="equipe" aria-labelledby="equipe-title" className="bg-secondary/50 py-20 sm:py-24">
+    <section id={site.sections.team} aria-labelledby={`${site.sections.team}-title`} className="bg-secondary/50 py-20 sm:py-24">
       <Container>
-        <SectionHeading id="equipe-title" {...team.heading} />
+        <SectionHeading id={`${site.sections.team}-title`} {...team.heading} />
         <Stagger as="ul" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {team.items.map((member, i) => (
             <StaggerItem as="li" key={member.name} className="h-full sm:last:col-span-2 sm:last:mx-auto sm:last:w-1/2 lg:last:col-span-1 lg:last:w-full">

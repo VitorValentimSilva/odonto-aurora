@@ -11,9 +11,9 @@ import { getIcon } from "@/lib/icons";
 export function Treatments() {
   const { treatments } = site;
   return (
-    <section id="tratamentos" aria-labelledby="tratamentos-title" className="py-20 sm:py-24">
+    <section id={site.sections.treatments} aria-labelledby={`${site.sections.treatments}-title`} className="py-20 sm:py-24">
       <Container>
-        <SectionHeading id="tratamentos-title" {...treatments.heading} />
+        <SectionHeading id={`${site.sections.treatments}-title`} {...treatments.heading} />
 
         <Stagger as="ul" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {treatments.items.map((item) => {

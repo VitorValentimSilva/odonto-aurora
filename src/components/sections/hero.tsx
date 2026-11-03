@@ -16,7 +16,7 @@ const enterText = "animate-in slide-in-from-bottom-3 duration-700 ease-out fill-
 export function Hero() {
   const { hero } = site;
   return (
-    <section id="inicio" aria-labelledby="hero-title" className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36 lg:pb-24">
+    <section id={site.sections.home} aria-labelledby="hero-title" className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36 lg:pb-24">
       {/* fundo */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         <div className="absolute -top-40 -right-40 size-[36rem] rounded-full bg-[radial-gradient(circle,var(--glow-cool),transparent_65%)]" />

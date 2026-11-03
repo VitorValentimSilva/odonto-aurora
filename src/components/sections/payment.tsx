@@ -10,9 +10,9 @@ export function Payment() {
   const { payment } = site;
 
   return (
-    <section id="convenios" aria-labelledby="convenios-title" className="bg-secondary/50 py-20 sm:py-24">
+    <section id={site.sections.payment} aria-labelledby={`${site.sections.payment}-title`} className="bg-secondary/50 py-20 sm:py-24">
       <Container>
-        <SectionHeading id="convenios-title" {...payment.heading} />
+        <SectionHeading id={`${site.sections.payment}-title`} {...payment.heading} />
 
         <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-[1.4fr_1fr]">
           <Reveal className="flex flex-col rounded-3xl border bg-card p-6 shadow-soft sm:p-8">
