@@ -4,12 +4,13 @@ import { Container } from "@/components/container";
 import { WhatsAppIcon } from "@/components/icons/brand-icons";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import { buildWhatsAppUrl } from "@/lib/links";
 
 import { LazyBookingForm } from "./booking-form-lazy";
 
-export function Booking() {
+export async function Booking() {
+  const site = await getSite();
   const { booking, contact, ui, location, openingHours } = site;
   return (
     <section data-section="booking" id={site.sections.booking} aria-labelledby={`${site.sections.booking}-title`} className="relative isolate py-20 sm:py-24">
@@ -31,7 +32,7 @@ export function Booking() {
             </ul>
             <div className="mt-8 overflow-hidden rounded-3xl border bg-card shadow-soft">
               <a
-                href={buildWhatsAppUrl()}
+                href={buildWhatsAppUrl(site)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-5 transition-colors hover:bg-secondary/60"

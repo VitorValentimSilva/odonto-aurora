@@ -4,7 +4,7 @@ import { Container } from "@/components/container";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import { buildMapsUrl } from "@/lib/links";
 
 /** Mapa ilustrativo em SVG (sem iframe, sem requisições externas). */
@@ -38,7 +38,8 @@ function MapIllustration({ caption }: { caption: string }) {
   );
 }
 
-export function Location() {
+export async function Location() {
+  const site = await getSite();
   const { location, address, openingHours, contact, brand, ui } = site;
   return (
     <section id={site.sections.location} aria-labelledby={`${site.sections.location}-title`} className="py-20 sm:py-24">
@@ -97,7 +98,7 @@ export function Location() {
             </div>
 
             <Button asChild size="xl" className="w-full sm:w-auto sm:self-start">
-              <a href={buildMapsUrl()} target="_blank" rel="noopener noreferrer">
+              <a href={buildMapsUrl(site)} target="_blank" rel="noopener noreferrer">
                 <Navigation aria-hidden="true" />
                 {location.directionsCta}
                 <span className="sr-only">{ui.externalLinkHint}</span>

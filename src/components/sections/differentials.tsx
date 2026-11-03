@@ -2,11 +2,12 @@ import { Container } from "@/components/container";
 import { HoverCard } from "@/components/motion/hover-card";
 import { Stagger, StaggerItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import { getIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
-export function Differentials() {
+export async function Differentials() {
+  const site = await getSite();
   const { differentials } = site;
   return (
     <section id={site.sections.differentials} aria-labelledby={`${site.sections.differentials}-title`} className="relative bg-secondary/50 py-20 sm:py-24">

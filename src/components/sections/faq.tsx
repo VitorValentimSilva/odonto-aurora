@@ -4,9 +4,10 @@ import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 
-export function Faq() {
+export async function Faq() {
+  const site = await getSite();
   const { faq } = site;
   return (
     <section id={site.sections.faq} aria-labelledby={`${site.sections.faq}-title`} className="py-20 sm:py-24">

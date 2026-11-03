@@ -1,11 +1,12 @@
 import { WhatsAppIcon } from "@/components/icons/brand-icons";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import { buildWhatsAppUrl } from "@/lib/links";
 
-export function WhatsAppFab() {
+export async function WhatsAppFab() {
+  const site = await getSite();
   return (
     <a
-      href={buildWhatsAppUrl()}
+      href={buildWhatsAppUrl(site)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${site.ui.whatsappFab} ${site.ui.externalLinkHint}`}

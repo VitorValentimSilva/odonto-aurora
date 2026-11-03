@@ -3,10 +3,11 @@ import { Container } from "@/components/container";
 import { Icon } from "@/components/icon";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import { getIcon } from "@/lib/icons";
 
-export function Payment() {
+export async function Payment() {
+  const site = await getSite();
   const { payment } = site;
 
   return (

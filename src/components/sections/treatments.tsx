@@ -6,11 +6,12 @@ import { HoverCard } from "@/components/motion/hover-card";
 import { Stagger, StaggerItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { site } from "@/config/site";
-import { itemPath } from "@/lib/items";
+import { getSite } from "@/lib/i18n";
+import { itemPath } from "@/lib/paths";
 import { getIcon } from "@/lib/icons";
 
-export function Treatments() {
+export async function Treatments() {
+  const site = await getSite();
   const { treatments } = site;
   return (
     <section id={site.sections.treatments} aria-labelledby={`${site.sections.treatments}-title`} className="py-20 sm:py-24">
@@ -46,7 +47,7 @@ export function Treatments() {
                   </ul>
                   <div className="relative mt-auto flex items-center justify-between gap-3 pt-4 sm:pt-5">
                     <Link
-                      href={itemPath(item.slug)}
+                      href={itemPath(site, item.slug)}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
                     >
                       {treatments.cardLinkLabel}
