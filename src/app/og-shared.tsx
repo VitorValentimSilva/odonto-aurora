@@ -1,4 +1,19 @@
 /* Elementos compartilhados pelas imagens geradas com next/og. */
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
+/** Plus Jakarta Sans (licença OFL) embutida para gerar as imagens no build, sem rede. */
+export async function loadOgFonts() {
+  const dir = join(process.cwd(), "src/assets/fonts");
+  const [medium, extraBold] = await Promise.all([
+    readFile(join(dir, "PlusJakartaSans-500.ttf")),
+    readFile(join(dir, "PlusJakartaSans-800.ttf")),
+  ]);
+  return [
+    { name: "Jakarta", data: medium, weight: 500 as const, style: "normal" as const },
+    { name: "Jakarta", data: extraBold, weight: 800 as const, style: "normal" as const },
+  ];
+}
 
 export const brandColors = {
   primary: "#0f6f7c",

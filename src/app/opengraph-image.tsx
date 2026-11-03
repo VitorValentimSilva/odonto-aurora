@@ -2,13 +2,13 @@ import { ImageResponse } from "next/og";
 
 import { site } from "@/config/site";
 
-import { ToothMark, brandColors as c } from "./og-shared";
+import { ToothMark, brandColors as c, loadOgFonts } from "./og-shared";
 
 export const alt = site.seo.ogImageAlt;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
   return new ImageResponse(
     (
       <div
@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           position: "relative",
           background: `linear-gradient(135deg, ${c.background} 0%, #e6f3f3 55%, ${c.warmLight} 100%)`,
           padding: 72,
-          fontFamily: "sans-serif",
+          fontFamily: "Jakarta",
         }}
       >
         <div
@@ -55,13 +55,13 @@ export default function OpengraphImage() {
             <span style={{ fontSize: 76, fontWeight: 800, lineHeight: 1.05, color: c.foreground, letterSpacing: -2 }}>
               {site.brand.slogan}
             </span>
-            <span style={{ marginTop: 24, fontSize: 30, color: c.primaryDark }}>
+            <span style={{ marginTop: 24, fontSize: 30, fontWeight: 500, color: c.primaryDark }}>
               {site.address.city} – {site.address.state} · {site.hero.trustBadges.map((b) => b.label).join(" · ")}
             </span>
           </div>
         </div>
       </div>
     ),
-    size,
+    { ...size, fonts: await loadOgFonts() },
   );
 }
