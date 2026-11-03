@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   items: Testimonial[];
+  /** Nome acessível da região rolável (título da seção). */
+  label: string;
   pauseLabel: string;
   playLabel: string;
 };
@@ -41,14 +43,17 @@ function Card({ t }: { t: Testimonial }) {
  * Marquee infinito em CSS. Pausa no hover/foco, tem botão de pausa (WCAG 2.2.2)
  * e vira uma lista com rolagem horizontal quando "reduzir movimento" está ativo.
  */
-export function TestimonialsMarquee({ items, pauseLabel, playLabel }: Props) {
+export function TestimonialsMarquee({ items, label, pauseLabel, playLabel }: Props) {
   const [paused, setPaused] = useState(false);
 
   return (
     <div className="relative">
       <div
+        role="region"
+        aria-label={label}
+        tabIndex={0}
         className={cn(
-          "group relative overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]",
+          "group relative overflow-hidden rounded-3xl py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]",
           "motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]",
         )}
       >
