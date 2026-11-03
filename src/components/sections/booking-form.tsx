@@ -2,11 +2,13 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
+
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -60,7 +62,12 @@ export function BookingForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="grid gap-5 sm:grid-cols-2" data-testid="booking-form">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        noValidate
+        className="grid gap-5 sm:grid-cols-2"
+        data-testid="booking-form"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -68,7 +75,12 @@ export function BookingForm() {
             <FormItem className="sm:col-span-2">
               <FormLabel>{copy.name.label}</FormLabel>
               <FormControl>
-                <Input autoComplete="name" placeholder={copy.name.placeholder} className="h-12 rounded-xl bg-background px-4 text-base md:text-base" {...field} />
+                <Input
+                  autoComplete="name"
+                  placeholder={copy.name.placeholder}
+                  className="h-12 rounded-xl bg-background px-4 text-base md:text-base"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,7 +117,11 @@ export function BookingForm() {
               <FormLabel>{copy.treatment.label}</FormLabel>
               <Select onValueChange={field.onChange} value={field.value} name={field.name}>
                 <FormControl>
-                  <SelectTrigger onBlur={field.onBlur} ref={field.ref} className="h-12! w-full rounded-xl bg-background px-4 text-base md:text-base">
+                  <SelectTrigger
+                    onBlur={field.onBlur}
+                    ref={field.ref}
+                    className="h-12! w-full rounded-xl bg-background px-4 text-base md:text-base"
+                  >
                     <SelectValue placeholder={copy.treatment.placeholder} />
                   </SelectTrigger>
                 </FormControl>
@@ -128,7 +144,10 @@ export function BookingForm() {
           render={({ field, fieldState }) => (
             <FormItem className="sm:col-span-2">
               <fieldset aria-describedby={fieldState.error ? "period-error" : undefined}>
-                <legend className="mb-2 text-sm leading-none font-medium data-[error=true]:text-destructive" data-error={!!fieldState.error}>
+                <legend
+                  className="mb-2 text-sm leading-none font-medium data-[error=true]:text-destructive"
+                  data-error={!!fieldState.error}
+                >
                   {copy.period.label}
                 </legend>
                 <div className="grid grid-cols-3 gap-2">
@@ -175,7 +194,12 @@ export function BookingForm() {
             <FormItem className="sm:col-span-2">
               <FormLabel>{copy.message.label}</FormLabel>
               <FormControl>
-                <Textarea rows={4} placeholder={copy.message.placeholder} className="min-h-28 rounded-xl bg-background px-4 py-3 text-base md:text-base" {...field} />
+                <Textarea
+                  rows={4}
+                  placeholder={copy.message.placeholder}
+                  className="min-h-28 rounded-xl bg-background px-4 py-3 text-base md:text-base"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -189,9 +213,9 @@ export function BookingForm() {
           </Button>
           <p className="text-center text-xs text-muted-foreground">
             {copy.privacy}{" "}
-            <a href="/privacidade" className="font-medium text-primary underline underline-offset-2">
+            <Link href="/privacidade" className="font-medium text-primary underline underline-offset-2">
               {site.privacy.linkLabel}
-            </a>
+            </Link>
             .
           </p>
         </div>
