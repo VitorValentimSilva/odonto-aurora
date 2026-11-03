@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/container";
 import { WhatsAppIcon } from "@/components/icons/brand-icons";
 import { Button } from "@/components/ui/button";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import { getIcon } from "@/lib/icons";
 
 import { HeroVisual } from "./hero-visual";
@@ -13,7 +13,8 @@ const enter = "animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out f
 /** Título e subtítulo (candidatos a LCP) só deslizam, sem começar invisíveis. */
 const enterText = "animate-in slide-in-from-bottom-3 duration-700 ease-out fill-mode-both";
 
-export function Hero() {
+export async function Hero() {
+  const site = await getSite();
   const { hero } = site;
   return (
     <section id={site.sections.home} aria-labelledby="hero-title" className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36 lg:pb-24">

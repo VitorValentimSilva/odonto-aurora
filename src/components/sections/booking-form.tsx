@@ -3,39 +3,48 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
 import Link from "next/link";
+import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { site } from "@/config/site";
+import { useSite } from "@/components/site-provider";
+import type { ClientSite } from "@/config/client-site";
+import { buildWhatsAppMessage } from "@/lib/format";
 import { buildWhatsAppUrl } from "@/lib/links";
+import { privacyPath } from "@/lib/paths";
 import { formatBrazilianPhone, isValidBrazilianPhone } from "@/lib/phone";
 import { cn } from "@/lib/utils";
 
-const { form: copy } = site.booking;
-const treatmentValues = copy.treatment.options.map((o) => o.value);
-const periodValues = copy.period.options.map((o) => o.value);
+type FormCopy = ClientSite["booking"]["form"];
 
-const schema = z.object({
-  name: z.string().trim().min(3, copy.errors.nameMin).max(80, copy.errors.nameMax),
-  phone: z.string().refine(isValidBrazilianPhone, copy.errors.phone),
-  treatment: z.string().refine((v) => treatmentValues.includes(v), copy.errors.treatment),
-  period: z.string().refine((v) => periodValues.includes(v), copy.errors.period),
-  message: z.string().trim().max(500, copy.errors.messageMax),
-});
+/** Esquema de validação com as mensagens do idioma atual. */
+function makeSchema(copy: FormCopy) {
+  const treatmentValues = copy.treatment.options.map((o) => o.value);
+  const periodValues = copy.period.options.map((o) => o.value);
+  return z.object({
+    name: z.string().trim().min(3, copy.errors.nameMin).max(80, copy.errors.nameMax),
+    phone: z.string().refine(isValidBrazilianPhone, copy.errors.phone),
+    treatment: z.string().refine((v) => treatmentValues.includes(v), copy.errors.treatment),
+    period: z.string().refine((v) => periodValues.includes(v), copy.errors.period),
+    message: z.string().trim().max(500, copy.errors.messageMax),
+  });
+}
 
-type BookingValues = z.infer<typeof schema>;
+type BookingValues = z.infer<ReturnType<typeof makeSchema>>;
 
 const labelOf = (options: { value: string; label: string }[], value: string) =>
   options.find((o) => o.value === value)?.label ?? value;
 
 export function BookingForm() {
+  const site = useSite();
+  const copy = site.booking.form;
+  const schema = useMemo(() => makeSchema(copy), [copy]);
   const form = useForm<BookingValues>({
     resolver: zodResolver(schema),
     defaultValues: { name: "", phone: "", treatment: "", period: "", message: "" },
@@ -43,14 +52,14 @@ export function BookingForm() {
   });
 
   function onSubmit(values: BookingValues) {
-    const text = copy.buildMessage({
+    const text = buildWhatsAppMessage(copy.whatsappMessage, {
       name: values.name,
       phone: values.phone,
       treatment: labelOf(copy.treatment.options, values.treatment),
       period: labelOf(copy.period.options, values.period),
       message: values.message || undefined,
     });
-    const url = buildWhatsAppUrl(text);
+    const url = buildWhatsAppUrl(site, text);
 
     const win = window.open(url, "_blank");
     if (win) win.opener = null;
@@ -213,7 +222,7 @@ export function BookingForm() {
           </Button>
           <p className="text-center text-xs text-muted-foreground">
             {copy.privacy}{" "}
-            <Link href="/privacidade" className="font-medium text-primary underline underline-offset-2">
+            <Link prefetch={false} data-testid="privacy-link" href={privacyPath(site)} className="font-medium text-primary underline underline-offset-2">
               {site.privacy.linkLabel}
             </Link>
             .

@@ -5,7 +5,7 @@ import { Container } from "@/components/container";
 import { HoverCard } from "@/components/motion/hover-card";
 import { Stagger, StaggerItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { site } from "@/config/site";
+import { getSite } from "@/lib/i18n";
 import type { TeamMember } from "@/config/types";
 
 const gradients = [
@@ -44,7 +44,8 @@ function Avatar({ member, index }: { member: TeamMember; index: number }) {
   );
 }
 
-export function Team() {
+export async function Team() {
+  const site = await getSite();
   const { team } = site;
   return (
     <section id={site.sections.team} aria-labelledby={`${site.sections.team}-title`} className="bg-secondary/50 py-20 sm:py-24">

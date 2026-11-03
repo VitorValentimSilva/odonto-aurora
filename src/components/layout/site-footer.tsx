@@ -4,17 +4,18 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { GitHubIcon } from "@/components/icons/brand-icons";
 import { Logo } from "@/components/logo";
-import { site } from "@/config/site";
-import { homeHref } from "@/lib/links";
+import { getSite } from "@/lib/i18n";
+import { homeHref, privacyPath } from "@/lib/paths";
 import { getIcon } from "@/lib/icons";
 
-export function SiteFooter({ year }: { year: number }) {
+export async function SiteFooter({ year }: { year: number }) {
+  const site = await getSite();
   const { brand, footer, nav, contact, address, social, responsible, author, ui } = site;
   return (
     <footer className="border-t bg-footer text-white/80">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Logo name={brand.name} className="text-white [&_.text-primary]:text-footer-accent" />
+          <Logo name={brand.name} logo={brand.logo} className="text-white [&_.text-primary]:text-footer-accent" />
           <p className="mt-4 max-w-xs text-sm">{footer.about}</p>
           <p className="mt-4 text-sm">
             <span className="font-semibold text-white">{responsible.role}:</span> {responsible.name} —{" "}
@@ -27,7 +28,7 @@ export function SiteFooter({ year }: { year: number }) {
           <ul className="mt-4 flex flex-col gap-2.5 text-sm">
             {nav.map((item) => (
               <li key={item.href}>
-                <a href={homeHref(item.href)} className="hover:text-white hover:underline">
+                <a href={homeHref(site, item.href)} className="hover:text-white hover:underline">
                   {item.label}
                 </a>
               </li>
@@ -89,7 +90,7 @@ export function SiteFooter({ year }: { year: number }) {
               © {year} {brand.name}. {footer.rights} {footer.disclaimer}
             </p>
             <p>
-              <Link href="/privacidade" className="font-semibold text-white underline-offset-4 hover:underline">
+              <Link prefetch={false} data-testid="privacy-link" href={privacyPath(site)} className="font-semibold text-white underline-offset-4 hover:underline">
                 {site.privacy.linkLabel}
               </Link>
             </p>
@@ -108,7 +109,7 @@ export function SiteFooter({ year }: { year: number }) {
             </p>
           </div>
           <a
-            href={`/#${site.sections.home}`}
+            href={homeHref(site, `#${site.sections.home}`)}
             className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 px-3 py-1.5 hover:bg-white/10 sm:self-auto"
           >
             <ArrowUp className="size-3.5" aria-hidden="true" />
