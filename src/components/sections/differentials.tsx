@@ -35,7 +35,7 @@ export function Differentials() {
                   {!featured && wide && (
                     <div
                       aria-hidden="true"
-                      className="absolute -top-16 -right-16 size-56 rounded-full bg-[radial-gradient(circle,oklch(0.93_0.05_50),transparent_70%)]"
+                      className="absolute -top-16 -right-16 size-56 rounded-full bg-[radial-gradient(circle,var(--glow-warm),transparent_70%)]"
                     />
                   )}
                   <span
