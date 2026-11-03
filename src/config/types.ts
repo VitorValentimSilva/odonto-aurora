@@ -114,6 +114,8 @@ export type SiteConfig = {
     warmLight: string;
     background: string;
     backgroundTint: string;
+    /** Fundo do modo escuro (themeColor do navegador). */
+    backgroundDark: string;
     foreground: string;
   };
 
@@ -186,6 +188,8 @@ export type SiteConfig = {
     closeNotification: string;
     playAnimation: string;
     notFound: { title: string; description: string; cta: CTA };
+    /** Seletor de tema: nome de cada modo e rótulo do botão. */
+    theme: { toggle: (current: string) => string; light: string; dark: string; system: string };
   };
 
   hero: {

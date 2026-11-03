@@ -43,6 +43,7 @@ export const site: SiteConfig = {
     warmLight: "#fde3d3",
     background: "#f7fbfb",
     backgroundTint: "#e6f3f3",
+    backgroundDark: "#0f1a1e",
     foreground: "#14313d",
   },
 
@@ -172,6 +173,12 @@ export const site: SiteConfig = {
     notifications: "Notificações",
     closeNotification: "Fechar notificação",
     playAnimation: "Retomar depoimentos",
+    theme: {
+      toggle: (current) => `Tema: ${current}. Clique para trocar.`,
+      light: "claro",
+      dark: "escuro",
+      system: "do sistema",
+    },
     notFound: {
       title: "Página não encontrada",
       description: "Não encontramos essa página. Que tal voltar ao início e agendar a sua avaliação?",
