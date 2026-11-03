@@ -18,7 +18,7 @@ export function Testimonials() {
         </Reveal>
       </Container>
       <Reveal className="mt-12">
-        <TestimonialsMarquee items={testimonials.items} pauseLabel={ui.pauseAnimation} playLabel={ui.playAnimation} />
+        <TestimonialsMarquee items={testimonials.items} label={testimonials.heading.title} pauseLabel={ui.pauseAnimation} playLabel={ui.playAnimation} />
       </Reveal>
     </section>
   );
