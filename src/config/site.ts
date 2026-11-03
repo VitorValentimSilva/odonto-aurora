@@ -28,6 +28,20 @@ export const site: SiteConfig = {
       "Clínica odontológica em Campinas – SP com tratamentos modernos, equipe especializada e atendimento humanizado do primeiro contato ao sorriso final.",
     schemaType: "Dentist",
     priceRange: "$$",
+    logo: {
+      glyph: "M13.4 12.6c1.9-1.5 4.2-1.2 6.6-.2 2.4-1 4.7-1.3 6.6.2 2 1.6 2 4.6 1.2 7.4-.6 2-1 3.9-1.5 6-.4 1.6-2.2 1.9-2.9.4l-1.6-3.8c-.5-1.1-1.1-1.4-1.8-1.4s-1.3.3-1.8 1.4l-1.6 3.8c-.7 1.5-2.5 1.2-2.9-.4-.5-2.1-.9-4-1.5-6-.8-2.8-.8-5.8 1.2-7.4Z",
+      accent: "M7 27a13 13 0 0 1 26 0",
+    },
+  },
+
+  theme: {
+    primary: "#0f6f7c",
+    primaryDark: "#134b5c",
+    warm: "#f2a27c",
+    warmLight: "#fde3d3",
+    background: "#f7fbfb",
+    backgroundTint: "#e6f3f3",
+    foreground: "#14313d",
   },
 
   seo: {
@@ -44,6 +58,7 @@ export const site: SiteConfig = {
       "odontopediatria",
     ],
     ogImageAlt: "Odonto Aurora — Seu sorriso merece cuidado de verdade",
+    serviceSchemaType: "MedicalProcedure",
   },
 
   contact: {
@@ -158,6 +173,7 @@ export const site: SiteConfig = {
       { icon: "heartHandshake", label: "Atendimento humanizado" },
     ],
     visual: {
+      illustration: "tooth",
       cardTitle: "Plano de tratamento",
       cardSubtitle: "Clareamento + limpeza",
       chips: ["Sem dor", "Digital", "Personalizado"],

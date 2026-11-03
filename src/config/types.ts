@@ -1,3 +1,4 @@
+import type { IllustrationName } from "@/components/illustrations";
 import type { IconName } from "@/lib/icons";
 
 /** Foto opcional (coloque o arquivo em /public/images e aponte o caminho aqui). */
@@ -33,6 +34,8 @@ export type Treatment = {
   title: string;
   description: string;
   highlights: string[];
+  /** Preço opcional exibido no card (ex.: cardápio). */
+  price?: string;
 };
 
 export type Differential = {
@@ -95,6 +98,21 @@ export type SiteConfig = {
     /** Tipo schema.org do negócio (ex.: "Dentist", "Restaurant", "PetStore"). */
     schemaType: string;
     priceRange: string;
+    /** schema.org `servesCuisine` (restaurantes). */
+    servesCuisine?: string[];
+    /** Logo: glifo branco (path SVG em viewBox 0 0 40 40) + traço de destaque opcional. */
+    logo: { glyph: string; accent?: string };
+  };
+
+  /** Cores em hex para o que não lê CSS: imagem Open Graph, ícones gerados e manifest. */
+  theme: {
+    primary: string;
+    primaryDark: string;
+    warm: string;
+    warmLight: string;
+    background: string;
+    backgroundTint: string;
+    foreground: string;
   };
 
   seo: {
@@ -102,6 +120,8 @@ export type SiteConfig = {
     description: string;
     keywords: string[];
     ogImageAlt: string;
+    /** Tipo schema.org de cada item de `treatments` (ex.: "MedicalProcedure", "MenuItem"). */
+    serviceSchemaType: string;
   };
 
   contact: {
@@ -161,6 +181,8 @@ export type SiteConfig = {
     secondaryCta: CTA;
     trustBadges: { icon: IconName; label: string }[];
     visual: {
+      /** Ilustração SVG do hero (ver `src/components/illustrations`). */
+      illustration: IllustrationName;
       cardTitle: string;
       cardSubtitle: string;
       chips: string[];
