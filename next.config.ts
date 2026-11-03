@@ -34,7 +34,9 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
-  partialPrefetching: true,
+  // Desligado: com ele, a 1ª visita a uma URL inexistente (ex.: /cardapio/xyz) respondia 200 com a página
+  // "não encontrada" (soft 404), porque o shell era enviado antes do notFound().
+  partialPrefetching: false,
   poweredByHeader: false,
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
