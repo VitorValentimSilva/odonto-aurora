@@ -10,6 +10,7 @@ termina direto no WhatsApp — **sem backend, sem banco e sem variáveis de ambi
 
 > 🔀 **Mesmo template, outro negócio:** a branch `restaurante` traz este site trocado para um restaurante fictício
 > (Alecrim & Brasa) — só `site.ts`, paleta, ilustração e logo mudam, os componentes são os mesmos.
+> Demo do restaurante: https://alecrim-e-brasa.vercel.app
 
 | Desktop (1440px) | Mobile (375px) |
 | --- | --- |
