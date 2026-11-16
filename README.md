@@ -9,7 +9,7 @@ pelo WhatsApp** e **avaliações** — **sem backend, sem banco e sem variáveis
 as seções e componentes são os mesmos; mudaram o `src/config/site.ts`, a paleta em `globals.css`, a ilustração do
 hero e o logo. Bom exemplo de como o template vira outro negócio sem reescrever a interface.
 
-**Demo:** (link)
+**Demo:** https://alecrim-e-brasa.vercel.app · versão clínica: https://odonto-aurora.vercel.app
 
 | Desktop (1440px) | Mobile (375px) |
 | --- | --- |
