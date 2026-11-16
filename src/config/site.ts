@@ -7,16 +7,15 @@ import type { SiteConfig } from "./types";
  *  CONTEÚDO DO SITE
  * ============================================================================
  *  Todo texto, número, contato e link do negócio vive aqui.
- *  Para transformar o site em outro negócio, edite este arquivo (e a paleta
- *  em src/app/globals.css) — os componentes não precisam ser alterados.
+ *  Para transformar o site em outro negócio (restaurante, pet shop, estúdio…),
+ *  edite este arquivo — os componentes não precisam ser alterados.
  *
- *  ⚠️ "Alecrim & Brasa" é um restaurante FICTÍCIO criado para portfólio.
- *  Telefones, endereço, CNPJ, equipe, preços e avaliações são inventados.
- *  Este é o mesmo template da landing page "Odonto Aurora" (branch main).
+ *  ⚠️ "Odonto Aurora" é uma clínica FICTÍCIA criada para portfólio.
+ *  Telefones, endereço, CROs e depoimentos são inventados.
  * ============================================================================
  */
 
-const whatsapp = "5519988887777";
+const whatsapp = "5519999999999";
 
 const siteUrl = resolveSiteUrl("https://odonto-aurora.vercel.app");
 
@@ -32,97 +31,85 @@ const pt: SiteConfig = {
   lang: "pt-BR",
 
   brand: {
-    name: "Alecrim & Brasa",
-    shortName: "Alecrim",
-    slogan: "Comida de fogo, ingredientes de verdade",
+    name: "Odonto Aurora",
+    shortName: "Aurora",
+    slogan: "Seu sorriso merece cuidado de verdade",
     description:
-      "Restaurante de cozinha de fogo em Campinas – SP: carnes na brasa, pizzas de fermentação natural, ingredientes de pequenos produtores e uma carta de vinhos pensada para cada prato.",
-    schemaType: "Restaurant",
+      "Clínica odontológica em Campinas – SP com tratamentos modernos, equipe especializada e atendimento humanizado do primeiro contato ao sorriso final.",
+    schemaType: "Dentist",
     priceRange: "$$",
-    servesCuisine: ["Brasileira", "Cozinha de fogo", "Pizza"],
     logo: {
-      // chama sobre a linha de um prato
       glyph:
-        "M20.6 7.5c1.7 4.6 7.4 7.3 7.4 14.2a8 8 0 0 1-16 0c0-3.6 2-5.7 3.6-7.5.4 2.3 1.5 3.6 3 4-.3-3.9-.6-7.4 2-10.7Z",
-      accent: "M8 31.5h24",
+        "M13.4 12.6c1.9-1.5 4.2-1.2 6.6-.2 2.4-1 4.7-1.3 6.6.2 2 1.6 2 4.6 1.2 7.4-.6 2-1 3.9-1.5 6-.4 1.6-2.2 1.9-2.9.4l-1.6-3.8c-.5-1.1-1.1-1.4-1.8-1.4s-1.3.3-1.8 1.4l-1.6 3.8c-.7 1.5-2.5 1.2-2.9-.4-.5-2.1-.9-4-1.5-6-.8-2.8-.8-5.8 1.2-7.4Z",
+      accent: "M7 27a13 13 0 0 1 26 0",
     },
   },
 
   theme: {
-    primary: "#a2422a",
-    primaryDark: "#6b2a1b",
-    warm: "#e2a43c",
-    warmLight: "#fbe8c6",
-    background: "#fcf8f2",
-    backgroundTint: "#f5eadb",
-    backgroundDark: "#1d1511",
-    foreground: "#2d1d15",
+    primary: "#0f6f7c",
+    primaryDark: "#134b5c",
+    warm: "#f2a27c",
+    warmLight: "#fde3d3",
+    background: "#f7fbfb",
+    backgroundTint: "#e6f3f3",
+    backgroundDark: "#0f1a1e",
+    foreground: "#14313d",
   },
 
   seo: {
-    title: "Alecrim & Brasa — Restaurante de cozinha de fogo em Campinas",
+    title: "Odonto Aurora — Clínica Odontológica em Campinas",
     description:
-      "Carnes na brasa, pizzas de fermentação natural e ingredientes locais em Campinas – SP. Reserve sua mesa pelo WhatsApp.",
+      "Clareamento, implantes, alinhadores, lentes de contato dental e odontopediatria em Campinas – SP. Agende sua avaliação pelo WhatsApp.",
     keywords: [
-      "restaurante em Campinas",
-      "cozinha de fogo",
-      "pizza de fermentação natural",
-      "costela no fogo de chão",
-      "restaurante pet friendly Campinas",
-      "jantar romântico Campinas",
+      "dentista em Campinas",
+      "clínica odontológica Campinas",
+      "clareamento dental",
+      "implante dentário",
+      "alinhadores invisíveis",
+      "lentes de contato dental",
+      "odontopediatria",
     ],
-    ogImageAlt: "Alecrim & Brasa — Comida de fogo, ingredientes de verdade",
-    serviceSchemaType: "MenuItem",
+    ogImageAlt: "Odonto Aurora — Seu sorriso merece cuidado de verdade",
+    serviceSchemaType: "MedicalProcedure",
   },
 
   contact: {
     whatsapp,
-    whatsappDisplay: "(19) 98888-7777",
+    whatsappDisplay: "(19) 99999-9999",
     whatsappLabel: "WhatsApp",
-    phone: "+55 19 98888-7777",
-    email: "reservas@alecrimebrasa.com.br",
-    defaultWhatsAppMessage: "Olá, Alecrim & Brasa! Vim pelo site e gostaria de reservar uma mesa.",
+    phone: "+55 19 99999-9999",
+    email: "contato@odontoaurora.com.br",
+    defaultWhatsAppMessage: "Olá, Odonto Aurora! Vim pelo site e gostaria de agendar uma avaliação.",
   },
 
   address: {
-    street: "Rua do Alecrim, 315",
+    street: "Av. Horizonte Azul, 742 – Sala 12",
     district: "Jardim Aurora",
     city: "Campinas",
     state: "SP",
     postalCode: "13000-000",
     country: "BR",
-    full: "Rua do Alecrim, 315, Jardim Aurora, Campinas – SP, 13000-000",
-    reference: "Manobrista no local a partir das 19h",
+    full: "Av. Horizonte Azul, 742 – Sala 12, Jardim Aurora, Campinas – SP, 13000-000",
+    reference: "Estacionamento conveniado em frente à clínica",
   },
 
   openingHours: [
     {
-      label: "Terça a sexta",
-      hours: "11h30–15h · 19h–23h",
-      days: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "11:30",
-      closes: "23:00",
-      slots: [
-        { opens: "11:30", closes: "15:00" },
-        { opens: "19:00", closes: "23:00" },
-      ],
+      label: "Segunda a sexta",
+      hours: "8h às 20h",
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "20:00",
     },
     {
       label: "Sábado",
-      hours: "12h às 23h30",
+      hours: "8h às 13h",
       days: ["Saturday"],
-      opens: "12:00",
-      closes: "23:30",
+      opens: "08:00",
+      closes: "13:00",
     },
     {
-      label: "Domingo",
-      hours: "12h às 17h",
-      days: ["Sunday"],
-      opens: "12:00",
-      closes: "17:00",
-    },
-    {
-      label: "Segunda",
+      label: "Domingo e feriados",
       hours: "Fechado",
       days: [],
       opens: "",
@@ -134,21 +121,21 @@ const pt: SiteConfig = {
     {
       icon: "instagram",
       label: "Instagram",
-      handle: "@alecrimebrasa.demo",
-      href: "https://instagram.com/alecrimebrasa.demo",
+      handle: "@odontoaurora.demo",
+      href: "https://instagram.com/odontoaurora.demo",
     },
     {
       icon: "whatsapp",
       label: "WhatsApp",
-      handle: "(19) 98888-7777",
+      handle: "(19) 99999-9999",
       href: `https://wa.me/${whatsapp}`,
     },
   ],
 
   responsible: {
-    name: "Alecrim & Brasa Gastronomia Ltda.",
-    role: "Razão social",
-    registry: "CNPJ 00.000.000/0001-00",
+    name: "Dra. Helena Duarte",
+    role: "Responsável técnica",
+    registry: "CRO-SP 000.001",
   },
 
   /** Troque pelo seu nome e link (GitHub, LinkedIn, site…). */
@@ -159,41 +146,41 @@ const pt: SiteConfig = {
 
   sections: {
     home: "inicio",
-    treatments: "cardapio",
-    differentials: "a-casa",
-    steps: "como-reservar",
+    treatments: "tratamentos",
+    differentials: "diferenciais",
+    steps: "como-funciona",
     team: "equipe",
-    testimonials: "avaliacoes",
-    payment: "ambiente",
+    testimonials: "depoimentos",
+    payment: "convenios",
     faq: "duvidas",
-    booking: "reservas",
+    booking: "agendar",
     location: "localizacao",
   },
 
   nav: [
-    { label: "Cardápio", href: "#cardapio" },
-    { label: "A casa", href: "#a-casa" },
+    { label: "Tratamentos", href: "#tratamentos" },
+    { label: "Diferenciais", href: "#diferenciais" },
     { label: "Equipe", href: "#equipe" },
-    { label: "Avaliações", href: "#avaliacoes" },
+    { label: "Depoimentos", href: "#depoimentos" },
     { label: "Dúvidas", href: "#duvidas" },
     { label: "Contato", href: "#localizacao" },
   ],
 
   ui: {
     skipToContent: "Pular para o conteúdo",
-    headerCta: { label: "Reservar mesa", href: "#reservas" },
+    headerCta: { label: "Agendar avaliação", href: "#agendar" },
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     menuTitle: "Menu",
-    homeLabel: "Alecrim & Brasa — início",
+    homeLabel: "Odonto Aurora — início",
     mainNavLabel: "Navegação principal",
-    whatsappFab: "Reservar pelo WhatsApp",
+    whatsappFab: "Conversar no WhatsApp",
     starsLabel: "Avaliação: {rating} de 5 estrelas",
     externalLinkHint: "(abre em nova aba)",
-    pauseAnimation: "Pausar avaliações",
+    pauseAnimation: "Pausar depoimentos",
     notifications: "Notificações",
     closeNotification: "Fechar notificação",
-    playAnimation: "Retomar avaliações",
+    playAnimation: "Retomar depoimentos",
     theme: {
       toggle: "Tema: {mode}. Clique para trocar.",
       light: "claro",
@@ -203,311 +190,307 @@ const pt: SiteConfig = {
     language: { label: "Idioma" },
     notFound: {
       title: "Página não encontrada",
-      description: "Essa página saiu do cardápio. Que tal voltar ao início e reservar a sua mesa?",
+      description: "Não encontramos essa página. Que tal voltar ao início e agendar a sua avaliação?",
       cta: { label: "Voltar ao início", href: "/" },
     },
   },
 
   hero: {
-    badge: "Reservas abertas para este fim de semana",
-    title: "Comida de fogo,",
-    highlight: "ingredientes de verdade",
+    badge: "Agenda aberta para novos pacientes",
+    title: "Seu sorriso merece",
+    highlight: "cuidado de verdade",
     subtitle:
-      "Carnes na brasa, pizzas de fermentação lenta e vegetais de pequenos produtores da região — servidos sem pressa, num salão feito para encontros.",
-    primaryCta: { label: "Reservar pelo WhatsApp", href: "#reservas" },
-    secondaryCta: { label: "Ver cardápio", href: "#cardapio" },
+      "Tratamentos odontológicos modernos, sem pressa e sem dor, com uma equipe que explica cada etapa e cuida de você como pessoa — não como número.",
+    primaryCta: { label: "Agendar pelo WhatsApp", href: "#agendar" },
+    secondaryCta: { label: "Ver tratamentos", href: "#tratamentos" },
     trustBadges: [
-      { icon: "flame", label: "Forno a lenha e parrilla" },
-      { icon: "star", label: "Nota 4,8 no Google" },
-      { icon: "sprout", label: "Ingredientes locais" },
+      { icon: "smile", label: "+2.000 sorrisos" },
+      { icon: "star", label: "Nota 4,9 no Google" },
+      { icon: "heartHandshake", label: "Atendimento humanizado" },
     ],
     visual: {
-      illustration: "dish",
-      cardTitle: "Prato da semana",
-      cardSubtitle: "Costela de fogo de chão",
-      chips: ["12h na brasa", "Serve 2", "Sem glúten"],
+      illustration: "tooth",
+      cardTitle: "Plano de tratamento",
+      cardSubtitle: "Clareamento + limpeza",
+      chips: ["Sem dor", "Digital", "Personalizado"],
       ratingLabel: "Avaliação média",
-      ratingValue: "4,8",
-      nextSlotLabel: "Mesa disponível",
-      nextSlotValue: "Hoje, 20h30",
+      ratingValue: "4,9",
+      nextSlotLabel: "Próximo horário",
+      nextSlotValue: "Amanhã, 9h30",
     },
-    // image: { src: "/images/hero.jpg", alt: "Prato servido no salão do restaurante", width: 1200, height: 1400 },
+    // image: { src: "/images/hero.jpg", alt: "Recepção da clínica", width: 1200, height: 1400 },
   },
 
   stats: {
     heading: {
       eyebrow: "Em números",
-      title: "Uma brasa que não apaga desde 2017",
+      title: "Confiança construída sorriso a sorriso",
     },
     items: [
-      { value: 9, suffix: "anos", label: "de casa cheia" },
-      { value: 85000, prefix: "+", label: "pratos servidos" },
-      { value: 120, label: "lugares no salão" },
-      { value: 4.8, decimals: 1, suffix: "/5", label: "nota média" },
+      { value: 12, suffix: "anos", label: "de história em Campinas" },
+      { value: 2000, prefix: "+", label: "pacientes atendidos" },
+      { value: 8, label: "especialistas" },
+      { value: 4.9, decimals: 1, suffix: "/5", label: "nota média" },
     ],
   },
 
   treatments: {
     heading: {
-      eyebrow: "Cardápio em destaque",
-      title: "Os pratos que fazem a fama da casa",
-      description: "Uma seleção do nosso cardápio — tudo feito na hora, com fogo de verdade e ingredientes da estação.",
+      eyebrow: "Tratamentos",
+      title: "Tudo o que seu sorriso precisa, em um só lugar",
+      description: "Do check-up preventivo à reabilitação completa, com tecnologia digital e planejamento individual.",
     },
     items: [
       {
-        icon: "beef",
-        title: "Costela de fogo de chão",
-        description: "12 horas na brasa, com farofa de manteiga de garrafa, mandioca crocante e vinagrete de ervas.",
-        highlights: ["Serve 2 pessoas", "Assinatura da casa"],
-        price: "R$ 129",
-        slug: "costela-fogo-de-chao",
+        icon: "sparkles",
+        title: "Clareamento dental",
+        description: "Dentes até 4 tons mais claros com protocolo seguro, combinando consultório e moldeira caseira.",
+        highlights: ["Baixa sensibilidade", "Resultado em 3 semanas"],
+        slug: "clareamento-dental",
         details: {
           metaDescription:
-            "Costela assada 12 horas no fogo de chão, com farofa de manteiga de garrafa e mandioca crocante. Prato para 2 no Alecrim & Brasa, em Campinas.",
+            "Clareamento dental em Campinas com protocolo combinado (consultório + caseiro), baixa sensibilidade e resultado em cerca de 3 semanas.",
           intro:
-            "O prato que deu fama à casa: costela bovina temperada só com sal grosso e assada lentamente, por 12 horas, ao lado do fogo de chão.",
+            "Dentes até 4 tons mais claros com um protocolo que combina sessões no consultório e moldeira caseira, sempre com acompanhamento.",
           body: [
-            "Começamos a acender a brasa às seis da manhã. A costela fica de pé, presa em espetos de ferro, recebendo o calor de lado — nunca a chama direta. O resultado é uma carne que desmancha no garfo, com a gordura derretida e a casca levemente defumada.",
-            "Servimos fatiada na mesa, com farofa de manteiga de garrafa, mandioca cozida e depois tostada na chapa e um vinagrete de ervas da nossa horta. A porção serve bem duas pessoas — ou três, se houver entrada e sobremesa.",
+            "Antes de clarear, fazemos uma avaliação para verificar cáries, gengiva e restaurações — o gel não altera a cor de resinas e coroas, então planejamos tudo para o resultado ficar uniforme.",
+            "O protocolo combinado usa géis de concentração controlada e dessensibilizantes antes e depois de cada etapa. Na maioria dos casos, o resultado final aparece em cerca de três semanas e se mantém por anos com boa higiene e retoques ocasionais.",
           ],
           benefits: [
-            "12 horas de cocção lenta no fogo de chão",
-            "Corte selecionado de pequenos produtores do interior paulista",
-            "Acompanhamentos inclusos: farofa, mandioca e vinagrete",
-            "Sem glúten (avise sobre alergias na reserva)",
+            "Avaliação prévia de cáries, gengiva e restaurações",
+            "Protocolo combinado: consultório + moldeira caseira",
+            "Dessensibilizante em todas as etapas",
+            "Moldeira digital feita por escaneamento 3D",
           ],
           faq: [
             {
-              question: "A costela fica disponível todos os dias?",
+              question: "O clareamento estraga o esmalte?",
               answer:
-                "Sim, de terça a domingo, enquanto durar a fornada do dia. Nos fins de semana recomendamos reservar e avisar que deseja a costela.",
+                "Não, quando feito com acompanhamento profissional e géis adequados. O esmalte não é desgastado; o gel age nos pigmentos internos do dente.",
             },
             {
-              question: "Serve quantas pessoas?",
+              question: "Quanto tempo dura o resultado?",
               answer:
-                "Duas pessoas com folga. Para grupos maiores, a cozinha prepara porções extras sob pedido na reserva.",
+                "De 2 a 4 anos em média, dependendo de hábitos como café, vinho e cigarro. Retoques curtos com a moldeira mantêm a cor.",
             },
             {
-              question: "Qual vinho combina?",
-              answer:
-                "Um tinto encorpado, como Malbec ou Tannat. A sommelière sugere opções por taça para quem prefere variar.",
+              question: "Grávidas podem clarear?",
+              answer: "Recomendamos adiar o clareamento durante a gestação e a amamentação, por precaução.",
             },
           ],
         },
       },
       {
-        icon: "pizza",
-        title: "Pizza de fermentação natural",
-        description: "Massa de 48 horas assada no forno a lenha, com tomate italiano, fior di latte e manjericão.",
-        highlights: ["Forno a lenha", "Opção vegana"],
-        price: "R$ 68",
-        slug: "pizza-fermentacao-natural",
+        icon: "shieldCheck",
+        title: "Implantes",
+        description: "Reposição de dentes com implantes de titânio e planejamento guiado por tomografia digital.",
+        highlights: ["Cirurgia guiada", "Planejamento 3D"],
+        slug: "implantes",
         details: {
           metaDescription:
-            "Pizza napolitana com massa de fermentação natural de 48 horas, assada no forno a lenha. Opção vegana disponível no Alecrim & Brasa.",
+            "Implantes dentários em Campinas com planejamento por tomografia, cirurgia guiada e acompanhamento completo na Odonto Aurora.",
           intro:
-            "Massa leve, de borda alta e salpicada, feita com fermento natural e descanso de 48 horas antes de ir ao forno a lenha.",
+            "Reposição de dentes perdidos com implantes de titânio, planejados digitalmente para uma cirurgia mais rápida, precisa e confortável.",
           body: [
-            "A fermentação longa deixa a massa mais digestiva e cheia de sabor. Ela assa em cerca de 90 segundos a 450 °C, o que cria a borda aerada com pintinhas tostadas típica da pizza napolitana.",
-            "A clássica leva molho de tomate italiano, fior di latte, manjericão fresco e azeite. Também temos a versão vegana, com queijo de castanha e legumes assados na brasa.",
+            "O planejamento começa com tomografia e escaneamento intraoral. Com esses dados, posicionamos o implante virtualmente e imprimimos um guia cirúrgico que leva a broca exatamente ao lugar planejado.",
+            "A cirurgia guiada costuma ser mais curta e com pós-operatório mais tranquilo. Depois do período de integração ao osso, instalamos a coroa definitiva em cerâmica, com cor e formato pensados para o seu sorriso.",
           ],
           benefits: [
-            "Massa com 48 horas de fermentação natural",
-            "Forno a lenha a 450 °C",
-            "Versão vegana com queijo de castanha",
-            "Tamanho individual, ideal para dividir como entrada",
+            "Planejamento digital com tomografia",
+            "Cirurgia guiada, menos invasiva",
+            "Coroa em cerâmica com cor personalizada",
+            "Retornos programados após a instalação",
           ],
           faq: [
             {
-              question: "Tem opção sem glúten?",
+              question: "Qualquer pessoa pode fazer implante?",
               answer:
-                "Ainda não: a massa é feita com farinha de trigo e preparada no mesmo forno. Para quem não consome glúten, indicamos a costela ou o peixe.",
+                "A maioria dos adultos sim. Avaliamos osso, gengiva e condições de saúde como diabetes e tabagismo, que podem exigir cuidados extras.",
             },
             {
-              question: "Posso pedir meio a meio?",
+              question: "Quanto tempo leva o tratamento?",
               answer:
-                "Como a pizza é individual, preferimos não dividir sabores, mas você pode pedir duas para compartilhar na mesa.",
+                "Em geral de 3 a 6 meses entre a cirurgia e a coroa definitiva. Em alguns casos é possível instalar uma coroa provisória no mesmo dia.",
             },
             {
-              question: "Vocês fazem para viagem?",
+              question: "Dói?",
               answer:
-                "Sim, pelo WhatsApp, para retirada no balcão. A massa é melhor consumida até 15 minutos depois de sair do forno.",
+                "A cirurgia é feita com anestesia local. O pós-operatório costuma ser controlado com analgésicos simples.",
             },
           ],
         },
       },
       {
-        icon: "fish",
-        title: "Peixe na folha de bananeira",
-        description: "Peixe do dia assado na brasa, arroz de coco, banana-da-terra grelhada e molho de maracujá.",
-        highlights: ["Sem glúten", "Peixe fresco"],
-        price: "R$ 89",
-        slug: "peixe-folha-de-bananeira",
+        icon: "orthodontics",
+        title: "Ortodontia e alinhadores",
+        description:
+          "Aparelhos fixos estéticos ou alinhadores invisíveis, com simulação 3D do resultado antes de começar.",
+        highlights: ["Simulação 3D", "Alinhadores invisíveis"],
+        slug: "ortodontia-alinhadores",
         details: {
           metaDescription:
-            "Peixe do dia assado na brasa dentro da folha de bananeira, com arroz de coco e banana-da-terra. Prato sem glúten no Alecrim & Brasa.",
+            "Aparelhos estéticos e alinhadores invisíveis em Campinas, com simulação 3D do resultado antes de começar o tratamento.",
           intro:
-            "O peixe fresco do dia, temperado com ervas e limão, embrulhado na folha de bananeira e assado sobre a brasa.",
+            "Dentes alinhados com aparelhos fixos estéticos ou alinhadores invisíveis — e você vê a simulação 3D do resultado antes de começar.",
           body: [
-            "A folha protege o peixe do fogo direto e cria um vapor perfumado lá dentro: a carne fica suculenta e ganha um leve aroma defumado. Abrimos a folha na mesa para você sentir o perfume.",
-            "Acompanham arroz de coco, banana-da-terra grelhada e um molho de maracujá com pimenta-de-cheiro, que dá acidez sem esconder o sabor do peixe.",
+            "Na avaliação, escaneamos os dentes em 3D e planejamos cada movimento. A simulação mostra como o sorriso vai ficar e quantas etapas o tratamento deve ter.",
+            "Os alinhadores são placas transparentes trocadas a cada uma ou duas semanas e podem ser removidos para comer. Para casos mais complexos, indicamos aparelhos fixos com bráquetes estéticos, quase imperceptíveis.",
           ],
           benefits: [
-            "Peixe fresco, comprado no dia",
-            "Preparo na brasa, sem fritura",
-            "Sem glúten",
-            "Molho de maracujá servido à parte",
+            "Simulação 3D antes de começar",
+            "Alinhadores transparentes e removíveis",
+            "Bráquetes estéticos para casos complexos",
+            "Contenção inclusa ao final do tratamento",
           ],
           faq: [
             {
-              question: "Qual é o peixe?",
-              answer:
-                "Depende da pesca do dia — geralmente pescada, robalo ou tilápia de criação responsável. A equipe informa na hora do pedido.",
+              question: "Adulto pode usar aparelho?",
+              answer: "Sim, não há idade limite. Muitos adultos escolhem os alinhadores pela discrição.",
             },
             {
-              question: "O prato é picante?",
-              answer: "Não. A pimenta-de-cheiro é aromática e não arde; o molho vem à parte.",
+              question: "Quantas horas por dia uso o alinhador?",
+              answer: "Cerca de 22 horas por dia, tirando só para comer e escovar os dentes.",
             },
             {
-              question: "Tem espinhas?",
+              question: "O tratamento dói?",
               answer:
-                "Servimos em filé, mas pequenas espinhas podem aparecer. Avise se for servir para crianças que limpamos com mais cuidado.",
+                "Pode haver leve pressão nos primeiros dias de cada troca, sinal de que os dentes estão se movendo. Passa rápido.",
             },
           ],
         },
       },
       {
-        icon: "cookingPot",
-        title: "Risoto de cogumelos e alecrim",
-        description: "Arroz arbóreo, cogumelos frescos salteados, parmesão 12 meses e azeite de alecrim da horta.",
-        highlights: ["Vegetariano", "Cogumelos da serra"],
-        price: "R$ 74",
-        slug: "risoto-cogumelos-alecrim",
+        icon: "gem",
+        title: "Lentes de contato dental",
+        description: "Facetas ultrafinas de porcelana para corrigir cor, forma e alinhamento com naturalidade.",
+        highlights: ["Ensaio estético", "Mínimo desgaste"],
+        slug: "lentes-de-contato-dental",
         details: {
           metaDescription:
-            "Risoto cremoso de cogumelos frescos com parmesão 12 meses e azeite de alecrim da horta. Opção vegetariana do Alecrim & Brasa.",
+            "Lentes de contato dental em porcelana com ensaio estético e mínimo desgaste, na Odonto Aurora em Campinas.",
           intro:
-            "Nosso prato vegetariano mais pedido: arroz arbóreo cozido no caldo de legumes, com cogumelos da serra salteados na manteiga.",
+            "Facetas ultrafinas de porcelana para corrigir cor, formato e pequenos desalinhamentos com aparência natural.",
           body: [
-            "O risoto é feito na hora, mexido até ficar cremoso sem precisar de creme de leite. Finalizamos com parmesão curado por 12 meses e um fio de azeite infusionado com alecrim colhido na nossa horta.",
-            "Os cogumelos (paris, shimeji e shiitake) vêm de um pequeno produtor da Serra da Mantiqueira e são selados na chapa quente para ganhar cor e sabor.",
+            "Antes de qualquer preparo, fazemos um ensaio estético: aplicamos uma resina provisória sobre os dentes para você ver e aprovar o novo formato do sorriso no espelho e em fotos.",
+            "Com o planejamento aprovado, as lentes são produzidas em cerâmica e cimentadas com mínimo ou nenhum desgaste. A porcelana não mancha e reflete a luz como o esmalte natural.",
           ],
           benefits: [
-            "Vegetariano",
-            "Cogumelos frescos de pequeno produtor",
-            "Feito na hora, cremoso sem creme de leite",
-            "Versão vegana sob pedido (sem queijo e manteiga)",
+            "Ensaio estético antes de começar",
+            "Porcelana que não mancha",
+            "Mínimo ou nenhum desgaste do dente",
+            "Formato planejado com fotos e vídeo",
           ],
           faq: [
             {
-              question: "Quanto tempo demora?",
+              question: "Quanto tempo duram?",
+              answer: "Com cuidados de higiene e consultas regulares, mais de 10 anos.",
+            },
+            {
+              question: "Preciso desgastar os dentes?",
+              answer: "Muitas vezes o desgaste é mínimo ou nenhum. Isso é definido no planejamento, caso a caso.",
+            },
+            {
+              question: "Fica com aparência artificial?",
               answer:
-                "Cerca de 20 minutos, porque é preparado na hora. Se estiver com pressa, avise o garçom ao pedir.",
-            },
-            {
-              question: "Pode ser vegano?",
-              answer: "Sim: trocamos manteiga por azeite e o parmesão por farofa de castanhas tostadas.",
-            },
-            {
-              question: "Serve como prato principal?",
-              answer: "Sim, a porção é de prato principal. Para dividir como entrada, pedimos meia porção.",
+                "Não, quando bem planejada. O ensaio estético existe justamente para ajustar cor e formato ao seu rosto antes da versão final.",
             },
           ],
         },
       },
       {
-        icon: "salad",
-        title: "Salada da horta na brasa",
-        description: "Folhas, abóbora e cebola tostadas no fogo, queijo de cabra, castanhas e vinagrete de mel.",
-        highlights: ["Vegetariano", "Da horta à mesa"],
-        price: "R$ 46",
-        slug: "salada-da-horta-na-brasa",
+        icon: "smilePlus",
+        title: "Limpeza e prevenção",
+        description: "Profilaxia, aplicação de flúor e check-up completo para manter a saúde bucal em dia.",
+        highlights: ["Check-up semestral", "Orientação de higiene"],
+        slug: "limpeza-e-prevencao",
         details: {
           metaDescription:
-            "Salada de folhas com abóbora e cebola tostadas na brasa, queijo de cabra, castanhas e vinagrete de mel. Entrada vegetariana do Alecrim & Brasa.",
+            "Limpeza dental, flúor e check-up completo em Campinas. Prevenção para manter a saúde bucal em dia na Odonto Aurora.",
           intro:
-            "Uma salada que também passa pelo fogo: legumes da estação tostados na brasa sobre folhas frescas da nossa horta.",
+            "Profilaxia, aplicação de flúor e um check-up completo para encontrar pequenos problemas antes que virem tratamentos maiores.",
           body: [
-            "A abóbora cabotiá e a cebola roxa ganham marcas da grelha e ficam adocicadas. Montamos sobre folhas colhidas no dia, com queijo de cabra cremoso, castanhas-do-pará tostadas e vinagrete de mel com mostarda.",
-            "Funciona como entrada para dividir ou como prato leve para o almoço. Os legumes mudam conforme a estação, mas a ideia é sempre a mesma: o sabor do fogo em ingredientes simples.",
+            "A consulta inclui remoção de tártaro e placa, polimento, avaliação da gengiva e, quando necessário, radiografias. Também revisamos restaurações antigas e sinais de bruxismo.",
+            "Saímos da consulta com orientações de escovação e uso de fio adaptadas a você — e com o próximo retorno já agendado, normalmente a cada seis meses.",
           ],
           benefits: [
-            "Vegetariana",
-            "Folhas da horta própria, colhidas no dia",
-            "Legumes da estação tostados na brasa",
-            "Versão vegana sem queijo",
+            "Remoção de tártaro e polimento",
+            "Avaliação de gengiva e restaurações",
+            "Aplicação de flúor quando indicado",
+            "Orientação personalizada de higiene",
           ],
           faq: [
             {
-              question: "Os ingredientes mudam?",
-              answer: "Os legumes acompanham a estação. A base de folhas, queijo de cabra e castanhas é fixa.",
-            },
-            {
-              question: "Posso acrescentar proteína?",
-              answer: "Sim: frango na brasa ou fatias de costela, cobrados à parte.",
-            },
-            {
-              question: "Tem castanhas?",
+              question: "De quanto em quanto tempo devo fazer limpeza?",
               answer:
-                "Sim, castanhas-do-pará. Avise sobre alergia que servimos sem e preparamos em utensílios separados.",
+                "Para a maioria das pessoas, a cada seis meses. Quem tem doença gengival ou usa aparelho pode precisar de intervalos menores.",
+            },
+            {
+              question: "A limpeza dói?",
+              answer: "Normalmente não. Em casos de muito tártaro ou gengiva sensível, usamos anestésico tópico.",
+            },
+            {
+              question: "O convênio cobre?",
+              answer:
+                "A maioria dos planos odontológicos cobre limpeza e check-up. Confirme pelo WhatsApp com os dados do seu plano.",
             },
           ],
         },
       },
       {
-        icon: "cakeSlice",
-        title: "Pudim de doce de leite queimado",
-        description: "Pudim cremoso com calda de doce de leite caramelizado no maçarico e flor de sal.",
-        highlights: ["Sobremesa da casa", "Para dividir"],
-        price: "R$ 29",
-        slug: "pudim-doce-de-leite",
+        icon: "baby",
+        title: "Odontopediatria",
+        description:
+          "Atendimento lúdico e acolhedor para crianças, criando desde cedo uma relação tranquila com o dentista.",
+        highlights: ["Ambiente infantil", "Primeira consulta sem medo"],
+        slug: "odontopediatria",
         details: {
           metaDescription:
-            "Pudim cremoso de doce de leite com calda caramelizada no maçarico e flor de sal. Sobremesa da casa no Alecrim & Brasa.",
+            "Dentista infantil em Campinas: atendimento lúdico e acolhedor para bebês e crianças na Odonto Aurora.",
           intro:
-            "A sobremesa que fecha a noite: pudim de doce de leite, liso e cremoso, com calda queimada na hora no maçarico.",
+            "Atendimento pensado para crianças, com tempo, brincadeira e muita conversa — para que a ida ao dentista seja tranquila desde cedo.",
           body: [
-            "O doce de leite é feito na casa, em panela de cobre, e vira a base de um pudim assado em banho-maria por quase duas horas. A textura é firme por fora e cremosa no centro.",
-            "Na mesa, queimamos uma camada de açúcar no maçarico — como num crème brûlée — e finalizamos com flor de sal, que equilibra o doce. Em aniversários, vai com vela por nossa conta.",
+            "A primeira consulta é de adaptação: a criança conhece a sala, a cadeira e os instrumentos, sem pressa. Explicamos tudo com linguagem simples e respeitamos o tempo de cada um.",
+            "Também orientamos os pais sobre escovação, alimentação, chupeta e hábitos que afetam o desenvolvimento dos dentes e da mordida.",
           ],
           benefits: [
-            "Doce de leite artesanal feito na casa",
-            "Calda caramelizada na hora",
-            "Porção generosa para dividir",
-            "Vela de aniversário por conta da casa",
+            "Consulta de adaptação sem procedimentos",
+            "Ambiente lúdico e acolhedor",
+            "Orientação aos pais sobre hábitos e alimentação",
+            "Prevenção com flúor e selantes",
           ],
           faq: [
             {
-              question: "Leva glúten?",
-              answer: "Não. O pudim é feito com leite, ovos e açúcar. Contém lactose e ovos.",
+              question: "Com que idade levar ao dentista?",
+              answer: "Quando nasce o primeiro dente, ou até 1 ano de idade.",
             },
             {
-              question: "Posso encomendar inteiro?",
-              answer: "Sim, com 48 horas de antecedência pelo WhatsApp. O pudim inteiro serve de 10 a 12 pessoas.",
+              question: "E se a criança chorar?",
+              answer:
+                "É normal no começo. Por isso fazemos consultas de adaptação e nunca forçamos procedimentos que não sejam urgentes.",
             },
             {
-              question: "Tem opção sem lactose?",
-              answer: "Temos sorbet de frutas da estação, sem lactose e vegano.",
+              question: "Os pais podem acompanhar?",
+              answer: "Sim, os pais ou responsáveis ficam na sala durante todo o atendimento.",
             },
           ],
         },
       },
     ],
-    cta: { label: "Reservar uma mesa", href: "#reservas" },
-    cardLinkLabel: "Ver detalhes",
-    basePath: "cardapio",
+    cta: { label: "Quero uma avaliação", href: "#agendar" },
+    cardLinkLabel: "Saiba mais",
+    basePath: "tratamentos",
     page: {
       breadcrumbHome: "Início",
-      breadcrumbLabel: "Cardápio",
-      benefitsTitle: "Por que pedir",
-      faqTitle: "Perguntas sobre o prato",
-      relatedTitle: "Outros pratos da casa",
+      breadcrumbLabel: "Tratamentos",
+      benefitsTitle: "O que está incluso",
+      faqTitle: "Dúvidas sobre o tratamento",
+      relatedTitle: "Outros tratamentos",
       cta: {
-        title: "Bateu a fome?",
-        description: "Reserve sua mesa pelo WhatsApp e avise qual prato não pode faltar.",
+        title: "Quer saber se é indicado para você?",
+        description: "Agende uma avaliação pelo WhatsApp e tire suas dúvidas com a equipe.",
         button: {
-          label: "Reservar mesa",
-          href: "#reservas",
+          label: "Agendar avaliação",
+          href: "#agendar",
         },
       },
     },
@@ -515,69 +498,70 @@ const pt: SiteConfig = {
 
   differentials: {
     heading: {
-      eyebrow: "A casa",
-      title: "Mais que um jantar: uma noite para lembrar",
+      eyebrow: "Por que a Aurora",
+      title: "Detalhes que fazem a diferença na sua experiência",
       description:
-        "Fogo, tempo e bons ingredientes. O resto é o salão cheio, a música baixa e a conversa que vai longe.",
+        "Unimos técnica, tecnologia e acolhimento para que cada visita seja leve — inclusive para quem tem medo de dentista.",
     },
     items: [
       {
-        icon: "flame",
-        title: "Cozinha de fogo de verdade",
+        icon: "heartHandshake",
+        title: "Atendimento sem pressa",
         description:
-          "Parrilla, forno a lenha e fogo de chão: nada de atalhos. Cada prato tem o tempo de brasa que merece.",
+          "Consultas com tempo para ouvir, explicar e tirar todas as dúvidas. Você entende cada etapa antes de decidir.",
         size: "wide",
       },
       {
-        icon: "sprout",
-        title: "Da horta à mesa",
-        description: "Vegetais e queijos de pequenos produtores a menos de 100 km.",
+        icon: "scanLine",
+        title: "Tecnologia digital",
+        description: "Escaneamento intraoral 3D, sem moldagens desconfortáveis.",
       },
       {
-        icon: "wine",
-        title: "Carta de vinhos",
-        description: "Rótulos nacionais e importados, com harmonização sugerida pela sommelière.",
+        icon: "clipboardList",
+        title: "Orçamento transparente",
+        description: "Plano por escrito, com valores e prazos claros. Sem surpresas.",
       },
       {
-        icon: "pawPrint",
-        title: "Pet friendly",
-        description: "Varanda com água fresca e petisco para o seu melhor amigo.",
+        icon: "microscope",
+        title: "Biossegurança rigorosa",
+        description: "Esterilização com rastreio de cada instrumental, ciclo a ciclo.",
       },
       {
-        icon: "partyPopper",
-        title: "Eventos e aniversários",
-        description: "Salão reservado para até 60 pessoas, com menu fechado e bolo da casa.",
+        icon: "clock",
+        title: "Horários estendidos",
+        description: "Até as 20h durante a semana e aos sábados pela manhã, para caber na sua rotina.",
       },
     ],
   },
 
   steps: {
     heading: {
-      eyebrow: "Como reservar",
-      title: "Sua mesa garantida em poucos minutos",
-      description: "Sem aplicativo, sem cadastro: é tudo pelo WhatsApp.",
+      eyebrow: "Como funciona",
+      title: "Do primeiro contato ao sorriso novo",
+      description: "Um caminho simples, transparente e no seu ritmo.",
     },
-    stepLabel: "Passo",
+    stepLabel: "Etapa",
     items: [
       {
         icon: "messages",
-        title: "Chame no WhatsApp",
-        description: "Preencha o formulário ou mande uma mensagem com data, horário e número de pessoas.",
+        title: "Fale com a gente",
+        description:
+          "Mande uma mensagem pelo WhatsApp ou preencha o formulário. Respondemos em minutos no horário comercial.",
       },
       {
-        icon: "calendarCheck",
-        title: "Confirmamos a mesa",
-        description: "Nossa equipe responde rapidamente com a confirmação e o melhor lugar do salão para você.",
+        icon: "stethoscope",
+        title: "Avaliação completa",
+        description: "Exame clínico, fotos e escaneamento digital para entender sua saúde bucal e seus objetivos.",
       },
       {
-        icon: "partyPopper",
-        title: "Conte a ocasião",
-        description: "Aniversário, pedido de casamento, cadeirinha para bebê? A gente prepara tudo.",
+        icon: "clipboardList",
+        title: "Plano personalizado",
+        description: "Você recebe um plano de tratamento por escrito, com etapas, prazos e opções de pagamento.",
       },
       {
-        icon: "utensils",
-        title: "É só aproveitar",
-        description: "Chegue, sente e deixe o resto com a brasa. Tolerância de 15 minutos para atrasos.",
+        icon: "smile",
+        title: "Tratamento e acompanhamento",
+        description: "Iniciamos o cuidado com conforto e seguimos com retornos programados para manter o resultado.",
       },
     ],
   },
@@ -585,79 +569,82 @@ const pt: SiteConfig = {
   team: {
     heading: {
       eyebrow: "Equipe",
-      title: "Quem acende a brasa todos os dias",
-      description: "Uma equipe apaixonada por fogo, produto e por receber bem.",
+      title: "Especialistas que cuidam de você",
+      description:
+        "Profissionais com formação contínua e um objetivo em comum: tornar o cuidado odontológico leve e eficiente.",
     },
     items: [
       {
-        name: "Lucas Ferraz",
-        initials: "LF",
-        role: "Chef executivo",
-        registry: "20 anos de cozinha",
-        bio: "Criado entre churrasqueiras do interior, estudou cozinha de fogo na Argentina e no Uruguai.",
+        name: "Dra. Helena Duarte",
+        initials: "HD",
+        role: "Implantodontia e prótese",
+        registry: "CRO-SP 000.001",
+        bio: "Diretora clínica, especialista em reabilitação oral e cirurgia guiada.",
       },
       {
-        name: "Ana Ribeiro",
-        initials: "AR",
-        role: "Sommelière",
-        registry: "Carta com 180 rótulos",
-        bio: "Monta harmonizações para cada prato e adora apresentar vinhos de pequenas vinícolas.",
+        name: "Dr. Rafael Nogueira",
+        initials: "RN",
+        role: "Ortodontia e alinhadores",
+        registry: "CRO-SP 000.002",
+        bio: "Planeja tratamentos ortodônticos digitais com simulação 3D do resultado.",
       },
       {
-        name: "Júlia Tanaka",
-        initials: "JT",
-        role: "Confeiteira",
-        registry: "Sobremesas autorais",
-        bio: "Responsável pelas sobremesas e pelos pães de fermentação natural servidos na casa.",
+        name: "Dra. Marina Okada",
+        initials: "MO",
+        role: "Odontopediatria e estética",
+        registry: "CRO-SP 000.003",
+        bio: "Une cuidado infantil acolhedor e odontologia estética minimamente invasiva.",
       },
     ],
   },
 
   testimonials: {
     heading: {
-      eyebrow: "Avaliações",
-      title: "Quem prova, volta",
+      eyebrow: "Depoimentos",
+      title: "Quem sorri com a Aurora recomenda",
     },
-    summary: "Nota média 4,8 com base em avaliações de clientes",
+    summary: "Nota média 4,9 com base em avaliações de pacientes",
     items: [
       {
-        name: "Mariana C.",
-        detail: "Jantar de aniversário",
+        name: "Camila R.",
+        detail: "Clareamento dental",
         quote:
-          "A costela desmancha! Avisei que era aniversário e trouxeram o pudim com vela. Atendimento impecável do começo ao fim.",
+          "Sempre tive vergonha de sorrir em fotos. Em três semanas o resultado ficou natural e não senti sensibilidade nenhuma.",
         rating: 5,
       },
       {
-        name: "Rafael T.",
-        detail: "Almoço de domingo",
+        name: "Eduardo M.",
+        detail: "Implante",
         quote:
-          "Melhor pizza de Campinas, sem exagero. Massa leve, borda perfeita e a varanda é ótima para ir com o cachorro.",
+          "Explicaram cada etapa com calma e o planejamento digital me deixou muito seguro. Cirurgia tranquila, recuperação rápida.",
         rating: 5,
       },
       {
-        name: "Beatriz e Paulo",
-        detail: "Noite a dois",
+        name: "Patrícia L.",
+        detail: "Mãe do Theo, 6 anos",
         quote:
-          "A sommelière acertou em cheio na harmonização. Ambiente aconchegante, música baixa e comida de outro nível.",
+          "Meu filho tinha pavor de dentista. Hoje ele pergunta quando vai voltar! A Dra. Marina tem uma paciência incrível.",
         rating: 5,
       },
       {
-        name: "Henrique S.",
-        detail: "Evento da empresa",
-        quote: "Fechamos o salão para 40 pessoas. Organização perfeita, menu fechado delicioso e preço justo.",
-        rating: 5,
-      },
-      {
-        name: "Carla M.",
-        detail: "Vegetariana",
+        name: "Bruno S.",
+        detail: "Alinhadores invisíveis",
         quote:
-          "Finalmente um restaurante de brasa com opções vegetarianas de verdade. O risoto e a salada na brasa são incríveis.",
+          "Ver a simulação 3D antes de começar fez toda diferença. Ninguém percebe que estou usando os alinhadores.",
         rating: 5,
       },
       {
-        name: "Diego F.",
-        detail: "Happy hour",
-        quote: "Fila no sábado, mas a reserva pelo WhatsApp resolveu. Vale cada minuto — peça a costela e o pudim.",
+        name: "Juliana F.",
+        detail: "Lentes de contato dental",
+        quote:
+          "Fiz o ensaio estético antes e pude aprovar o formato. Ficou exatamente como eu imaginava, muito natural.",
+        rating: 5,
+      },
+      {
+        name: "Sérgio A.",
+        detail: "Limpeza e prevenção",
+        quote:
+          "Atendimento pontual, clínica impecável e horário à noite que encaixa na minha rotina. Virei paciente fiel.",
         rating: 4,
       },
     ],
@@ -665,137 +652,145 @@ const pt: SiteConfig = {
 
   payment: {
     heading: {
-      eyebrow: "Ambiente e pagamento",
-      title: "Um lugar para todo mundo à mesa",
-      description: "Pensamos em cada detalhe para que a sua visita seja tranquila — de crianças a pets.",
+      eyebrow: "Convênios e pagamento",
+      title: "Cuidar do sorriso cabe no seu planejamento",
+      description: "Trabalhamos com os principais convênios e condições facilitadas para tratamentos particulares.",
     },
-    insurancesTitle: "Comodidades",
-    insurancesIcon: "heartHandshake",
+    insurancesTitle: "Convênios aceitos",
     insurances: [
-      "Pet friendly",
-      "Área kids",
-      "Opções veganas",
-      "Sem glúten sob pedido",
-      "Acessível",
-      "Wi-Fi",
-      "Manobrista",
+      "SorriaMais Saúde",
+      "OdontoPrime",
+      "Vida Dental",
+      "BemEstar Odonto",
+      "Plano Sorriso Total",
+      "DentalCare Brasil",
+      "UniOdonto Campinas",
     ],
     methodsTitle: "Formas de pagamento",
     methods: [
       { icon: "qrCode", label: "Pix" },
-      { icon: "creditCard", label: "Crédito e débito" },
-      { icon: "banknote", label: "Vale-refeição" },
+      { icon: "creditCard", label: "Cartão de crédito" },
+      { icon: "banknote", label: "Débito e dinheiro" },
     ],
     installments: {
-      title: "Eventos para até 60 pessoas",
-      description: "com menu fechado, bolo da casa e salão reservado.",
-      icon: "partyPopper",
+      title: "Parcelamos em até 12x",
+      description: "no cartão de crédito, para tratamentos particulares.",
     },
-    note: "Informe alergias e restrições na reserva — adaptamos o preparo sempre que possível.",
+    note: "Convênios fictícios, apenas para demonstração. Consulte a cobertura do seu plano.",
   },
 
   faq: {
     heading: {
       eyebrow: "Dúvidas frequentes",
-      title: "Antes de você chegar",
+      title: "Perguntas que sempre recebemos",
     },
-    contactPrompt: "Ficou alguma dúvida?",
-    contactCta: { label: "Fale com a gente no WhatsApp", href: "#reservas" },
+    contactPrompt: "Não encontrou sua dúvida?",
+    contactCta: { label: "Fale com a gente no WhatsApp", href: "#agendar" },
     items: [
       {
-        question: "Preciso de reserva?",
+        question: "A primeira avaliação tem custo?",
         answer:
-          "Não é obrigatório, mas recomendamos para sextas, sábados e almoço de domingo. Pelo WhatsApp a confirmação é rápida.",
+          "A avaliação inicial inclui exame clínico, fotos e orientação sobre as opções de tratamento. Consulte as condições vigentes pelo WhatsApp — para pacientes de convênios aceitos, ela é coberta pelo plano.",
       },
       {
-        question: "Vocês aceitam pets?",
-        answer: "Sim! Pets são bem-vindos na varanda, com pote de água e petisco por conta da casa.",
-      },
-      {
-        question: "Há opções vegetarianas, veganas e sem glúten?",
+        question: "O clareamento dental deixa os dentes sensíveis?",
         answer:
-          "Sim. Temos pratos vegetarianos fixos, pizza vegana e vários itens sem glúten. Avise sobre alergias na reserva.",
+          "Usamos géis de baixa concentração e dessensibilizantes antes e depois das sessões. A maioria dos pacientes relata sensibilidade leve ou nenhuma.",
       },
       {
-        question: "Posso comemorar aniversário?",
+        question: "Quanto tempo dura um tratamento com alinhadores?",
         answer:
-          "Claro. Conte na reserva e preparamos uma surpresa. Para grupos acima de 15 pessoas, temos menu fechado.",
+          "Depende de cada caso, mas a média fica entre 6 e 18 meses. Na avaliação você vê a simulação 3D com o número estimado de etapas.",
       },
       {
-        question: "Tem estacionamento?",
-        answer: "Temos manobrista a partir das 19h e estacionamento conveniado na mesma rua durante o almoço.",
+        question: "Implante dói?",
+        answer:
+          "O procedimento é feito com anestesia local e planejamento guiado, o que reduz o tempo de cirurgia. O pós-operatório costuma ser tranquilo, controlado com medicação simples.",
       },
       {
-        question: "Cobram taxa de rolha?",
-        answer: "Sim, R$ 50 por garrafa, isenta na compra de um rótulo da nossa carta.",
+        question: "A partir de que idade a criança deve ir ao dentista?",
+        answer:
+          "Recomendamos a primeira consulta assim que nasce o primeiro dente, ou até 1 ano de idade. Quanto antes, mais natural fica a relação com o cuidado bucal.",
+      },
+      {
+        question: "Vocês atendem urgências?",
+        answer:
+          "Sim. Em casos de dor ou acidente, chame no WhatsApp: encaixamos atendimentos de urgência no mesmo dia sempre que possível.",
       },
       {
         question: "Quais formas de pagamento são aceitas?",
-        answer: "Pix, cartões de crédito e débito e as principais bandeiras de vale-refeição.",
+        answer:
+          "Pix, cartões de débito e crédito (em até 12x) e dinheiro. Também atendemos diversos convênios odontológicos.",
+      },
+      {
+        question: "Tem estacionamento?",
+        answer: "Sim, temos estacionamento conveniado em frente à clínica e a recepção é totalmente acessível.",
       },
     ],
   },
 
   booking: {
     heading: {
-      eyebrow: "Reservas",
-      title: "Reserve sua mesa em menos de 1 minuto",
-      description: "Preencha os dados e continue a conversa no WhatsApp — confirmamos a sua mesa por lá.",
+      eyebrow: "Agendamento",
+      title: "Agende sua avaliação em menos de 1 minuto",
+      description: "Preencha os dados abaixo e continue a conversa direto no WhatsApp com nossa equipe de recepção.",
     },
     benefits: [
-      "Confirmação rápida pelo WhatsApp",
-      "Mesas no salão, varanda ou balcão da parrilla",
-      "Avise a ocasião e preparamos uma surpresa",
+      "Resposta rápida no horário comercial",
+      "Horários de manhã, tarde e noite",
+      "Sem compromisso: tire suas dúvidas primeiro",
     ],
     form: {
-      name: { label: "Nome completo", placeholder: "Em nome de quem fica a reserva?" },
+      name: { label: "Nome completo", placeholder: "Como podemos te chamar?" },
       phone: { label: "WhatsApp", placeholder: "(19) 99999-9999" },
       treatment: {
-        label: "Número de pessoas",
-        placeholder: "Selecione",
+        label: "Tratamento de interesse",
+        placeholder: "Selecione uma opção",
         options: [
-          { value: "1-2", label: "1 a 2 pessoas" },
-          { value: "3-4", label: "3 a 4 pessoas" },
-          { value: "5-6", label: "5 a 6 pessoas" },
-          { value: "7-10", label: "7 a 10 pessoas" },
-          { value: "evento", label: "Evento (mais de 10)" },
+          { value: "avaliacao", label: "Avaliação geral" },
+          { value: "clareamento", label: "Clareamento dental" },
+          { value: "implantes", label: "Implantes" },
+          { value: "ortodontia", label: "Ortodontia / Alinhadores" },
+          { value: "lentes", label: "Lentes de contato dental" },
+          { value: "limpeza", label: "Limpeza e prevenção" },
+          { value: "odontopediatria", label: "Odontopediatria" },
         ],
       },
       period: {
-        label: "Refeição",
+        label: "Melhor período",
         options: [
-          { value: "almoco", label: "Almoço" },
-          { value: "jantar", label: "Jantar" },
-          { value: "evento", label: "Evento" },
+          { value: "manha", label: "Manhã" },
+          { value: "tarde", label: "Tarde" },
+          { value: "noite", label: "Noite" },
         ],
       },
       message: {
-        label: "Data, horário e observações",
-        placeholder: "Ex.: sábado, 20h — aniversário, cadeirinha para bebê…",
+        label: "Mensagem (opcional)",
+        placeholder: "Conte um pouco sobre o que você procura…",
       },
-      submit: "Reservar pelo WhatsApp",
-      privacy: "Seus dados são usados apenas para confirmar a reserva. Saiba mais na",
+      submit: "Enviar pelo WhatsApp",
+      privacy: "Seus dados são usados apenas para o contato sobre o agendamento. Saiba mais na",
       errors: {
         nameMin: "Informe seu nome (mínimo de 3 letras).",
         nameMax: "Nome muito longo.",
         phone: "Informe um WhatsApp válido com DDD.",
-        treatment: "Selecione o número de pessoas.",
-        period: "Escolha almoço, jantar ou evento.",
+        treatment: "Selecione o tratamento de interesse.",
+        period: "Escolha o melhor período.",
         messageMax: "A mensagem pode ter no máximo 500 caracteres.",
       },
       whatsappMessage: {
-        intro: "Olá, Alecrim & Brasa! Gostaria de reservar uma mesa.",
+        intro: "Olá, Odonto Aurora! Gostaria de agendar uma avaliação.",
         fields: {
           name: "Nome",
           phone: "WhatsApp",
-          treatment: "Pessoas",
-          period: "Refeição",
-          message: "Data e observações",
+          treatment: "Tratamento",
+          period: "Melhor período",
+          message: "Mensagem",
         },
       },
       toast: {
         title: "Tudo certo! Abrindo o WhatsApp…",
-        description: "Sua reserva já está escrita. É só tocar em enviar.",
+        description: "Sua mensagem já está pronta. É só tocar em enviar.",
       },
     },
   },
@@ -803,8 +798,7 @@ const pt: SiteConfig = {
   privacy: {
     path: "privacidade",
     title: "Política de privacidade",
-    description:
-      "Como o site do Alecrim & Brasa trata seus dados pessoais, em linguagem simples e de acordo com a LGPD.",
+    description: "Como o site da Odonto Aurora trata seus dados pessoais, em linguagem simples e de acordo com a LGPD.",
     updatedLabel: "Última atualização",
     updatedAt: "3 de novembro de 2026",
     intro:
@@ -813,26 +807,33 @@ const pt: SiteConfig = {
       {
         heading: "Quem é o responsável",
         paragraphs: [
-          "O controlador dos dados é Alecrim & Brasa Gastronomia Ltda. (CNPJ 00.000.000/0001-00), Rua do Alecrim, 315, Jardim Aurora, Campinas – SP. Empresa e dados fictícios, criados para portfólio.",
+          "O controlador dos dados é a Odonto Aurora, Av. Horizonte Azul, 742 – Sala 12, Jardim Aurora, Campinas – SP, sob responsabilidade técnica da Dra. Helena Duarte (CRO-SP 000.001). Clínica e dados fictícios, criados para portfólio.",
         ],
       },
       {
         heading: "Quais dados coletamos",
         paragraphs: [
-          "Somente o que você digita no formulário de reserva: nome, WhatsApp, número de pessoas, refeição e, se quiser, uma mensagem com data e observações.",
-          "Esses dados não são enviados a nenhum servidor nosso: o próprio navegador monta uma mensagem e abre o WhatsApp. Só recebemos a reserva se você tocar em enviar dentro do aplicativo.",
+          "Somente o que você digita no formulário de agendamento: nome, WhatsApp, tratamento de interesse, melhor período e, se quiser, uma mensagem.",
+          "Esses dados não são enviados a nenhum servidor nosso: o próprio navegador monta uma mensagem e abre o WhatsApp. Só recebemos o pedido se você tocar em enviar dentro do aplicativo.",
+        ],
+      },
+      {
+        heading: "Dados de saúde",
+        paragraphs: [
+          "O tratamento de interesse e a mensagem podem revelar informações sobre a sua saúde bucal, que a LGPD considera dado sensível (art. 11). Por isso pedimos apenas o mínimo para o agendamento — evite enviar exames ou detalhes clínicos por aqui.",
+          "Na clínica, o prontuário odontológico é tratado para a tutela da saúde, com sigilo profissional e pelo prazo exigido pelas normas do Conselho Federal de Odontologia.",
         ],
       },
       {
         heading: "Para que usamos",
         paragraphs: [
-          "Para responder e confirmar a sua reserva (base legal: procedimentos preliminares a pedido do titular, art. 7º, V, da LGPD). Não usamos seus dados para publicidade e não os vendemos ou compartilhamos com terceiros.",
+          "Para responder e agendar a sua avaliação (base legal: procedimentos preliminares a pedido do titular, art. 7º, V, e tutela da saúde, art. 11, II, f, da LGPD). Não usamos seus dados para publicidade e não os vendemos ou compartilhamos com terceiros.",
         ],
       },
       {
         heading: "WhatsApp",
         paragraphs: [
-          "A conversa acontece no WhatsApp, serviço da Meta, que tem política de privacidade própria. Guardamos o histórico da conversa apenas pelo tempo necessário para atender você e cumprir obrigações legais.",
+          "A conversa acontece no WhatsApp, serviço da Meta, que tem política de privacidade própria. Guardamos o histórico apenas pelo tempo necessário para atender você e cumprir obrigações legais.",
         ],
       },
       {
@@ -846,7 +847,7 @@ const pt: SiteConfig = {
         heading: "Seus direitos",
         paragraphs: [
           "Você pode pedir confirmação de tratamento, acesso, correção, anonimização ou eliminação dos seus dados, além de informações sobre compartilhamento e revogação de consentimento (art. 18 da LGPD).",
-          "Para isso, fale com a gente pelo e-mail reservas@alecrimebrasa.com.br ou pelo WhatsApp (19) 98888-7777. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).",
+          "Para isso, fale com a gente pelo e-mail contato@odontoaurora.com.br ou pelo WhatsApp (19) 99999-9999. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).",
         ],
       },
       {
@@ -868,10 +869,10 @@ const pt: SiteConfig = {
     heading: {
       eyebrow: "Localização",
       title: "Venha nos visitar",
-      description: "Fácil de chegar, com manobrista à noite e varanda pet friendly.",
+      description: "Fácil acesso, estacionamento conveniado e recepção acessível.",
     },
     addressTitle: "Endereço",
-    hoursTitle: "Horário de funcionamento",
+    hoursTitle: "Horário de atendimento",
     contactTitle: "Contato",
     directionsCta: "Como chegar",
     mapCaption: "Campinas – SP",
@@ -879,12 +880,12 @@ const pt: SiteConfig = {
 
   footer: {
     about:
-      "Cozinha de fogo em Campinas: carnes na brasa, pizzas de fermentação natural e ingredientes de pequenos produtores.",
+      "Odontologia moderna e humanizada em Campinas. Cuidamos do seu sorriso com técnica, tecnologia e acolhimento.",
     linksTitle: "Navegação",
     contactTitle: "Contato",
     socialTitle: "Redes sociais",
     rights: "Todos os direitos reservados.",
-    disclaimer: "Restaurante, equipe, preços, CNPJ e avaliações são fictícios.",
+    disclaimer: "Clínica, profissionais, registros, convênios e depoimentos são fictícios.",
     portfolioPrefix: "Projeto fictício desenvolvido para portfólio por",
     backToTop: "Voltar ao topo",
   },
@@ -904,60 +905,59 @@ const en: SiteConfig = {
 
   brand: {
     ...pt.brand,
-    slogan: "Wood-fire cooking, honest ingredients",
+    slogan: "Your smile deserves real care",
     description:
-      "Wood-fire restaurant in Campinas, Brazil: flame-grilled meats, naturally leavened pizzas, produce from small local farms and a wine list designed for every dish.",
-    servesCuisine: ["Brazilian", "Wood-fire cooking", "Pizza"],
+      "Dental clinic in Campinas, Brazil, with modern treatments, a specialist team and caring service from the first message to your final smile.",
   },
 
   seo: {
-    title: "Alecrim & Brasa — Wood-fire restaurant in Campinas, Brazil",
+    title: "Odonto Aurora — Dental clinic in Campinas, Brazil",
     description:
-      "Flame-grilled meats, sourdough pizzas and local ingredients in Campinas, Brazil. Book your table on WhatsApp.",
+      "Teeth whitening, implants, clear aligners, porcelain veneers and pediatric dentistry in Campinas, Brazil. Book your check-up on WhatsApp.",
     keywords: [
-      "restaurant in Campinas",
-      "wood-fire cooking",
-      "sourdough pizza",
-      "fire-pit beef ribs",
-      "pet friendly restaurant Campinas",
-      "romantic dinner Campinas",
+      "dentist in Campinas",
+      "dental clinic Campinas",
+      "teeth whitening",
+      "dental implants",
+      "clear aligners",
+      "porcelain veneers",
+      "pediatric dentistry",
     ],
-    ogImageAlt: "Alecrim & Brasa — Wood-fire cooking, honest ingredients",
-    serviceSchemaType: "MenuItem",
+    ogImageAlt: "Odonto Aurora — Your smile deserves real care",
+    serviceSchemaType: "MedicalProcedure",
   },
 
   contact: {
     ...pt.contact,
-    defaultWhatsAppMessage: "Hi, Alecrim & Brasa! I found you on the website and would like to book a table.",
+    defaultWhatsAppMessage: "Hi, Odonto Aurora! I found you on the website and would like to book a check-up.",
   },
 
-  address: { ...pt.address, country: "BR", reference: "Valet parking available from 7 pm" },
+  address: { ...pt.address, reference: "Partner parking right across the street" },
 
   openingHours: [
-    { ...pt.openingHours[0], label: "Tuesday to Friday", hours: "11:30am–3pm · 7pm–11pm" },
-    { ...pt.openingHours[1], label: "Saturday", hours: "12pm–11:30pm" },
-    { ...pt.openingHours[2], label: "Sunday", hours: "12pm–5pm" },
-    { ...pt.openingHours[3], label: "Monday", hours: "Closed" },
+    { ...pt.openingHours[0], label: "Monday to Friday", hours: "8am–8pm" },
+    { ...pt.openingHours[1], label: "Saturday", hours: "8am–1pm" },
+    { ...pt.openingHours[2], label: "Sundays and holidays", hours: "Closed" },
   ],
 
-  responsible: { ...pt.responsible, role: "Company" },
+  responsible: { ...pt.responsible, role: "Clinical director" },
 
   sections: {
     home: "home",
-    treatments: "menu",
-    differentials: "the-house",
-    steps: "how-to-book",
+    treatments: "treatments",
+    differentials: "why-us",
+    steps: "how-it-works",
     team: "team",
     testimonials: "reviews",
-    payment: "amenities",
+    payment: "insurance",
     faq: "faq",
-    booking: "reservations",
+    booking: "book",
     location: "location",
   },
 
   nav: [
-    { label: "Menu", href: "#menu" },
-    { label: "The house", href: "#the-house" },
+    { label: "Treatments", href: "#treatments" },
+    { label: "Why us", href: "#why-us" },
     { label: "Team", href: "#team" },
     { label: "Reviews", href: "#reviews" },
     { label: "FAQ", href: "#faq" },
@@ -966,13 +966,13 @@ const en: SiteConfig = {
 
   ui: {
     skipToContent: "Skip to content",
-    headerCta: { label: "Book a table", href: "#reservations" },
+    headerCta: { label: "Book a check-up", href: "#book" },
     openMenu: "Open menu",
     closeMenu: "Close menu",
     menuTitle: "Menu",
-    homeLabel: "Alecrim & Brasa — home",
+    homeLabel: "Odonto Aurora — home",
     mainNavLabel: "Main navigation",
-    whatsappFab: "Book on WhatsApp",
+    whatsappFab: "Chat on WhatsApp",
     starsLabel: "Rating: {rating} out of 5 stars",
     externalLinkHint: "(opens in a new tab)",
     pauseAnimation: "Pause reviews",
@@ -988,375 +988,367 @@ const en: SiteConfig = {
     language: { label: "Language" },
     notFound: {
       title: "Page not found",
-      description: "This page is off the menu. How about going back home and booking your table?",
+      description: "We couldn't find this page. How about going back home and booking your check-up?",
       cta: { label: "Back to home", href: "/" },
     },
   },
 
   hero: {
     ...pt.hero,
-    badge: "Now taking bookings for this weekend",
-    title: "Wood-fire cooking,",
-    highlight: "honest ingredients",
+    badge: "Now accepting new patients",
+    title: "Your smile deserves",
+    highlight: "real care",
     subtitle:
-      "Flame-grilled meats, slow-fermented pizzas and vegetables from small local farms — served unhurried, in a dining room made for good company.",
-    primaryCta: { label: "Book on WhatsApp", href: "#reservations" },
-    secondaryCta: { label: "See the menu", href: "#menu" },
+      "Modern, gentle and unhurried dental care, with a team that explains every step and treats you as a person — not a number.",
+    primaryCta: { label: "Book on WhatsApp", href: "#book" },
+    secondaryCta: { label: "See treatments", href: "#treatments" },
     trustBadges: [
-      { icon: "flame", label: "Wood oven and grill" },
-      { icon: "star", label: "4.8 rating on Google" },
-      { icon: "sprout", label: "Local ingredients" },
+      { icon: "smile", label: "2,000+ smiles" },
+      { icon: "star", label: "4.9 rating on Google" },
+      { icon: "heartHandshake", label: "Caring service" },
     ],
     visual: {
-      illustration: "dish",
-      cardTitle: "Dish of the week",
-      cardSubtitle: "Fire-pit beef ribs",
-      chips: ["12h over embers", "Serves 2", "Gluten-free"],
+      illustration: "tooth",
+      cardTitle: "Treatment plan",
+      cardSubtitle: "Whitening + cleaning",
+      chips: ["Pain-free", "Digital", "Personalised"],
       ratingLabel: "Average rating",
-      ratingValue: "4.8",
-      nextSlotLabel: "Table available",
-      nextSlotValue: "Today, 8:30pm",
+      ratingValue: "4.9",
+      nextSlotLabel: "Next available",
+      nextSlotValue: "Tomorrow, 9:30am",
     },
   },
 
   stats: {
-    heading: { eyebrow: "By the numbers", title: "A fire that hasn't gone out since 2017" },
+    heading: { eyebrow: "By the numbers", title: "Trust built one smile at a time" },
     items: [
-      { value: 9, suffix: "years", label: "of full tables" },
-      { value: 85000, prefix: "+", label: "dishes served" },
-      { value: 120, label: "seats" },
-      { value: 4.8, decimals: 1, suffix: "/5", label: "average rating" },
+      { value: 12, suffix: "years", label: "caring for Campinas" },
+      { value: 2000, prefix: "+", label: "patients treated" },
+      { value: 8, label: "specialists" },
+      { value: 4.9, decimals: 1, suffix: "/5", label: "average rating" },
     ],
   },
 
   treatments: {
     heading: {
-      eyebrow: "Menu highlights",
-      title: "The dishes that made our name",
-      description: "A selection from our menu — everything cooked to order, over real fire, with seasonal ingredients.",
+      eyebrow: "Treatments",
+      title: "Everything your smile needs, in one place",
+      description: "From preventive check-ups to full rehabilitation, with digital technology and an individual plan.",
     },
     items: [
       {
-        icon: "beef",
-        title: "Fire-pit beef ribs",
-        description: "12 hours over the embers, with clarified-butter farofa, crispy cassava and herb vinaigrette.",
-        highlights: ["Serves 2", "House signature"],
-        price: "R$ 129",
-        slug: "fire-pit-beef-ribs",
+        icon: "sparkles",
+        title: "Teeth whitening",
+        description:
+          "Up to 4 shades whiter with a safe protocol that combines in-office sessions and a take-home tray.",
+        highlights: ["Low sensitivity", "Results in 3 weeks"],
+        slug: "teeth-whitening",
         details: {
           metaDescription:
-            "Beef ribs slow-roasted for 12 hours by the fire pit, with butter farofa and crispy cassava. A dish for two at Alecrim & Brasa, Campinas.",
+            "Teeth whitening in Campinas with a combined protocol (in-office + take-home), low sensitivity and results in about 3 weeks.",
           intro:
-            "The dish that made us famous: beef ribs seasoned only with coarse salt and slow-roasted for 12 hours beside the fire pit.",
+            "Teeth up to 4 shades whiter with a protocol that combines in-office sessions and a take-home tray, always with professional follow-up.",
           body: [
-            "We light the fire at six in the morning. The ribs stand on iron skewers, taking the heat from the side — never the direct flame. The result is meat that falls off the bone, with rendered fat and a lightly smoky crust.",
-            "It is carved at the table and served with clarified-butter farofa, cassava boiled and then crisped on the griddle, and a vinaigrette made with herbs from our garden. One portion comfortably serves two — or three, with a starter and dessert.",
+            "Before whitening, we check for cavities, gum health and existing fillings — the gel does not change the colour of resins or crowns, so we plan everything for an even result.",
+            "The combined protocol uses controlled-concentration gels and desensitisers before and after each stage. In most cases the final result shows in about three weeks and lasts for years with good hygiene and occasional touch-ups.",
           ],
           benefits: [
-            "12 hours of slow cooking by the fire pit",
-            "Selected cut from small farms in São Paulo state",
-            "Sides included: farofa, cassava and vinaigrette",
-            "Gluten-free (let us know about allergies when booking)",
+            "Prior check of cavities, gums and fillings",
+            "Combined protocol: in-office + take-home tray",
+            "Desensitiser at every stage",
+            "Digital tray made from a 3D scan",
           ],
           faq: [
             {
-              question: "Are the ribs available every day?",
+              question: "Does whitening damage the enamel?",
               answer:
-                "Yes, Tuesday to Sunday, while the day's batch lasts. On weekends we recommend booking and mentioning that you want the ribs.",
+                "No, when done with professional supervision and proper gels. The enamel is not worn away; the gel acts on the pigments inside the tooth.",
             },
             {
-              question: "How many people does it serve?",
+              question: "How long do the results last?",
               answer:
-                "Two people with room to spare. For larger groups the kitchen prepares extra portions if you ask when booking.",
+                "Two to four years on average, depending on habits like coffee, wine and smoking. Short touch-ups with the tray keep the shade.",
             },
             {
-              question: "Which wine goes with it?",
-              answer:
-                "A full-bodied red, such as Malbec or Tannat. Our sommelier suggests options by the glass if you'd like to mix it up.",
+              question: "Can pregnant women whiten their teeth?",
+              answer: "We recommend postponing whitening during pregnancy and breastfeeding, as a precaution.",
             },
           ],
         },
       },
       {
-        icon: "pizza",
-        title: "Sourdough pizza",
-        description: "48-hour dough baked in the wood oven, with Italian tomatoes, fior di latte and basil.",
-        highlights: ["Wood oven", "Vegan option"],
-        price: "R$ 68",
-        slug: "sourdough-pizza",
+        icon: "shieldCheck",
+        title: "Dental implants",
+        description: "Titanium implants to replace missing teeth, planned with digital CT scans.",
+        highlights: ["Guided surgery", "3D planning"],
+        slug: "dental-implants",
         details: {
           metaDescription:
-            "Neapolitan-style pizza with 48-hour naturally leavened dough, baked in a wood oven. Vegan option available at Alecrim & Brasa.",
+            "Dental implants in Campinas with CT-based planning, guided surgery and complete follow-up at Odonto Aurora.",
           intro:
-            "Light dough with a tall, blistered crust, made with natural leaven and rested for 48 hours before it meets the wood oven.",
+            "Replacing missing teeth with titanium implants, digitally planned for a faster, more precise and more comfortable surgery.",
           body: [
-            "The long fermentation makes the dough easier to digest and full of flavour. It bakes in about 90 seconds at 450 °C, creating the airy, leopard-spotted crust of a true Neapolitan pizza.",
-            "The classic has Italian tomato sauce, fior di latte, fresh basil and olive oil. There is also a vegan version with cashew cheese and fire-roasted vegetables.",
+            "Planning starts with a CT scan and an intraoral scan. With this data we position the implant virtually and 3D-print a surgical guide that takes the drill exactly where planned.",
+            "Guided surgery is usually shorter, with a smoother recovery. Once the implant has bonded to the bone, we fit the final ceramic crown, with a shade and shape designed for your smile.",
           ],
           benefits: [
-            "Dough with 48 hours of natural fermentation",
-            "Wood oven at 450 °C",
-            "Vegan version with cashew cheese",
-            "Individual size, great to share as a starter",
+            "Digital planning with CT scan",
+            "Guided, less invasive surgery",
+            "Ceramic crown with custom shade",
+            "Scheduled follow-ups after placement",
           ],
           faq: [
             {
-              question: "Is there a gluten-free option?",
+              question: "Can anyone get an implant?",
               answer:
-                "Not yet: the dough uses wheat flour and is baked in the same oven. If you avoid gluten, we recommend the ribs or the fish.",
+                "Most adults can. We assess bone, gums and conditions such as diabetes and smoking, which may require extra care.",
             },
             {
-              question: "Can I order half and half?",
+              question: "How long does treatment take?",
               answer:
-                "Since the pizza is individual we prefer not to split flavours, but you can order two to share at the table.",
+                "Usually 3 to 6 months between surgery and the final crown. In some cases a temporary crown can be fitted on the same day.",
             },
             {
-              question: "Do you do takeaway?",
-              answer:
-                "Yes, through WhatsApp, for pickup at the counter. The dough is best eaten within 15 minutes of leaving the oven.",
+              question: "Does it hurt?",
+              answer: "Surgery is done under local anaesthesia. Recovery is usually managed with simple painkillers.",
             },
           ],
         },
       },
       {
-        icon: "fish",
-        title: "Fish in banana leaf",
-        description: "Catch of the day grilled over embers, coconut rice, grilled plantain and passion fruit sauce.",
-        highlights: ["Gluten-free", "Fresh fish"],
-        price: "R$ 89",
-        slug: "fish-in-banana-leaf",
+        icon: "orthodontics",
+        title: "Braces and aligners",
+        description: "Aesthetic fixed braces or clear aligners, with a 3D simulation of the result before you start.",
+        highlights: ["3D simulation", "Clear aligners"],
+        slug: "braces-and-aligners",
         details: {
           metaDescription:
-            "Catch of the day grilled over embers inside a banana leaf, with coconut rice and plantain. A gluten-free dish at Alecrim & Brasa.",
+            "Aesthetic braces and clear aligners in Campinas, with a 3D simulation of the result before treatment starts.",
           intro:
-            "Fresh catch of the day, seasoned with herbs and lime, wrapped in banana leaf and roasted over the embers.",
+            "Straight teeth with aesthetic fixed braces or clear aligners — and you see a 3D simulation of the result before you begin.",
           body: [
-            "The leaf shields the fish from direct fire and creates fragrant steam inside: the flesh stays juicy and picks up a gentle smoky aroma. We open the leaf at the table so you get the full scent.",
-            "It comes with coconut rice, grilled plantain and a passion fruit sauce with Brazilian 'pimenta-de-cheiro' pepper, adding acidity without hiding the fish.",
+            "At your assessment we scan your teeth in 3D and plan every movement. The simulation shows how your smile will look and how many stages the treatment should take.",
+            "Aligners are clear trays changed every one or two weeks that you can remove to eat. For more complex cases we recommend fixed braces with aesthetic, nearly invisible brackets.",
           ],
           benefits: [
-            "Fresh fish, bought daily",
-            "Cooked over embers, never fried",
-            "Gluten-free",
-            "Passion fruit sauce served on the side",
+            "3D simulation before starting",
+            "Clear, removable aligners",
+            "Aesthetic brackets for complex cases",
+            "Retainer included at the end",
           ],
           faq: [
             {
-              question: "Which fish is it?",
-              answer:
-                "It depends on the day's catch — usually hake, snook or responsibly farmed tilapia. The team will tell you when you order.",
+              question: "Can adults wear braces?",
+              answer: "Yes, there is no age limit. Many adults choose aligners because they are discreet.",
             },
             {
-              question: "Is it spicy?",
-              answer: "No. The pepper is aromatic and not hot; the sauce comes on the side.",
+              question: "How many hours a day do I wear aligners?",
+              answer: "About 22 hours a day, taking them out only to eat and brush your teeth.",
             },
             {
-              question: "Does it have bones?",
+              question: "Does it hurt?",
               answer:
-                "We serve it filleted, but small bones may appear. Let us know if it's for children and we'll clean it more carefully.",
+                "You may feel slight pressure in the first days of each new tray, a sign your teeth are moving. It passes quickly.",
             },
           ],
         },
       },
       {
-        icon: "cookingPot",
-        title: "Mushroom and rosemary risotto",
-        description: "Arborio rice, fresh sautéed mushrooms, 12-month parmesan and rosemary oil from our garden.",
-        highlights: ["Vegetarian", "Mountain-grown mushrooms"],
-        price: "R$ 74",
-        slug: "mushroom-rosemary-risotto",
+        icon: "gem",
+        title: "Porcelain veneers",
+        description: "Ultra-thin porcelain veneers to correct colour, shape and alignment with a natural look.",
+        highlights: ["Smile preview", "Minimal preparation"],
+        slug: "porcelain-veneers",
         details: {
-          metaDescription:
-            "Creamy risotto with fresh mushrooms, 12-month parmesan and rosemary oil from the garden. Vegetarian option at Alecrim & Brasa.",
+          metaDescription: "Porcelain veneers with a smile preview and minimal preparation at Odonto Aurora, Campinas.",
           intro:
-            "Our most-ordered vegetarian dish: arborio rice cooked in vegetable stock, with mountain mushrooms sautéed in butter.",
+            "Ultra-thin porcelain veneers to correct colour, shape and small misalignments with a natural appearance.",
           body: [
-            "The risotto is made to order and stirred until creamy — no cream needed. We finish it with parmesan aged for 12 months and a drizzle of olive oil infused with rosemary picked in our garden.",
-            "The mushrooms (button, shimeji and shiitake) come from a small grower in the Mantiqueira mountains and are seared on a hot griddle for colour and flavour.",
+            "Before any preparation we do a smile preview: we apply temporary resin over your teeth so you can see and approve the new smile in the mirror and in photos.",
+            "Once the plan is approved, the veneers are made in ceramic and bonded with minimal or no preparation. Porcelain doesn't stain and reflects light like natural enamel.",
           ],
           benefits: [
-            "Vegetarian",
-            "Fresh mushrooms from a small grower",
-            "Made to order, creamy without cream",
-            "Vegan version on request (no cheese or butter)",
+            "Smile preview before starting",
+            "Stain-resistant porcelain",
+            "Minimal or no tooth reduction",
+            "Shape planned with photos and video",
           ],
           faq: [
             {
-              question: "How long does it take?",
+              question: "How long do they last?",
+              answer: "With good hygiene and regular check-ups, more than 10 years.",
+            },
+            {
+              question: "Do my teeth need to be reduced?",
+              answer: "Often reduction is minimal or none at all. This is decided during planning, case by case.",
+            },
+            {
+              question: "Will they look artificial?",
               answer:
-                "About 20 minutes, since it's made to order. If you're in a hurry, let your server know when ordering.",
-            },
-            {
-              question: "Can it be vegan?",
-              answer: "Yes: we swap the butter for olive oil and the parmesan for toasted nut crumbs.",
-            },
-            {
-              question: "Is it a main course?",
-              answer: "Yes, it's a main-course portion. To share as a starter, ask for a half portion.",
+                "Not when well planned. The smile preview exists precisely to adjust shade and shape to your face before the final version.",
             },
           ],
         },
       },
       {
-        icon: "salad",
-        title: "Fire-grilled garden salad",
-        description: "Greens, fire-charred squash and onion, goat cheese, nuts and honey vinaigrette.",
-        highlights: ["Vegetarian", "Garden to table"],
-        price: "R$ 46",
-        slug: "fire-grilled-garden-salad",
+        icon: "smilePlus",
+        title: "Cleaning and prevention",
+        description: "Professional cleaning, fluoride and a full check-up to keep your oral health on track.",
+        highlights: ["Six-monthly check-up", "Hygiene coaching"],
+        slug: "cleaning-and-prevention",
         details: {
           metaDescription:
-            "Salad of greens with fire-charred squash and onion, goat cheese, nuts and honey vinaigrette. Vegetarian starter at Alecrim & Brasa.",
+            "Dental cleaning, fluoride and a full check-up in Campinas. Prevention to keep your oral health on track at Odonto Aurora.",
           intro:
-            "A salad that also meets the fire: seasonal vegetables charred over embers on fresh greens from our garden.",
+            "Professional cleaning, fluoride and a full check-up to catch small problems before they become bigger treatments.",
           body: [
-            "Kabocha squash and red onion get grill marks and turn sweet. We build it on greens picked that day, with creamy goat cheese, toasted Brazil nuts and a honey-mustard vinaigrette.",
-            "It works as a starter to share or as a light lunch. The vegetables change with the seasons, but the idea stays the same: the taste of fire on simple ingredients.",
+            "The visit includes tartar and plaque removal, polishing, a gum assessment and, when needed, X-rays. We also review old fillings and signs of teeth grinding.",
+            "You leave with brushing and flossing tips tailored to you — and your next visit already booked, usually every six months.",
           ],
           benefits: [
-            "Vegetarian",
-            "Greens from our own garden, picked daily",
-            "Seasonal vegetables charred over embers",
-            "Vegan version without cheese",
+            "Tartar removal and polishing",
+            "Gum and filling assessment",
+            "Fluoride when indicated",
+            "Personalised hygiene coaching",
           ],
           faq: [
             {
-              question: "Do the ingredients change?",
-              answer: "The vegetables follow the season. The base of greens, goat cheese and nuts stays the same.",
-            },
-            {
-              question: "Can I add protein?",
-              answer: "Yes: grilled chicken or slices of beef rib, charged separately.",
-            },
-            {
-              question: "Does it contain nuts?",
+              question: "How often should I have a cleaning?",
               answer:
-                "Yes, Brazil nuts. Tell us about allergies and we'll serve it without them, prepared with separate utensils.",
+                "For most people, every six months. People with gum disease or braces may need shorter intervals.",
+            },
+            {
+              question: "Does cleaning hurt?",
+              answer: "Usually not. With a lot of tartar or sensitive gums, we use a topical anaesthetic.",
+            },
+            {
+              question: "Does my dental plan cover it?",
+              answer: "Most dental plans cover cleanings and check-ups. Confirm on WhatsApp with your plan details.",
             },
           ],
         },
       },
       {
-        icon: "cakeSlice",
-        title: "Burnt dulce de leche flan",
-        description: "Creamy flan with a dulce de leche topping caramelised with a torch and finished with sea salt.",
-        highlights: ["House dessert", "Great to share"],
-        price: "R$ 29",
-        slug: "burnt-dulce-de-leche-flan",
+        icon: "baby",
+        title: "Pediatric dentistry",
+        description:
+          "Playful, welcoming care for children, building a calm relationship with the dentist from an early age.",
+        highlights: ["Child-friendly room", "Fear-free first visit"],
+        slug: "pediatric-dentistry",
         details: {
           metaDescription:
-            "Creamy dulce de leche flan with a torch-caramelised top and sea salt. The house dessert at Alecrim & Brasa.",
+            "Children's dentist in Campinas: playful and welcoming care for babies and kids at Odonto Aurora.",
           intro:
-            "The dessert that ends the night: smooth, creamy dulce de leche flan with a topping burnt to order with a torch.",
+            "Care designed for children, with time, play and lots of conversation — so visiting the dentist feels calm from early on.",
           body: [
-            "Our dulce de leche is made in-house in a copper pan and becomes the base of a flan baked in a water bath for almost two hours. It is firm on the outside and creamy in the middle.",
-            "At the table we torch a layer of sugar — like a crème brûlée — and finish with sea salt to balance the sweetness. On birthdays, it comes with a candle on the house.",
+            "The first visit is for getting used to things: your child meets the room, the chair and the instruments, without rushing. We explain everything in simple words and respect each child's pace.",
+            "We also guide parents on brushing, diet, pacifiers and habits that affect the development of teeth and bite.",
           ],
           benefits: [
-            "House-made dulce de leche",
-            "Topping caramelised to order",
-            "Generous portion to share",
-            "Birthday candle on the house",
+            "Get-to-know-us visit with no procedures",
+            "Playful, welcoming environment",
+            "Guidance for parents on habits and diet",
+            "Prevention with fluoride and sealants",
           ],
           faq: [
             {
-              question: "Does it contain gluten?",
-              answer: "No. The flan is made with milk, eggs and sugar. It contains lactose and eggs.",
+              question: "At what age should my child see a dentist?",
+              answer: "When the first tooth appears, or by 1 year of age.",
             },
             {
-              question: "Can I order a whole one?",
-              answer: "Yes, with 48 hours' notice on WhatsApp. A whole flan serves 10 to 12 people.",
+              question: "What if my child cries?",
+              answer:
+                "That's normal at first. That's why we do get-to-know-us visits and never force procedures that aren't urgent.",
             },
             {
-              question: "Is there a lactose-free option?",
-              answer: "We have a seasonal fruit sorbet, lactose-free and vegan.",
+              question: "Can parents stay in the room?",
+              answer: "Yes, parents or guardians stay in the room for the whole visit.",
             },
           ],
         },
       },
     ],
-    cta: { label: "Book a table", href: "#reservations" },
-    cardLinkLabel: "See details",
-    basePath: "menu",
+    cta: { label: "I want a check-up", href: "#book" },
+    cardLinkLabel: "Learn more",
+    basePath: "treatments",
     page: {
       breadcrumbHome: "Home",
-      breadcrumbLabel: "Menu",
-      benefitsTitle: "Why order it",
-      faqTitle: "Questions about this dish",
-      relatedTitle: "More from our kitchen",
+      breadcrumbLabel: "Treatments",
+      benefitsTitle: "What's included",
+      faqTitle: "Questions about this treatment",
+      relatedTitle: "Other treatments",
       cta: {
-        title: "Feeling hungry?",
-        description: "Book your table on WhatsApp and tell us which dish you can't miss.",
-        button: { label: "Book a table", href: "#reservations" },
+        title: "Want to know if it's right for you?",
+        description: "Book a check-up on WhatsApp and ask our team anything.",
+        button: { label: "Book a check-up", href: "#book" },
       },
     },
   },
 
   differentials: {
     heading: {
-      eyebrow: "The house",
-      title: "More than dinner: a night to remember",
+      eyebrow: "Why Aurora",
+      title: "Details that make a difference to your experience",
       description:
-        "Fire, time and good ingredients. The rest is a full room, soft music and conversation that goes on and on.",
+        "We combine skill, technology and warmth so every visit feels easy — even for people afraid of the dentist.",
     },
     items: [
       {
-        icon: "flame",
-        title: "Real wood-fire cooking",
-        description:
-          "Grill, wood oven and fire pit: no shortcuts. Every dish gets the time over the embers it deserves.",
+        icon: "heartHandshake",
+        title: "Unhurried appointments",
+        description: "Time to listen, explain and answer every question. You understand each step before you decide.",
         size: "wide",
       },
       {
-        icon: "sprout",
-        title: "Garden to table",
-        description: "Vegetables and cheeses from small producers less than 100 km away.",
+        icon: "scanLine",
+        title: "Digital technology",
+        description: "3D intraoral scanning, no uncomfortable impressions.",
       },
       {
-        icon: "wine",
-        title: "Wine list",
-        description: "Brazilian and imported labels, with pairings suggested by our sommelier.",
+        icon: "clipboardList",
+        title: "Transparent quotes",
+        description: "A written plan with clear prices and timelines. No surprises.",
       },
       {
-        icon: "pawPrint",
-        title: "Pet friendly",
-        description: "A veranda with fresh water and a treat for your best friend.",
+        icon: "microscope",
+        title: "Strict biosafety",
+        description: "Sterilisation with every instrument tracked, cycle by cycle.",
       },
       {
-        icon: "partyPopper",
-        title: "Events and birthdays",
-        description: "Private room for up to 60 guests, with a set menu and house cake.",
+        icon: "clock",
+        title: "Extended hours",
+        description: "Open until 8pm on weekdays and on Saturday mornings, to fit your routine.",
       },
     ],
   },
 
   steps: {
     heading: {
-      eyebrow: "How to book",
-      title: "Your table confirmed in minutes",
-      description: "No app, no sign-up: it all happens on WhatsApp.",
+      eyebrow: "How it works",
+      title: "From first message to new smile",
+      description: "A simple, transparent path at your own pace.",
     },
     stepLabel: "Step",
     items: [
       {
         icon: "messages",
-        title: "Message us on WhatsApp",
-        description: "Fill in the form or send a message with the date, time and number of guests.",
+        title: "Get in touch",
+        description: "Send us a WhatsApp message or fill in the form. We reply within minutes during business hours.",
       },
       {
-        icon: "calendarCheck",
-        title: "We confirm your table",
-        description: "Our team replies quickly with your confirmation and the best spot in the room.",
+        icon: "stethoscope",
+        title: "Full assessment",
+        description: "Clinical exam, photos and a digital scan to understand your oral health and your goals.",
       },
       {
-        icon: "partyPopper",
-        title: "Tell us the occasion",
-        description: "Birthday, proposal, high chair for a baby? We'll get everything ready.",
+        icon: "clipboardList",
+        title: "Personalised plan",
+        description: "You get a written treatment plan with stages, timelines and payment options.",
       },
       {
-        icon: "utensils",
-        title: "Just enjoy",
-        description: "Arrive, sit down and leave the rest to the fire. We hold tables for 15 minutes.",
+        icon: "smile",
+        title: "Treatment and follow-up",
+        description: "We start your care comfortably and follow up with scheduled visits to keep the results.",
       },
     ],
   },
@@ -1364,73 +1356,69 @@ const en: SiteConfig = {
   team: {
     heading: {
       eyebrow: "Team",
-      title: "The people who light the fire every day",
-      description: "A team passionate about fire, great produce and hospitality.",
+      title: "Specialists who look after you",
+      description: "Professionals in continuous training with one shared goal: making dental care easy and effective.",
     },
     items: [
       {
         ...pt.team.items[0],
-        role: "Executive chef",
-        registry: "20 years in the kitchen",
-        bio: "Raised around countryside barbecues, he studied fire cooking in Argentina and Uruguay.",
+        role: "Implants and prosthodontics",
+        bio: "Clinical director, specialist in oral rehabilitation and guided surgery.",
       },
       {
         ...pt.team.items[1],
-        role: "Sommelier",
-        registry: "180-label wine list",
-        bio: "Builds pairings for every dish and loves introducing wines from small wineries.",
+        role: "Orthodontics and aligners",
+        bio: "Plans digital orthodontic treatments with a 3D simulation of the result.",
       },
       {
         ...pt.team.items[2],
-        role: "Pastry chef",
-        registry: "Signature desserts",
-        bio: "In charge of desserts and the naturally leavened breads served at the house.",
+        role: "Pediatric and cosmetic dentistry",
+        bio: "Combines caring pediatric dentistry with minimally invasive cosmetic work.",
       },
     ],
   },
 
   testimonials: {
-    heading: { eyebrow: "Reviews", title: "Once you try it, you come back" },
-    summary: "4.8 average rating from guest reviews",
+    heading: { eyebrow: "Reviews", title: "Patients who smile with Aurora recommend it" },
+    summary: "4.9 average rating from patient reviews",
     items: [
       {
-        name: "Mariana C.",
-        detail: "Birthday dinner",
+        name: "Camila R.",
+        detail: "Teeth whitening",
         quote:
-          "The ribs melt in your mouth! I mentioned it was my birthday and they brought the flan with a candle. Flawless service from start to finish.",
+          "I was always shy about smiling in photos. In three weeks the result looked natural and I felt no sensitivity at all.",
         rating: 5,
       },
       {
-        name: "Rafael T.",
-        detail: "Sunday lunch",
+        name: "Eduardo M.",
+        detail: "Implant",
         quote:
-          "Best pizza in Campinas, no exaggeration. Light dough, perfect crust, and the veranda is great for bringing the dog.",
+          "They explained every step calmly and the digital planning made me feel very confident. Smooth surgery, quick recovery.",
         rating: 5,
       },
       {
-        name: "Beatriz & Paulo",
-        detail: "Date night",
-        quote: "The sommelier nailed the pairing. Cosy atmosphere, soft music and food on another level.",
+        name: "Patrícia L.",
+        detail: "Theo's mom, 6 years old",
+        quote: "My son was terrified of dentists. Now he asks when he's going back! Dr. Marina is incredibly patient.",
         rating: 5,
       },
       {
-        name: "Henrique S.",
-        detail: "Company event",
-        quote: "We booked the room for 40 people. Perfect organisation, delicious set menu and a fair price.",
+        name: "Bruno S.",
+        detail: "Clear aligners",
+        quote: "Seeing the 3D simulation before starting made all the difference. Nobody notices I'm wearing aligners.",
         rating: 5,
       },
       {
-        name: "Carla M.",
-        detail: "Vegetarian",
+        name: "Juliana F.",
+        detail: "Porcelain veneers",
         quote:
-          "Finally a grill restaurant with real vegetarian options. The risotto and the fire-grilled salad are amazing.",
+          "I did the smile preview first and approved the shape. It turned out exactly as I imagined, very natural.",
         rating: 5,
       },
       {
-        name: "Diego F.",
-        detail: "Happy hour",
-        quote:
-          "There was a queue on Saturday, but booking on WhatsApp sorted it out. Worth every minute — order the ribs and the flan.",
+        name: "Sérgio A.",
+        detail: "Cleaning and prevention",
+        quote: "Punctual, spotless clinic and evening hours that fit my routine. I'm a loyal patient now.",
         rating: 4,
       },
     ],
@@ -1439,123 +1427,122 @@ const en: SiteConfig = {
   payment: {
     ...pt.payment,
     heading: {
-      eyebrow: "Amenities and payment",
-      title: "A place for everyone at the table",
-      description: "We thought of every detail so your visit is easy — from kids to pets.",
+      eyebrow: "Insurance and payment",
+      title: "Caring for your smile fits your budget",
+      description: "We accept the main dental plans and offer easy payment terms for private treatments.",
     },
-    insurancesTitle: "Amenities",
-    insurances: [
-      "Pet friendly",
-      "Kids' area",
-      "Vegan options",
-      "Gluten-free on request",
-      "Accessible",
-      "Wi-Fi",
-      "Valet parking",
-    ],
+    insurancesTitle: "Accepted dental plans",
     methodsTitle: "Payment methods",
     methods: [
       { icon: "qrCode", label: "Pix" },
-      { icon: "creditCard", label: "Credit and debit" },
-      { icon: "banknote", label: "Meal vouchers" },
+      { icon: "creditCard", label: "Credit card" },
+      { icon: "banknote", label: "Debit and cash" },
     ],
     installments: {
-      title: "Events for up to 60 guests",
-      description: "with a set menu, house cake and a private room.",
-      icon: "partyPopper",
+      title: "Up to 12 interest-free instalments",
+      description: "on credit card, for private treatments.",
     },
-    note: "Tell us about allergies and dietary needs when booking — we adapt dishes whenever possible.",
+    note: "Fictitious dental plans, for demonstration only. Check your plan's coverage.",
   },
 
   faq: {
-    heading: { eyebrow: "FAQ", title: "Before you arrive" },
-    contactPrompt: "Still have questions?",
-    contactCta: { label: "Talk to us on WhatsApp", href: "#reservations" },
+    heading: { eyebrow: "FAQ", title: "Questions we hear all the time" },
+    contactPrompt: "Didn't find your question?",
+    contactCta: { label: "Talk to us on WhatsApp", href: "#book" },
     items: [
       {
-        question: "Do I need a reservation?",
+        question: "Is the first assessment free?",
         answer:
-          "It's not required, but we recommend it for Fridays, Saturdays and Sunday lunch. On WhatsApp, confirmation is quick.",
+          "The first assessment includes a clinical exam, photos and guidance on treatment options. Ask about current conditions on WhatsApp — for patients with an accepted dental plan, it's covered by the plan.",
       },
       {
-        question: "Are pets welcome?",
-        answer: "Yes! Pets are welcome on the veranda, with a water bowl and a treat on the house.",
-      },
-      {
-        question: "Are there vegetarian, vegan and gluten-free options?",
+        question: "Does whitening make teeth sensitive?",
         answer:
-          "Yes. We have fixed vegetarian dishes, a vegan pizza and several gluten-free items. Let us know about allergies when booking.",
+          "We use low-concentration gels and desensitisers before and after each session. Most patients report mild or no sensitivity.",
       },
       {
-        question: "Can I celebrate a birthday?",
+        question: "How long does aligner treatment take?",
         answer:
-          "Of course. Tell us when booking and we'll prepare a surprise. For groups over 15 people we have a set menu.",
+          "It depends on the case, but usually between 6 and 18 months. At your assessment you'll see the 3D simulation with the estimated number of stages.",
       },
       {
-        question: "Is there parking?",
-        answer: "Valet parking from 7 pm and a partner car park on the same street at lunchtime.",
+        question: "Does an implant hurt?",
+        answer:
+          "The procedure is done under local anaesthesia with guided planning, which shortens surgery time. Recovery is usually smooth and managed with simple medication.",
       },
       {
-        question: "Do you charge corkage?",
-        answer: "Yes, R$ 50 per bottle, waived if you buy a bottle from our list.",
+        question: "When should children first see a dentist?",
+        answer:
+          "We recommend the first visit when the first tooth appears, or by age 1. The earlier, the more natural the relationship with oral care.",
+      },
+      {
+        question: "Do you handle emergencies?",
+        answer:
+          "Yes. If you're in pain or had an accident, message us on WhatsApp: we fit in same-day emergency visits whenever possible.",
       },
       {
         question: "Which payment methods do you accept?",
-        answer: "Pix, credit and debit cards and the main meal-voucher brands.",
+        answer: "Pix, debit and credit cards (up to 12 instalments) and cash. We also accept several dental plans.",
+      },
+      {
+        question: "Is there parking?",
+        answer: "Yes, there is partner parking across the street and the reception is fully accessible.",
       },
     ],
   },
 
   booking: {
     heading: {
-      eyebrow: "Reservations",
-      title: "Book your table in under a minute",
-      description: "Fill in your details and continue on WhatsApp — we'll confirm your table there.",
+      eyebrow: "Booking",
+      title: "Book your check-up in under a minute",
+      description: "Fill in your details and continue the conversation on WhatsApp with our reception team.",
     },
     benefits: [
-      "Quick confirmation on WhatsApp",
-      "Tables in the dining room, on the veranda or at the grill counter",
-      "Tell us the occasion and we'll prepare a surprise",
+      "Quick reply during business hours",
+      "Morning, afternoon and evening slots",
+      "No commitment: ask your questions first",
     ],
     form: {
       ...pt.booking.form,
-      name: { label: "Full name", placeholder: "Who is the booking for?" },
+      name: { label: "Full name", placeholder: "What should we call you?" },
       phone: { label: "WhatsApp", placeholder: "(19) 99999-9999" },
       treatment: {
-        label: "Number of guests",
-        placeholder: "Select",
+        label: "Treatment of interest",
+        placeholder: "Select an option",
         options: [
-          { value: "1-2", label: "1 to 2 guests" },
-          { value: "3-4", label: "3 to 4 guests" },
-          { value: "5-6", label: "5 to 6 guests" },
-          { value: "7-10", label: "7 to 10 guests" },
-          { value: "evento", label: "Event (more than 10)" },
+          { value: "avaliacao", label: "General check-up" },
+          { value: "clareamento", label: "Teeth whitening" },
+          { value: "implantes", label: "Dental implants" },
+          { value: "ortodontia", label: "Braces / aligners" },
+          { value: "lentes", label: "Porcelain veneers" },
+          { value: "limpeza", label: "Cleaning and prevention" },
+          { value: "odontopediatria", label: "Pediatric dentistry" },
         ],
       },
       period: {
-        label: "Meal",
+        label: "Best time",
         options: [
-          { value: "almoco", label: "Lunch" },
-          { value: "jantar", label: "Dinner" },
-          { value: "evento", label: "Event" },
+          { value: "manha", label: "Morning" },
+          { value: "tarde", label: "Afternoon" },
+          { value: "noite", label: "Evening" },
         ],
       },
-      message: { label: "Date, time and notes", placeholder: "e.g. Saturday, 8pm — birthday, high chair for a baby…" },
-      submit: "Book on WhatsApp",
-      privacy: "Your details are only used to confirm your booking. Learn more in our",
+      message: { label: "Message (optional)", placeholder: "Tell us a little about what you're looking for…" },
+      submit: "Send on WhatsApp",
+      privacy: "Your details are only used to contact you about your appointment. Learn more in our",
       errors: {
         nameMin: "Please enter your name (at least 3 letters).",
         nameMax: "Name is too long.",
         phone: "Please enter a valid WhatsApp number with area code.",
-        treatment: "Please select the number of guests.",
-        period: "Choose lunch, dinner or event.",
+        treatment: "Please select a treatment.",
+        period: "Please choose the best time.",
         messageMax: "The message can have up to 500 characters.",
       },
       whatsappMessage: {
-        intro: "Hi, Alecrim & Brasa! I'd like to book a table.",
-        fields: { name: "Name", phone: "WhatsApp", treatment: "Guests", period: "Meal", message: "Date and notes" },
+        intro: "Hi, Odonto Aurora! I'd like to book a check-up.",
+        fields: { name: "Name", phone: "WhatsApp", treatment: "Treatment", period: "Best time", message: "Message" },
       },
-      toast: { title: "All set! Opening WhatsApp…", description: "Your booking message is ready. Just tap send." },
+      toast: { title: "All set! Opening WhatsApp…", description: "Your message is ready. Just tap send." },
     },
   },
 
@@ -1563,7 +1550,7 @@ const en: SiteConfig = {
     path: "privacy",
     title: "Privacy policy",
     description:
-      "How the Alecrim & Brasa website handles your personal data, in plain language and in line with Brazil's LGPD.",
+      "How the Odonto Aurora website handles your personal data, in plain language and in line with Brazil's LGPD.",
     updatedLabel: "Last updated",
     updatedAt: "November 3, 2026",
     intro:
@@ -1572,20 +1559,27 @@ const en: SiteConfig = {
       {
         heading: "Who is responsible",
         paragraphs: [
-          "The data controller is Alecrim & Brasa Gastronomia Ltda. (CNPJ 00.000.000/0001-00), Rua do Alecrim, 315, Jardim Aurora, Campinas – SP, Brazil. Fictitious company and data, created for a portfolio.",
+          "The data controller is Odonto Aurora, Av. Horizonte Azul, 742 – Room 12, Jardim Aurora, Campinas – SP, Brazil, under the clinical responsibility of Dr. Helena Duarte (CRO-SP 000.001). Fictitious clinic and data, created for a portfolio.",
         ],
       },
       {
         heading: "What we collect",
         paragraphs: [
-          "Only what you type in the booking form: name, WhatsApp number, number of guests, meal and, optionally, a message with the date and notes.",
-          "This data is not sent to any server of ours: your browser builds a message and opens WhatsApp. We only receive the booking if you tap send in the app.",
+          "Only what you type in the booking form: name, WhatsApp number, treatment of interest, best time and, optionally, a message.",
+          "This data is not sent to any server of ours: your browser builds a message and opens WhatsApp. We only receive the request if you tap send in the app.",
+        ],
+      },
+      {
+        heading: "Health data",
+        paragraphs: [
+          "The treatment of interest and your message may reveal information about your oral health, which the LGPD treats as sensitive data (art. 11). That's why we ask only for the minimum needed to book — please don't send exams or clinical details here.",
+          "At the clinic, dental records are processed for health care purposes, under professional confidentiality and for the period required by the Brazilian Federal Council of Dentistry.",
         ],
       },
       {
         heading: "How we use it",
         paragraphs: [
-          "To reply to and confirm your booking (legal basis: steps taken at your request prior to a contract, LGPD art. 7, V). We don't use your data for advertising and we don't sell or share it with third parties.",
+          "To reply to you and book your assessment (legal basis: steps taken at your request prior to a contract, LGPD art. 7, V, and health protection, art. 11, II, f). We don't use your data for advertising and we don't sell or share it with third parties.",
         ],
       },
       {
@@ -1605,7 +1599,7 @@ const en: SiteConfig = {
         heading: "Your rights",
         paragraphs: [
           "You can request confirmation of processing, access, correction, anonymisation or deletion of your data, as well as information about sharing and withdrawal of consent (LGPD art. 18).",
-          "To do so, contact us at reservas@alecrimebrasa.com.br or on WhatsApp +55 19 98888-7777. You may also file a complaint with Brazil's National Data Protection Authority (ANPD).",
+          "To do so, contact us at contato@odontoaurora.com.br or on WhatsApp +55 19 99999-9999. You may also file a complaint with Brazil's National Data Protection Authority (ANPD).",
         ],
       },
       {
@@ -1627,7 +1621,7 @@ const en: SiteConfig = {
     heading: {
       eyebrow: "Location",
       title: "Come visit us",
-      description: "Easy to reach, with valet parking at night and a pet-friendly veranda.",
+      description: "Easy access, partner parking and an accessible reception.",
     },
     addressTitle: "Address",
     hoursTitle: "Opening hours",
@@ -1637,12 +1631,12 @@ const en: SiteConfig = {
   },
 
   footer: {
-    about: "Wood-fire cooking in Campinas: flame-grilled meats, sourdough pizzas and produce from small local farms.",
+    about: "Modern, caring dentistry in Campinas. We look after your smile with skill, technology and warmth.",
     linksTitle: "Navigation",
     contactTitle: "Contact",
     socialTitle: "Social media",
     rights: "All rights reserved.",
-    disclaimer: "Restaurant, team, prices, company number and reviews are fictitious.",
+    disclaimer: "Clinic, professionals, registrations, dental plans and reviews are fictitious.",
     portfolioPrefix: "Fictitious project built for a portfolio by",
     backToTop: "Back to top",
   },
